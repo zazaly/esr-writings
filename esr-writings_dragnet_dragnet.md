@@ -1,0 +1,716 @@
+::: {#Header}
+  ---------------------- --
+  DRAG.NET: The script   
+  ---------------------- --
+:::
+
+::: {#Menu}
+
+------------------------------------------------------------------------
+
+[Home Page](http://www.catb.org/~esr "My home page")\
+[What\'s New](http://www.catb.org/~esr/whatsnew.html "What"){s="" new="" on="" this="" site'\"=""}\
+[Site Map](http://www.catb.org/~esr/sitemap.html "Map of the site")\
+[Software](http://www.catb.org/~esr/software.html "Software I maintain")\
+[Projects](http://www.catb.org/~esr/projects.html "My projects")\
+[HOWTOs](http://www.catb.org/~esr/faqs/ "My FAQ documents")\
+[Essays](../index.html "Essays and ruminations")\
+[Personal](http://www.catb.org/~esr/personal.html "Portrait of the author")\
+[Weblog](http://armedndangerous.blogspot.com)\
+[Freedom!](http://www.catb.org/~esr/netfreedom/)\
+[Firearms!](http://www.catb.org/~esr/guns/)\
+
+------------------------------------------------------------------------
+:::
+
+::::::::: {#Content}
+One URL has been changed because myweb site moved. Otherwise this is exactly as it was performed.
+
+\[Stage dressing: Stage setup is three podia, spaced about four feet apart. Stage is dark, with three spotlights on the podia. Spots are initially half-bright. Projection screens should be located between the podia.\]
+
+\[Blocking: Rob is at stage left, Eric at stage center, Cathy at stage right. (This placement could be reversed, but Cathy and Eric need to be adjacent for the blocking to work.) The announcer is offstage and invisible.\]
+
+\[Vocal effects: Eric and Rob should read their lines in tense monotones, Cathy in a melodramatic vamp style.\]
+
+\[All three are costumed: Cathy in a 50s-style bias-cut dress, Rob and Eric in suits.\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00001.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+\[AUDIO: Dragnet intro\]
+
+ANNOUNCER: The story you are about to hear is true. No names have been changed, as there were no innocents. The timeline, however, has been futzed with considerably.
+
+\[AUDIO: Dragnet outro\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00002.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+\[SPOT ON ROB GOES BRIGHT\]
+
+ROB (VOICEOVER): My name is Landley. Rob Landley. I\'m a hacker. On September 7, 2001, my partner Eric Raymond and I were working the World Domination detail when we got a call from a citizen in distress. She needed help with a problem. A Microsoft problem.
+
+\[SPOT ON CATHY GOES BRIGHT\]
+
+CATHY: \"It\'s Windows. I can\'t stand it anymore. The crashes. The lost data. The abuse.\"
+
+\[SPOT ON ERIC GOES BRIGHT\]
+
+ROB (VOICEOVER): My partner flinched.
+
+\[ERIC shudders visibly.\]
+
+ROB: \"You know that woman?\"
+
+ERIC: \"Yeah. She\'s my wife.\"
+
+\[ALL SPOTS DIM\]
+
+\[SOUND: DRAGNET THEME\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00003.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+\[ALL SPOTS BRIGHT\]
+
+\[VISUAL: The Dragnet shield.\]
+
+ROB: \"Just the facts, ma\'am. Tell us what you need.\"
+
+CATHY: \"Well\...I\'m not a techie. I\'m a lawyer.\"
+
+ROB: \"We won\'t hold that against you, ma\'am,\"
+
+\[ERIC nods agreement\]
+
+CATHY: \"I don\'t think I want to try and handle any of that command-line stuff, I\'m just not ready. Can you set up a graphic logon? And painless dialup to my ISP? I\'ll need to browse the web. And email. I need email.\"
+
+ROB: \"What else do you need, ma\'am?\"
+
+CATHY: \"I want to keep my addressbook, the one I have in Outlook 97 right now.\"
+
+ROB (VOICEOVER): I sensed she was holding back.
+
+ROB: \"Anything else, ma\'am?\"
+
+CATHY: \"I\'ve got Microsoft Word files! Hundreds of them. People keep sending them to me. I have to view them, and edit them, and print them, and send them back\...\"
+
+\[ERIC and CATHY look towards each other.\]
+
+CATHY: \"I know it\'s wrong, but I need a word processor that can handle the ugly things.\"
+
+\[ERIC and ROB look towards each other.\]
+
+ERIC: \"This could be a tough one,\"
+
+ROB: \"Yeah. We better call in the penguin.\"
+
+\[VISUAL: TUX as Sherlock Holmes\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00004.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+\[ALL SPOTS DIM\]
+
+\[SOUND: DRAGNET THEME\]
+
+ROB (VOICEOVER): \"Windows. I know too much about Windows. It\'s an ugly place; nobody should have to go there. My partner recruited me after successfully avoiding Windows for years. Me, I\'d tried to avoid it. I just hadn\'t been so lucky.\"
+
+\[SPOT ON ROB GOES BRIGHT\]
+
+\[VISUAL: \"Eric\'s old machine\".\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00005.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"2:05PM: My partner and I arrived at the scene of the crime, wearing our most concerned expressions.\"
+
+\[ROB and ERIC nod decisively at each other\]
+
+ROB (VOICEOVER): \"A VA Linux Systems YMP27 workstation, Eric\'s old machine, stood ready to replace her Windows box.\"
+
+ROB (VOICEOVER): \"I used to walk an installfest beat. One of the things you learn on the installfest beat is caution. Instinctive caution. When you have to migrate someone between operating systems, keeping the old machine intact is a good idea. Losing a citizen\'s data is\...embarrassing. Our job is to protect and serve, not make their technical problems worse.\"
+
+\[SPOT ON ERIC GOES BRIGHT. SPOT ON CATHY DIMS\]
+
+ERIC: How do you make your voice go like that?
+
+\[ROB hands ERIC a cardboard tube. ERIC contemplates it for a moment.\]
+
+ERIC (VOICEOVER): \"At today\'s prices, buying new hardware to put Linux on is inexpensive. Inexpensive enough to be a worthwhile hedge against data loss, and hardware failure. If all else fails, it means you can hook the old box back up and try again another day.\"
+
+\[VISUAL: Uncaptioned shot of grelber.\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00006.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): 2:10PM: \"Cracked the case. The case on the old Windows box, that is. It was dusty. Very dusty. Its name was \`grelber\'. I was impressed by the machine\'s powerful turbine-like sound, until Eric explained the concept of worn-out case-fan bearings to me.\"
+
+ERIC (VOICEOVER): \"We took it outside and read it its rights. Rob blew on it, demonstrating proper dust-removal technique.\"
+
+\[ROB coughs violently while making fanning motions\...\]
+
+\[PAUSE FOR AUDIENCE\]
+
+ERIC (VOICEOVER): \"2:20PM: We took the old machine apart and stuck in a vintage ISA network card \-- old enough that we thought even Windows 95 would have a fair chance to spot it in a line-up. We needed to be able to transfer her files. We were thinking Samba shares.\"
+
+\[VISUAL: \"ISA Network Card\".\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00007.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"2:45PM: We ran into a problem. It was a perp we had tangled with before \-- a nasty mook name of Plug\'n\'Play.\"
+
+ROB: \"IRQ conflict. I hate \'em.\"
+
+ERIC: \"Isn\'t this a plug and play card?\"
+
+ROB: \"Yeah. That\'s the problem. 95 doesn\'t fully support plug and play. It\'s giving the network card an IRQ, but one that\'s already used by the SCSI controller.\"
+
+ERIC \[in normal voice\]: \"That\'s really *stupid*!\"
+
+ROB: \"You\'re breaking character.\"
+
+ERIC: \"Oops. Sorry\...\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ERIC: \"How can Windows think the SCSI controller is disabled by a conflict when we just booted it from one of those drives?\"
+
+ROB: \"I don\'t know. Time for another plan.\"
+
+ROB (VOICEOVER): \"3:00PM: We tried putting in a PCI network card. An NE2K, the single most common 10baseT driver interface on the planet.\"
+
+ERIC (VOICEOVER): \"Windows asked us to put in a vendor driver disk. Which we didn\'t have. It also lost track of the serial port.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+\[VISUAL: Uncaptioned shot of Sugar.\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00008.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"3:15PM: Petted \`Sugar\', a black, white and gray American tabby cat with green eyes described by witnesses as \`belonging to Eric and Cathy\'. The cat was fuzzy. Very fuzzy.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ROB (VOICEOVER): \"3:25PM: Contemplated moving over 500 megabytes of data by 3.5 inch floppy. Returned to petting cat.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+\[VISUAL: TOM\'S ROOT BOOT with penguin logo and URL\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00009.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ERIC (VOICEOVER): \"3:45PM: We booted up Cathy\'s old system with \`Tom\'s Root Boot\', a well-known single floppy Linux system. It recognized the network card, but did not contain a device driver for the Buslogic 942C SCSI card controlling the hard drives. There was no more space on the floppy. Some days, you just can\'t win.\"
+
+\[VISUAL: Sugar\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00010.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"4:00PM: Consulted with cat for inspiration. Cat purred and rolled over for a belly rub.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+\[VISUAL: the Dragnet shield\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00011.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"4:05PM: Removed SCSI controller and hard drives from old box and inserted them in new box, which would shortly be named \`minx\'. We were taking our chances that the SCSI controller already in the system would be earlier in the boot sequence, so the machine would come up in Red Hat 7.1 able to mount grelber\'s old drives.\"
+
+ERIC: \"This could get ugly. What if it boots up in Windows?\"
+
+ROB: \"Don\'t worry\...I\'ve got a boot disk, and I\'m not afraid to use it.\"
+
+\[SOUND: DRAGNET THEME\]
+
+ROB (VOICEOVER): \"4:20PM. Minx booted without incident. We looked at the ugly lash-up of cables we\'d had to throw together and shuddered. Sometimes, troubleshooting isn\'t pretty.\"
+
+ERIC: \"Are we sure moving Windows files to a Linux box won\'t lose meta-information that we need?\"
+
+ROB: \"It\'s FAT. It\'s built on top of DOS. There isn\'t much metainformation, and Linux\'s VFS layer understands all of it. Just mount the partition as type \`vfat\' and run tar(1); Linux will know what to do.\"
+
+ERIC: \"And this way, Windows can\'t interfere!\"
+
+ROB: \"Exactly. Windows won\'t even be running.\"
+
+\[Screen shot of Malvern Pizza\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00012.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"4:25PM: Started the data transfer and went to a late lunch. Walked from Eric\'s house to Malvern Pizza, a local eating establishment. We ordered steak sandwiches. Mushroom and onion, Eric\'s with no cheese. They arrived. We ate them.\"
+
+ERIC (VOICEOVER): \"There were no doughnuts.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ROB (VOICEOVER): \"4:45PM: Data successfully transferred to minx\'s second drive. My partner had designed minx with a dual-spindle disk subsystem. One system drive for the OS, one warehouse drive for user files \-- only 4GB each, but that was a lot in 1997. At times like this, two drives come in handy.\"
+
+ERIC (VOICEOVER): \"Minx also had two Pentium II 400MHz processors, 128MB of memory, a Matrox Millennium graphics card, a Viewsonic 21PS monitor, and Yamaha speakers. VA just doesn\'t build them like that any more.\"
+
+\[VISUAL: \"OUCH!\" in large letters. Hold for 10 sec and blank.\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00013.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"5:00PM: We reassembled grelber. My partner moved it to the basement. We felt it belonged there.\"
+
+\[VISUAL: Uncaptioned shot of Sugar in basement.\]\
+
+::: centered
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00014.idx.jpg)
+  ------------------------------------------------------------------------
+:::
+
+\
+
+ROB (VOICEOVER): \"5:01PM: Cat politely disputed ownership of basement. Partner petted cat. Left grelber there anyway.\"
+
+VISUAL: KRUD: http://tummy.com/krud\
+
+::: centered
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00015.idx.jpg)
+  ------------------------------------------------------------------------
+:::
+
+\
+
+ERIC (VOICEOVER): \"5:05PM: Did a fresh install of KRUD Linux (Kevin\'s Red Hat Uber Distribution on minx\'s system drive. The warehouse drive, with Cathy\'s rescued data on it, remained unplugged during the install. We were taking no chances. We were confident that the cat, Sugar, would carefully guard the original copies, still on grelber, in the basement. Cross her and she\'ll shed all over you\...\"
+
+ROB (VOICEOVER): \"6:00PM: Reconnected warehouse drive. Booted up newly installed Linux system. Untarred Cathy\'s data from the archive we had copied over, into a directory named \`windows\' immediately beneath her Linux home directory.\"
+
+\[VISUAL: Uncaptioned shot of KDE desktop.\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00016.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"6:05PM: Time to set up Cathy\'s desktop environment and move over her Netscape bookmarks. Eric was mostly a GNOME user, but we\'d picked KDE as an easier migration path for a recovering Windows victim.\"
+
+ROB: \"KDE\'s built in web browser, Konqueror, can see the bookmarks made by Linux\'s version of Netscape. So if we copy the Netscape bookmarks file from the windows machine into the default Netscape bookmarks location, it shouldn\'t have any trouble.\"
+
+ERIC: \"Still Mozilla can use Netscape bookmarks directly. They won\'t be in a separate folder, she can add to them and re-organize them and delete them, just as if she were still using Netscape.\"
+
+ROB: \"I\'ve had much better luck with Konqueror\'s ability to render web pages, and it doesn\'t seem to use nearly as much memory. Then again, I haven\'t tried Mozilla in some time.\"
+
+ERIC: \"Let\'s set up both browsers then. Cathy can make the choice.\"
+
+ROB (VOICEOVER): 6:20PM: Pondered which of Cathy\'s other applications to replace, which to emulate \-- and how to emulate them.
+
+ROB: \"We\'ve got three options. First: we can replace some Windows applications with equivalent \-- or better \-- Linux apps.\"
+
+ERIC: \"That should work well for browsers, communications programs, and Internet tools in general.\"
+
+ROB: \"That\'s right. If she finds she still needs Windows applications on her main machine, then we can go one of two ways. Windows emulation, or virtual-machine emulation.\"
+
+\[VISUAL: \"Eric doesn\'t pretend ignorance well\...\"\]\
+
+::: centered
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00017.idx.jpg)
+  ------------------------------------------------------------------------
+:::
+
+\
+
+ERIC: \"What\'s the difference?\"
+
+\[VISUAL: WINE project home page, captioned http://winehq.com\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00018.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB: \"You can emulate Windows with WINE. It can run Windows executables, and provides a set of shared libraries to handle most of the Windows system calls, forwarding them to the appropriate Linux subsystem.\"
+
+ERIC: \"What\'s the catch?\"
+
+ROB: \"WINE has been in alpha test since 1994. It\'s still buggy and incomplete. Still, I\'ve seen it work pretty well when set up by a pro, and we\'re only trying to handle Windows 95. They\'ve had six years to get that much right.\"
+
+ERIC: \"And what\'s our alternative?\"
+
+ROB: \"Putting an actual Windows partition on minx.\"
+
+\[ERIC shudders\]
+
+ROB: \"Then she can either dual-boot to one or the other, or run it under a virtual machine emulator like VMWare, Win4Lin, or Plex86. It\'s ugly, but it works at least as well as Windows ever did. That way we can wean her off Windows gradually.\"
+
+ERIC: \"We need to break the cycle of addiction. A fourth alternative would be to just exile the games and optional Windows crud to grelber in the basement.\"
+
+ROB: \"So it\'s there if she needs it, but far enough away that she won\'t be tempted often. I like it, but to pull it off\...\"
+
+ERIC: \"Microsoft Word is the big issue\"
+
+ROB: \"We\'ve got to find a Linux word processor that can read and write .DOC files.\"
+
+\[SOUND:MISSION IMPOSSIBLE THEME\]
+
+ERIC: \"No! No! Wrong theme music!\"
+
+\[SOUND: DRAGNET THEME\]\
+
+::: centered
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00019.idx.jpg)
+  ------------------------------------------------------------------------
+:::
+
+\
+
+ROB (VOICEOVER): \"7:00PM: KDE 2.1 ships with a word processor named KWord. We tried out KWord\'s Word-format filter. It didn\'t work. KWord wouldn\'t read a single one of the documents in Cathy\'s windows directory. So much for that theory.\"
+
+\[VISUAL: ANTIWORD: http://www.winfield.demon.nl/ WV: http://wvware.sourceforge.net/ \]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00020.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ERIC (VOICEOVER): \"We booked KWord on a 305: being kind of pointless. Even if you only read in the text and lose all the formatting, the ability to at least view the file format in which 95% of all business documents are currently being produced (ugly or not) is essential to any serious word processor. Utilities like antiword and wv have been out for years. There is no excuse for not being able to extract at least the ASCII.\"
+
+ROB (VOICEOVER): I had tried AbiWord a few months before (in April 2001). The good news: it would read in Word documents. The bad news: it crashed immediately after doing so.
+
+ERIC: \"I hear it\'s under active development\...\"
+
+ROB: \"We can only hope\...\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ROB (VOICEOVER): 7:45PM: We checked out the Codeweavers version of WINE. My partner, anticipating the need, had downloaded it the night before.
+
+\[VISUAL: Wine\'s crash screen\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00021.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): WINE was pure vinegar. We booked it on a 1406: total lameness.\"
+
+ERIC: \"Poorly documented, incomplete, buggy, and when it doesn\'t crash it locks up.\"
+
+ROB: \"And when it does anything at all, it\'s slow. Very slow. It\'s so slow it\'s hard to tell when it\'s hung.\"
+
+ERIC: \"You know\...maybe WINE qualifies as an accurate Windows emulation after all.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+\[SPOT ON CATHY GOES BRIGHT\]
+
+ROB (VOICEOVER): \"8:20PM: Cathy Raymond arrived at the scene. We had been trying to get WINE to work for some time. No dice. We were frustrated. The cat was frustrated. We petted the cat, so at at least *she* felt better.\"
+
+\[SPOT ON CATHY GOES BRIGHT\]
+
+CATHY: \"Hello boys, how is it coming along? Can I edit Word documents yet?\"
+
+ROB: \"That\'s under investigation at this time, ma\'am.\"
+
+CATHY: \"Can I read my email?\"
+
+ERIC: \"Inquiries are proceeding.\"
+
+CATHY: \"Can I at least surf the web?\"
+
+ROB: \"I refuse to answer on the grounds that it might tend to incriminate me.\"
+
+\[VISUAL: Exterior shot of Linh restaurant\]\
+
+::: centered
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00022.idx.jpg)
+  ------------------------------------------------------------------------
+:::
+
+\
+
+CATHY: \[Sighs\] \"And you say you do this for a living? Oh, never mind. Put down those silly cardboard tubes and let\'s go\...eat something.\"
+
+ROB: \"Can the announcer come along too?\"
+
+\[ANNOUNCER\] \"No, I\'m still in California at this point. And I\'m keeping my cardboard tube.
+
+\[ALL SPOTS DIM, THEN SPOTS ON ROB AND ERIC GO BRIGHT\]
+
+\[VISUAL: the Dragnet shield\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00023.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ERIC (VOICEOVER): \"10:00PM: Back on the job. The next step involved downloading software: either Star Office, a newer version of Abiword, or perhaps the newly released KDE 2.2. We were also getting tired of walking over to snark to do Google searches. It was obvious: minx needed an Internet connection.\"
+
+\[VISUAL: Google home page, ideally coming in as ERIC says \"Google\"\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00024.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"10:15PM: Attempted to configure minx to use Cathy\'s existing dialup connection \-- through a 28.8K external modem to a community ISP my partner had co-founded back in \'93. Although the ISP is Linux-based, their \"How to Connect from a Linux Box\" document is not a link but a \"Coming Soon\" notice. The dialup number we could find connected to a shell account without any obvious way to start ppp. The support staff had gone home for the day. And Eric no longer had the root password.\"
+
+\[VISUAL: Screen shot of CCIL main page.\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00025.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"10:55PM: No luck with the ISP. We decided to network minx to Eric\'s new machine, snark, to take advantage of its working 56K connection. First step was to string 30 feet of CAT 5 cable between the two machines. The longest cable we had on hand was 25 feet. A second hub was called in to make up the difference.\"
+
+\[VISUAL: Uncaptioned shot of Netgear hub.\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00026.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"10:57PM: Resumed our investigations at snark. This was the machine with the working 56K connection \-- Eric\'s custom-built Ultimate Linux Box, which he had installed just a few days before.
+
+ERIC (VOICEOVER): \"11:00PM: While attempting to get network forwarding for minx up on snark, we discovered that an error in the configuration of the kernel it was shipped with had silently disabled its firewalling. Not good. We immediately disconnected the modem and ran a security check. Then we rebuilt the kernel with iptables.
+
+\[VISUAL: screen shot here of top under make -j, and a compile\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00027.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"11:05PM: Eric\'s new \`snark\' has a motherboard featuring dual 1.2GHz Athlons and the fastest disk drives in production, IBM UltraStars with a 4.2ms seek time. The total kernel build time: less than one minute and fifty seconds. You may now drool.\"
+
+ERIC (VOICEOVER): \"11:20PM: The 2.4.9 linux kernel on snark had an iptables module, but it stubbornly refused to load. After running depmod -a twice, several recompiles and a lot of reading source code, we realised that the iptables subsystem in the running kernel was in fact compiled in. The modules in /lib/modules were left over from an earlier compile. Clearly, we needed more caffeine.\"
+
+ROB (VOICEOVER): \"11:21PM: Therapeutic administration of Dr. Pepper.\"
+
+\[ROB and ERIC slug back a healthy gulp of the beverage each.\]
+
+ERIC (VOICEOVER): \"11:45PM: Firewalls back up. Forwarding and masquerading enabled. Hubs all lit up. It worked; minx was live on the net.\"
+
+\[VISUAL: Sugar again\]\
+
+::: centered
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00028.idx.jpg)
+  ------------------------------------------------------------------------
+:::
+
+\
+
+ROB (VOICEOVER): \"11:46PM: Sugar demanded a time-out for celebratory cat-petting.\"
+
+ERIC (VOICEOVER): \"11:50PM: Time to tackle Cathy\'s Windows address book. To do that, we needed to find where Outlook kept its data, and how it is encoded.\"
+
+ROB (VOICEOVER): \"11:55PM: A lot of hacking is just wearing out virtual shoe leather. We flatfooted through the Windows filesystem looking for the Outlook address book. We figured once we got a make on that file, a little forensic analysis would tell us what we needed to know,\"
+
+ERIC (VOICEOVER): \"12:15AM: The obvious approach - a recursive find, grepping for strings in the addressbook data \-- didn\'t work. If it was there, and it had to be there, it was coded in something more opaque. Unicode, maybe.\"
+
+ROB (VOICEOVER): \"2:15AM: After a couple of hours of this, we searched Google and found our answer. Outlook has an addressbook-export facility \-- it can export its addressbook as a table containing tab-separated fields. The only way to get an addressbook from one version of Outlook to another is in plain text. We reassembled grelber and used it to export Cathy\'s addressbook to floppy. We also discovered that the first line of the table was field names.\"
+
+ERIC (VOICEOVER): \"02:18AM: Our duty was clear. Write a program that would translate the export files to whatever format was used by KDE\'s address book. For this job, my partner and I needed a language that both supports rapid development and has good support for parsing and data structures. A lot of departments use Perl for this kind of work, and it will get the job done. But my partner and I thought we knew a faster way: Python.\"
+
+ROB (VOICEOVER): \"2:20AM: Our first step was to write a parser class that would digest the tab-separated Outlook export file into a Python data structure from which we could conveniently generate reports. Fortunately, my partner is an expert at this kind of hacking; we had our first running version literally within minutes after he limbered up his typing fingers. Dealing with some odd (and undocumented) quirks in Microsoft\'s handling of quotes and embedded tabs took us considerably longer.\"
+
+ERIC (VOICEOVER): \"2:50AM: Our next step was to determine the KDE addressbook\'s M.O. \-- the file format we\'d have to translate to. A quick web search established that it also wasn\'t documented anywhere. (If Google can\'t find it, it\'s not documented.)\"
+
+ROB: \"Time for some good old-fashioned investigative work.\"
+
+ERIC: \"I think this calls for a sting operation.\"
+
+ROB: \"Right. I\'ll go undercover as an ordinary user and create some addressbook entries with known values. You stake out the location of the KDE addressbook file. Once Kmail writes out the data, we\'ll nab it.\"
+
+ERIC (VOICEOVER): \"3:00AM: We collared a sample \`KAB\' addressbook file and took it to the forensics lab. The format was an ugly kluge, but pretty transparent. We begin writing code to report the contents of our Python data structure in KAB format.\"
+
+ROB: \"That\'s \`kludge\'\...\"
+
+ERIC: \"No, it\'s \`kluge\'\"
+
+ROB: \"No, it\'s \`kludge\'.\"
+
+ERIC: \"No, it\'s \`kluge\'\"
+
+ROB: \"Kludge!\"
+
+ERIC: \"Kluge!\"
+
+ROB: \"Kludge!\"
+
+ERIC: \"Kluge!\"
+
+\[VISUAL: Blinking, \"Obligatory \`Saturday Night Live\' reference.\"\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00029.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ANNOUNCER: \"Hey now, you\'re both right! That format is both a kluge *and* a kludge!\"
+
+ROB: \"Mmmm. Tastes terrific!\"
+
+ERIC: \"And just look at that shine!\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ROB (VOICEOVER): \"03:15AM: My partner and I found ourselves getting extreme. Extreme programming, that is \-- a useful technique with a really stupid name. One keyboard, four hands, four eyeballs. We took turns coding. Generating something the KDE addressbook application will read turned out to be a tougher job than we thought. The address data had mostly been wedged into the \`custom\' extension field of a file format that had been originally designed for something else. Something called QConfigDB. The resulting mess was not pretty.\"
+
+ERIC (VOICEOVER): \"05:00AM: We had been at it for nearly four hours. What our script produced looked right but the KDE addressbook application wouldn\'t read it. We were getting stale \-- stale enough that the Dr. Peppers weren\'t helping anymore. We decided to work on something else.\"
+
+ROB (VOICEOVER): \"05:05AM: StarOffice. It seemed to be our best hope of solving the Word problem. We went to the Sun Microsystems site to download it. The web form wanted to us to tell Sun a few things first. Name. Address. Organization. We start typing and clicking.\"
+
+ERIC (VOICEOVER): \"05:07AM: A box near the bottom of the third page of the web form wants to know if Sun can send us marketing spam. We tell it no.\"
+
+ROB (VOICEOVER): \"05:10AM. We\'re still typing. Number of employees at this location. Mother\'s maiden name. Somewhere around the sixth page of the web form Sun asks a second time if they can send us spam. We tell it no.\"
+
+ERIC (VOICEOVER): \"05:20AM: We\'re still answering questions. Favorite color. Capitol of North Dakota. Blood type. Airspeed of an unladen African swallow. Somewhere around the fifteenth page of the web form Sun asks a third time if they can please send us spam. We tell it no.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ROB (VOICEOVER): \"05:30AM: The download has finally started \-- through a 56K modem, and StarOffice is bigger than Mozilla. At 4K a second, it\'s going to take a while. We\'re talking hours. Time to get some sleep. My partner and I call it a night. I head for the daybed in the basement.\"
+
+\[SPOTS ON ERIC AND CATHY GO BRIGHT; SPOT ON ROB DIMS\]
+
+CATHY: \[YAWNS\] \"Honey, aren\'t you two done yet? It\'s almost six o\'clock in the mirning?\"
+
+ERIC: \"Not yet. We\'re downloading a copy of Star Office for you to edit Word documents with, and that\'s going to take about four hours over 56K.\"
+
+CATHY: \"Oh, is *that* all? You\'ve had a copy of StarOffice since last LinuxWorld. It\'s been sitting on the dresser all this time.\"
+
+\[CATHY HANDS ERIC A CD-ROM. SPOT GOES DOWN ON HER, UP ON ROB.\]
+
+ROB (VOICEOVER): \"05:45AM: I\'m still awake when my partner comes down the basement stairs. Sugar has been explaining to me that it\'s her basement and there are more important things than sleep. Like petting cats.\"
+
+ERIC: \"Rob?\"
+
+ROB: \"Yeah?\"
+
+ERIC: \"Next time you\'ve got a tough investigative problem\...ask your wife.\"
+
+ROB: \"Eric?\"
+
+ERIC: \"Yeah?\"
+
+ROB: \"I\'m not married.\"
+
+ROB (VOICEOVER): \"06:00AM: We begin testing StarOffice.\"
+
+ERIC (VOICEOVER): \"06:30AM: StarOffice seems to work. It\'s bloated and slow, but no worse than Microsoft Office. It loads a .DOC file. It saves the .DOC file. Cathy Raymond can edit her documents.\"
+
+ROB (VOICEOVER): \"06:35AM: Time for a few hours\' sleep.\"
+
+ERIC (VOICEOVER): \"12:30PM: We find the simple case error in the addressbook conversion script that was preventing it from working. The addressbook conversion works. Cathy\'s addressbook is now available from Kmail.\"
+
+\[VISUAL: LOOKOUT: http://www.catb.org/\~esr/lookout/\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00030.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"12:35PM: Cathy can read and write Microsoft Word files. We\'ve converted her Outlook97 address book. Excel spreadsheets were already a solved problem in both KOffice and StarOffice. We\'ve configured Cathy\'s email. Her printer configured easily, too, via printtool. We\'ve run out of things to do.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ROB (VOICEOVER): \"01:00PM: We went back to grelber, her old machine to see if there was any important application we had missed. Upon closer examination of the machine, we discovered that the turbine roar originated from one of the two Seagate Barracuda hard drives.\"
+
+ERIC: \"Bad bearings. It\'ll get them every time.\"
+
+\[VISUAL: Burnt motherboard\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00031.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB (VOICEOVER): \"In addition, we determined that grelber\'s processor fan had ceased functioning at some undetermined point in the past. The processor socket was visibly scorched. And during our investigations, between one boot and the next, Windows stopped recognizing the machine\'s CD-ROM drive.\"
+
+\[SPOT ON CATHY GOES BRIGHT\]
+
+\[VISUAL: Dragnet shield\]\
+
+  ------------------------------------------------------------------------
+  ![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00032.idx.jpg)
+  ------------------------------------------------------------------------
+
+\
+
+ROB: \"You\'re lucky, ma\'am. It looks like we got here just in time,\"
+
+\[CATHY looks at ERIC. ERIC looks at CATHY\]
+
+CATHY: \"Oh\...how can I *ever* thank you?\"
+
+\[ROB stares straight ahead at the audience.\]
+
+ROB: \"No need to thank us, Ma\'am. We\'re just doing our job.\"
+
+\[PAUSE FOR AUDIENCE\]
+
+ANNOUNCER: \"Subsequently, Cathy was able to perform normal end-user tasks without difficulty. WINE is only marginally less lame at this time. Grelber was stripped for parts. A cardboard-tube device driver has been emailed to Linus for inclusion in 2.5. And the cat, Sugar, remains extremely fuzzy.\"
+
+\[DRAGNET THEME AND FADE OUT\]
+
+\[VISUAL: List of referenced URLs.\]\
+
+![](http://www.catb.org/~esr/writings/dragnet/slides/mgp00033.idx.jpg)
+:::::::::
+
+\

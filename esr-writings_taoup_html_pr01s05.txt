@@ -1,0 +1,38 @@
+  Our Case Studies             
+  ------------------ --------- -------
+  Prev                Preface     Next
+
+------------------------------------------------------------------------
+
+Our Case Studies
+
+A lot of books on programming rely on toy examples constructed specifically to prove a point. This one won't. Our case studies will be real, pre-existing pieces of software that are in production use every day. Here are some of the major ones:
+
+cdrtools/xcdroast
+
+    These two separate projects are usually used together. The cdrtools package is a set of CLI tools for writing CD-ROMs; Web search for “cdrtools”. The xcdroast application is a GUI front end for cdrtools; see the xcdroast project site.
+
+fetchmail
+
+    The fetchmail program retrieves mail from remote-mail servers using the POP3 or IMAP post-office protocols. See the fetchmail home page (or search for “fetchmail” on the Web).
+
+GIMP
+
+    The GIMP (GNU Image Manipulation Program) is a full-featured paint, draw, and image-manipulation program that can edit a huge variety of graphical formats in sophisticated ways. Sources are available from the GIMP home page (or search for "GIMP" on the Web).
+
+mutt
+
+    The mutt mail user agent is the current best-of-breed among text-based Unix electronic mail agents, with notably good support for MIME (Multipurpose Internet Mail Extensions) and the use of privacy aids such as PGP (Pretty Good Privacy) and GPG (GNU Privacy Guard). Source code and executable binaries are available at the Mutt project site.
+
+xmlto
+
+    The xmlto command renders DocBook and other XML documents in various output formats, including HTML and text and PostScript. For sources and documentation, see the xmlto project site.
+
+To minimize the amount of code the user needs to read to understand the examples, we have tried to choose case studies that can be used more than once, ideally to illustrate several different design principles and practices. For this same reason, many of the examples are from my projects. No claim that these are the best possible ones is implied, merely that I find them sufficiently familiar to be useful for multiple expository purposes.
+
+------------------------------------------------------------------------
+
+  -------------------------------- ------ ----------------------------
+  Prev                               Up                           Next
+  Conventions Used in This Book     Home     Author's Acknowledgements
+  -------------------------------- ------ ----------------------------
