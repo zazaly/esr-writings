@@ -1,0 +1,32 @@
+  Where Configurations Live                               
+  --------------------------- --------------------------- -------
+  Prev                         Chapter 10. Configuration     Next
+
+------------------------------------------------------------------------
+
+Where Configurations Live
+
+Classically, a Unix program can look for control information in five places in its startup-time environment:
+
+-   Run-control files under /etc (or at fixed location elsewhere in systemland).
+
+-   System-set environment variables.
+
+-   Run-control files (or ‘dotfiles’) in the user's home directory. (See Chapter 3 for a discussion of this important concept, if it is unfamiliar.)
+
+-   User-set environment variables.
+
+-   Switches and arguments passed to the program on the command line that invoked it.
+
+These queries are usually done in the order listed above. That way, later (more local) settings override earlier (more global) ones. Settings found earlier can help the program compute locations for later retrievals of configuration data.
+
+When thinking about which mechanism to use to pass configuration data to a program, bear in mind that good Unix practice demands using whichever one most closely matches the expected lifetime of the preference. Thus: for preferences which are very likely to change between invocations, use command-line switches. For preferences which change seldom, but that should be under individual user control, use a run-control file in the user's home directory. For preference information that needs to be set site-wide by a system administrator and not changed by users, use a run-control file in system space.
+
+We'll discuss each of these places in more detail, then examine some case studies.
+
+------------------------------------------------------------------------
+
+  ------------------------------- ------ --------------------
+  Prev                              Up                   Next
+  What Should Be Configurable?     Home     Run-Control Files
+  ------------------------------- ------ --------------------

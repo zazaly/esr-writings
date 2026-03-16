@@ -1,0 +1,53 @@
+::: navheader
+  Silence Is Golden                                               
+  -------------------------------------- ------------------------ --------------------------------------------------
+  [Prev](ch11s08.html){accesskey="p"}     Chapter 11. Interfaces     [Next](optimizationchapter.html){accesskey="n"}
+
+------------------------------------------------------------------------
+:::
+
+::::::: {.sect1 lang="en"}
+:::: titlepage
+<div>
+
+## []{#id2960632}Silence Is Golden {#silence-is-golden .title style="clear: both"}
+
+</div>
+::::
+
+We cannot leave the subject of interactive user interfaces without exploring one of the oldest and most persistent design tropes of Unix, the Rule of Silence. We observed in [Chapter 1](philosophychapter.html "Chapter 1. Philosophy") that well-designed Unix programs with nothing interesting or surprising to say should shut up, and suggested there are good reasons for this that have long outlasted the slow teletypes on which Unix was born.
+
+Here\'s one: Programs that babble don\'t tend to play well with other programs. If your CLI program emits status messages to standard output, then programs that try to interpret that output will be put to the trouble of interpreting or discarding those messages (even if nothing went wrong!). Better to send only real errors to standard error and not to emit unrequested data at all.
+
+Here\'s another: The user\'s vertical screen space is precious. Every line of junk your program emits is one less line of context still available on the user\'s display.
+
+Here\'s a third: Junk messages are a careless waste of the human user\'s bandwidth. They\'re one more source of distracting motion on a screen display that may be mediating for more important foreground tasks, such as communication with other humans.
+
+Go ahead and give your GUIs progress bars for long operations. That\'s good style --- it helps the user time-share his brain efficiently by cuing him that he can go off and read mail or do other things while waiting for completion. But don\'t clutter GUI interfaces with confirmation popups except when you have to guard operations that might lose or trash data --- and even then, hide them when the parent window is minimized, and bury them unless the parent window has focus.^\[[111](ch11s09.html#ftn.id2960697){#id2960697}\]^ Your job as an interface designer is to assist the user, not to gratuitously get in his face.
+
+In general, it\'s bad style to tell the user things he already knows (\"Program \<foo\> is starting up\...\", or \"Program \<foo\> is exiting\" are two classic offenders). Your interface design as a whole should obey the Rule of Least Surprise, but the content of messages should obey a Rule of [*Most*]{.emphasis} Surprise --- be chatty only about things that deviate from what\'s normally expected.
+
+This rule has even greater force for confirmation prompts. Constantly asking for confirmation where the answer is almost always "yes" conditions the user to press "yes" without thinking about it, a habit that can have very unfortunate consequences. Programs should request confirmation only when there is good reason to suspect that the answer might be "no no no!" A confirmation request that is not a surprise is a strong hint of bad design. Any confirmation prompts at all may be a sign that what your interface really needs is an undo command.
+
+If you want chatty progress messages for debugging purposes, disable them by default with a verbosity switch. Before releasing for production, relegate as many of the normal messages as possible to being displayed only when the verbosity switch is on.
+
+:::: footnotes
+\
+
+------------------------------------------------------------------------
+
+::: footnote
+^\[[111](ch11s09.html#id2960697){#ftn.id2960697}\]^ If your windowing system supports translucent popups that intrude less between the user and the application, [*use them*]{.emphasis}.
+:::
+::::
+:::::::
+
+::: navfooter
+
+------------------------------------------------------------------------
+
+  ------------------------------------------- -------------------------------------------- --------------------------------------------------
+  [Prev](ch11s08.html){accesskey="p"}          [Up](interfacechapter.html){accesskey="u"}     [Next](optimizationchapter.html){accesskey="n"}
+  The Web Browser as a Universal Front End         [Home](index.html){accesskey="h"}                                 Chapter 12. Optimization
+  ------------------------------------------- -------------------------------------------- --------------------------------------------------
+:::

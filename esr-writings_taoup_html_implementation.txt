@@ -1,0 +1,122 @@
+  Part III. Implementation       
+  -------------------------- --- -------
+  Prev                              Next
+
+------------------------------------------------------------------------
+
+Implementation
+
+Table of Contents
+
+14. Languages
+
+Unix's Cornucopia of Languages
+
+Why Not C?
+
+Interpreted Languages and Mixed Strategies
+
+Language Evaluations
+
+C
+
+C++
+
+Shell
+
+Perl
+
+Tcl
+
+Python
+
+Java
+
+Emacs Lisp
+
+Trends for the Future
+
+Choosing an X Toolkit
+
+15. Tools
+
+A Developer-Friendly Operating System
+
+Choosing an Editor
+
+Useful Things to Know about vi
+
+Useful Things to Know about Emacs
+
+The Antireligious Choice: Using Both
+
+Special-Purpose Code Generators
+
+yacc and lex
+
+Case Study: Glade
+
+make: Automating Your Recipes
+
+Basic Theory of make
+
+make in Non-C/C++ Development
+
+Utility Productions
+
+Generating Makefiles
+
+Version-Control Systems
+
+Why Version Control?
+
+Version Control by Hand
+
+Automated Version Control
+
+Unix Tools for Version Control
+
+Runtime Debugging
+
+Profiling
+
+Combining Tools with Emacs
+
+Emacs and make
+
+Emacs and Runtime Debugging
+
+Emacs and Version Control
+
+Emacs and Profiling
+
+Like an IDE, Only Better
+
+16. Reuse
+
+The Tale of J. Random Newbie
+
+Transparency as the Key to Reuse
+
+From Reuse to Open Source
+
+The Best Things in Life Are Open
+
+Where to Look?
+
+Issues in Using Open-Source Software
+
+Licensing Issues
+
+What Qualifies as Open Source
+
+Standard Open-Source Licenses
+
+When You Need a Lawyer
+
+------------------------------------------------------------------------
+
+  ----------------------------- ------ ------------------------
+  Prev                            Up                       Next
+  The Right Size of Software     Home     Chapter 14. Languages
+  ----------------------------- ------ ------------------------

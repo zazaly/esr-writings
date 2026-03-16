@@ -1,0 +1,52 @@
+::: {#Header}
+  ------------------------------------- -----------
+  On Socially Responsible Programming     02 Oct 99
+  ------------------------------------- -----------
+:::
+
+::: {#Menu}
+
+------------------------------------------------------------------------
+
+[Home Page](http://www.catb.org/~esr "My home page")\
+[What\'s New](http://www.catb.org/~esr/whatsnew.html "What"){s="" new="" on="" this="" site'\"=""}\
+[Site Map](http://www.catb.org/~esr/sitemap.html "Map of the site")\
+[Software](http://www.catb.org/~esr/software.html "Software I maintain")\
+[Projects](http://www.catb.org/~esr/projects.html "My projects")\
+[HOWTOs](http://www.catb.org/~esr/faqs/ "My FAQ documents")\
+[Essays](index.html "Essays and ruminations")\
+[Personal](http://www.catb.org/~esr/personal.html "Portrait of the author")\
+[Weblog](http://www.ibiblio.org/esrblog/)\
+[Freedom!](http://www.catb.org/~esr/netfreedom/)\
+[Firearms!](http://www.catb.org/~esr/guns/)\
+
+------------------------------------------------------------------------
+:::
+
+::: {#Content}
+On 2 October 1999, Computer Professionals for Social Responsibility presented the Norbert Weiner Award to the open-source movement. Larry Wall, Brian Behlendorf, Richard M. Stallman, and myself were invited to accept. I was unable to attend because my wife was recovering from surgery at the time, but Harry Hochheiser delivered these remarks on my behalf. This speech has been translated into [Japanese](http://www.yamdas.org/column/technique/cpsrj.html)
+
+\
+
+Ladies and gentlemen, CPSR incautiously invited me to say a few words about social responsibility in computing tonight. And my first words are these: when I hear someone speak of \`social responsibility\', that\'s when I reach for my revolver.
+
+In point of fact, I don\'t actually own a revolver; but I do believe the rhetoric and the very concept of \`social responsibility\' have become badly corrupted by political abuse. All too often, people who invoke \`social responsibility\' are demanding that we give up individual liberty --- that we accept just a bit more taxation, just a bit more regulation, just a bit more governmental intrusiveness, all for the the supposed good of society.
+
+The founders of the United States knew better than to believe that liberty could be traded away by inches to any good end. To foster social responsibility, they wrote a Constitution and a Bill of Rights designed to protect individual liberty against the natural expansionist tendency of governments.
+
+My challenge to everyone here tonight is to remember that, and to express it in action. If we want to be socially responsible programmers, our first duty is to defend and expand liberty --- to defend, in particular, the individual freedoms guaranteed in the Bill of Rights.
+
+Bearing in mind the First Amendment, no socially responsible programmer should cooperate with or assist any government program which censors or interdicts free speech. Or which gives special status, positively or negatively, to religious organizations. Or which interferes with the right of people to assemble peacefully over electronic networks or in any other medium.
+
+Bearing in mind the Second Amendment, no socially responsible programmer should use his craft to assist with any government program of firearms registration, licensing, prohibition, or confiscation.
+
+Bearing in mind the Fourth Amendment, no socially responsible programmer should assist any program of domestic surveillance, including efforts to convert privacy from a right to a government-granted privilege through cryptographic key-escrow schemes or national identification databases.
+
+Bearing in mind the Ninth and Tenth Amendments, no socially responsible programmer should allow his work to assist the federal government in arrogating powers not explicitly granted to it under the Constitution, and therefore reserved to the states and the people.
+
+We cannot leave the defense of our liberty to politicians; they thrive on slicing away bits of it in the name of any pressure group that can deliver votes. It is the duty of every citizen --- and of every socially responsible programmer --- not merely to passively resist the erosion of liberty, but to actively promote and extend liberty; to enlarge the private sphere; to take power away from government so that individuals and voluntary groups may peacefully work out their destinies.
+
+The founders of the U.S. expected us to exercise social responsibility with the ballot and the bullet --- to defend liberty with the vote, and with citizen arms if the vote ever failed us. Today, in a world of ever more ubiquitous computing and networking, we can use the computer keyboard to the same end.
+
+Go to it!
+:::

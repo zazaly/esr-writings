@@ -1,0 +1,128 @@
+  ----------------------- --
+  Notes for Translators   
+  ----------------------- --
+
+------------------------------------------------------------------------
+
+Home Page
+Site Map
+TAOUP
+Contributing
+Errata
+Translation
+
+------------------------------------------------------------------------
+
+Parts of TAOUP are going to pose interesting challenges for a translator. I know I'm not an easy writer to translate out of English; my production vocabulary is very large, my style often swerves between formality and slangy idiomatic usages within a single paragraph, and many of my phrasings are subtle allusions to both classics and popular culture.
+
+Nevertheless, the demand for overseas translation rights was early and strong. To make things easier, I've put together some crib notes on how to translate TAOUP effectively. As I field more questions I will add the answers to this page.
+
+General advice
+
+This book, or identifiable portions of it anyway, is more like literature than most technical books are. By that I mean that the rhythm and style of the prose is relatively important, and that the book is, in significant part, telling a story. A true story; but significant parts of it (the History and Futures chapters, for example) might be poorly served by a very literal translation if the result is dry, colorless, and loses its narrative drive.
+
+Below I give advice on how to translate various bits that I think might be obscure to a non-native speaker of English. My advice generally comes down to this: find an equivalent idiom rather than translating word by word. Do not be afraid of phrasings that are unconventional or humorous — I do a lot of that in the original English, and I would dislike a translation that was all cookie-cutter ‘safe’ prose. If you think you detect irony or an occasional flash of anger, you are probably right — let that come through in your translation, too. Relax and stretch yourself. Take chances.
+
+Chapter 1: Philosophy
+
+The section heading Culture? What culture? is intended to recall the phrase “Crisis? What crisis?”. Originally the title of an album by a long-defunct '70s pop group called Supertramp, this has passed into idiomatic English as a way of suggesting that the speaker thinks the listener might be getting upset about nothing or making too much of trivialities. Translate idiomatically rather than literally if possible.
+
+To understand how the section heading Flexibility all the way down will be read by a native speaker, see this famous story about turtles all the way down. Try to translate with a similar sense of fun.
+
+Chapter 2: History
+
+The section heading Blows against the Empire recalls the title of a still-famous 1970 rock album, and native English speakers will likely think of the phrase “Evil Empire” used of the Soviet Union in the 1980s. These references are intentional. Translate with an idiom suggesting heroic rebellion, if possible.
+
+Chapter 3: Contrasts
+
+“almost, but not entirely unlike a webserver running CGI” This is deliberately perverse syntax. It's a reference to a very silly novel called The Hitchhiker's Guide To The Galaxy. The “almost” applies to the word “unlike”. There is probably no sense in trying to preserve the exact reference for non-English speakers, so feel free to untangle the sentence in your translation.
+
+Chapter 7: Multiprogramming
+
+“fleeing in terror might well be an appropriate response” The mental image you want to evoke in the reader is of a screaming crowd fleeing in abject terror as Godzilla levels another city block. If this sentence does not come out funny, you have translated it wrong.
+
+Chapter 12: Optimization
+
+The section heading Don't Just Do Something, Stand There! is a deliberate inversion of Don't just stand there, do something! which is idiomatically what native English speakers expect to hear when a bystander's failure to act is exasperating the speaker beyond reason. If there is a parallel idiom in your target language, use that rather than translating literally.
+
+Chapter 13: Complexity
+
+The section heading A Tale of Five Editors refers to the title of a famous Dickens novel, A Tale of Two Cities. If this has been translated into your target language, use the same nouns as that title.
+
+Chapter 14: Languages
+
+The section heading Unix's Cornucopia of Languages; the word “cornucopia” means “horn of plenty”, a magical device from ancient Greek myth that gave forth food and drink on command. If this is not a live reference in your target language, any mythological device that spontaneously produces wealth will do.
+
+Chapter 17: Portability
+
+The section heading The Ghost at the Victory Banquet is a reference to Banquo's ghost in the Shakespeare play Macbeth. This will be a live reference in Germany and the few other non-English speaking countries where Shakespeare is well known. Where he is not, feel free to substitute a local symbol of the unquiet past, of old sins coming back to haunt.
+
+Chapter 20: Futures
+
+The section heading The Way The Future Was is lifted from Frederik Pohl's memoir of his life among the Futurians, a notable group of science-fiction fans in the 1940s and '50s. Try to find a way to translate this that conveys a feeling of nostalgia for a better time.
+
+The Unix koans
+
+Undoubtedly the hardest part of the book to translate well is Appendix D, The Unix Koans of Master Foo, which is a carefully constructed English-language parody of Japanese translations of Chinese Zen Buddhist sources. Here is the note I wrote for translators in a comment in the original XML:
+
+  This is a parody. To achieve the intended effect, the introduction should be translated in a dry, academic style and the koans themselves into the sort of language one might expect to find in a religious text; poetic, formal, somewhat archaic. If you happen to be translating into Japanese or Chinese (languages of the Zen primary sources) it would be a good idea to read the Heart Sutra and the Gateless Gate first; there are turns of phrase here that are intended to mirror language in those texts, and the translation should reflect this.
+
+Actually, it would be a good idea to read target-language translations of the Heart Sutra and Gateless Gate no matter what target language you are translating TAOUP into, unless you can assume your readers are familiar with an English translation of these sources.
+
+Introduction
+
+The references to the Eastern and Western schools are meant to recall the Northern (gradual-enlightenment) and Southern (sudden-enlightenment) schools of Chinese Zen (these are better known to most Westerners through the Soto and Rinzai tendencies in Japanese Buddhism). The term ‘patriarch’ should be rendered as whatever formal title scholars in your target language use for the Patriarchs of Zen. If there isn't one, use a word or phrase with the sense of ‘Great Master’, ‘Grandmaster’, or ‘Revered Master’.
+
+The name “Nubi” is a play on the English slang term ‘newbie’. This seems to have originated as a British public school slang contraction of “new boy”, remained in live use in the British military, and entered wide use on the Internet after 1990. If you think most of your readers will hear the echo of English “new” in the first syllable, leave it alone (this will work in most European languages). Otherwise try to think of a personal name in your target language with a first syllable matching the first syllable of the target-language word for “new”.
+
+Master Foo and the Ten Thousand Lines
+
+“Unix-nature” is, of course, a take on the Zen technical term “Buddha-nature” (Japanese “busshou” or “hotokeshou”) and should be translated to resemble your target language's word or phrase for the latter. Similarly, for “emptiness” you want whatever scholars in your target language use as a translation of the Sanskrit word “sunyata” (Japanese “kuu” or “koushou”). And “enlightened” should connect to the target-language translation of the Japanese “satori” or “kensho”.
+
+Master Foo and the Script Kiddie
+
+The barbarous speech of the stranger from the land of Woot is leet-speak, a dialect of written English found mainly in email and on chat systems; it may have no counterpart elsewhere. Simply doing silly orthographic substitutions in the same style might carry you through.
+
+Master Foo Discourses on the Two Paths
+
+Another sensitive bit is in where he yells “Three pounds of VAX!”. The full effect of this line in English depends on the rhyme with the koan Tozan's Three Pounds from Gateless Gate:
+
+        A monk asked Tozan when he was weighing some flax: ‘What is Buddha?’
+
+        Tozan said: `Three pounds of flax' 
+
+It also depends on the fact that the VAX minicomputer was a very important early Unix machine in the 1980s. How you're going to make this reference work in any target language where VAX doesn't rhyme with the target-language word for “flax”, I have no idea. It's a challenge for the translator. You might want to see if you can find a target-language translation of the koan and parallel that.
+
+The terms “sutra” (=“scroll”) and “dharma” (=“tradition” or “teaching”, usually of Buddhist or Hindu religious ideas) can probably be left untranslated. If your readers don't recognize them, they'll already be too hopelessly lost for a translation to help much.
+
+Master Foo and the Methodologist
+
+The word “profile” is a computer term of art that means to collect performance statistics on code while it is running. If your target language does not have an exact equivalent, use a verb with the sense of “monitor”, “instrument” or “time”.
+
+The sentence: “continually measure your productivity while managing resources”. This is meant to sound like stuffy, stupid management-speak. Translate accordingly.
+
+Master Foo Discourses on the Graphical User Interface
+
+The phrase “Great Way” (of Zen) shows up in a lot of English-language Zen literature; it's ‘daido’ in Japanses. If you are translating into one of the other Zen source languages, there is probably an exact technical translation; be sure to find out what it is and use it.
+
+In translating this koan, you may find it useful to meditate on the following simpler one: “The mind is like a dog. His master points at the moon, but he barks at the hand.” The animal in this koan is also the same one that appears in the first koan of Gateless Gate, Joshu's Dog.
+
+Master Foo and the Unix Zealot
+
+MCSE is an abbreviation for “Microsoft Certified Systems Engineer”. There is probably a term for this, and corresponding abbreviation, in your target language. Use it.
+
+“it would transform mind” Special note for those translating into French; this is indended to recall a famous line from one version of the Surrealist Manifesto, “the liberation of mind and all that resembles it”. Translate accordingly.
+
+Master Foo Discourses on the Unix-Nature
+
+The knottiest bits in the whole Koans may be here. First, “Not code. Not name. Not mind. Not things.” This is almost a direct lift from koan #27 of Gateless Gate. If you are translating to one of the Zen source languages, use this fact. Next:
+
+  “Moving in accordance with the law of nature, it unfolds inexorably in the minds of programmers, assimilating designs to its own nature. All software that would compete with it must become like to it; empty, empty, profoundly empty, perfectly void, hail!”
+
+“Moving in accordance with the law of nature” is a frequent phrase in English translations of the Tao Te Ching, but I don't know the original Chinese. The last line is an intended reference to “Om, gate, gate, paragate, parasamgate, bodhi, svaha!”, the climactic line of the Heart Sutra, which is usually translated into English as something like “Gone, all gone, all gone beyond, there will be enlightenment, hail!”. That parallelism needs to come through in translation, which means you need to know by what features an educated reader in your target language would recognize the Heart Sutra.
+
+Master Foo and the End User
+
+English has an uncommon but established usage of the noun ‘chop’ for a Chinese-style signature stamp, often used for signing documents. Thus, in English, for something to be made under someone's chop means it was made with that person's authority or organizing influence; the term also suggests an Oriental context. Your target language's equivalent for ‘seal’ will do.
+
+------------------------------------------------------------------------

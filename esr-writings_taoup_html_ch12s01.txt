@@ -1,0 +1,28 @@
+  Don't Just Do Something, Stand There!                              
+  --------------------------------------- -------------------------- -------
+  Prev                                     Chapter 12. Optimization     Next
+
+------------------------------------------------------------------------
+
+Don't Just Do Something, Stand There!
+
+The most powerful optimization technique in any programmer's toolbox is to do nothing.
+
+This very Zen advice is true for several reasons. One is the exponential effect of Moore's Law — the smartest, cheapest, and often fastest way to collect performance gains is to wait a few months for your target hardware to become more capable. Given the cost ratio between hardware and programmer time, there are almost always better things to do with your time than to optimize a working system.
+
+We can get mathematically specific about this. It is almost never worth doing optimizations that reduce resource use by merely a constant factor; it's smarter to concentrate effort on cases in which you can reduce average-case running time or space use from O(n²) to O(n) or O(n log n),^([112]) or similarly reduce from a higher order. Linear performance gains tend to be rapidly swamped by Moore's Law.^([113])
+
+Another very constructive form of doing nothing is to not write code. The program can't be slowed down by code that isn't there. It can be slowed down by code that is there but less efficient than it could be — but that's a different matter.
+
+------------------------------------------------------------------------
+
+^([112]) For readers unfamiliar with O notation, it is a way of indicating how the average running time of an algorithm changes with the size of its inputs. An O(1) algorithm runs in constant time. An O(n) algorithm runs in a time that is predicted by An + C, where A is some unknown constant of proportionality and C is an unknown constant representing setup time. Linear search of a list for a specified value is O(n). An O(n²) algorithm runs in time An² plus lower-order terms (which might be linear, or logarithmic, of any other function lower than a quadratic). Checking a list for duplicate values (by the naïve method, not sorting it) is O(n²). Similarly, O(n³) algorithms have an average run time predicted by the cube of problem size; these tend to be too slow for practical use. O(log n) is typical of tree searches. Intelligent choice of algorithm can often reduce running time from O(n²) to O(log n). Sometimes when we are interested in predicting an algorithm's memory utilization, we may notice that it varies as O(1) or O(n) or O(n²); in general, algorithms with O(n²) or higher memory utilization are not practical either.
+
+^([113]) The eighteen-month doubling time usually quoted for Moore's Law implies that you can collect a 26% performance gain just by buying new hardware in six months.
+
+------------------------------------------------------------------------
+
+  --------------------------- ------ ----------------------------
+  Prev                          Up                           Next
+  Chapter 12. Optimization     Home     Measure before Optimizing
+  --------------------------- ------ ----------------------------

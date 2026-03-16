@@ -1,0 +1,36 @@
+  Chapter 12. Optimization                     
+  -------------------------- ----------------- -------
+  Prev                        Part II. Design     Next
+
+------------------------------------------------------------------------
+
+Chapter 12. Optimization
+
+Table of Contents
+
+Don't Just Do Something, Stand There!
+
+Measure before Optimizing
+
+Nonlocality Considered Harmful
+
+Throughput vs. Latency
+
+Batching Operations
+
+Overlapping Operations
+
+Caching Operation Results
+
+Premature optimization is the root of all evil.
+
+-- C. A. R. Hoare
+
+This is going to be a very short chapter, because the main thing Unix experience teaches us about optimizing for performance is how to know when not to do it. A secondary lesson is that the most effective optimization tactics are usually things we do for other reasons, such as cleanness of design.
+
+------------------------------------------------------------------------
+
+  -------------------- ------ ----------------------------------------
+  Prev                   Up                                       Next
+  Silence Is Golden     Home     Don't Just Do Something, Stand There!
+  -------------------- ------ ----------------------------------------

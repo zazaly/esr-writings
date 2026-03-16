@@ -1,0 +1,64 @@
+  Chapter 3. Contrasts                     
+  ---------------------- ----------------- -------
+  Prev                    Part I. Context     Next
+
+------------------------------------------------------------------------
+
+Chapter 3. Contrasts
+
+Comparing the Unix Philosophy with Others
+
+Table of Contents
+
+The Elements of Operating-System Style
+
+What Is the Operating System's Unifying Idea?
+
+Multitasking Capability
+
+Cooperating Processes
+
+Internal Boundaries
+
+File Attributes and Record Structures
+
+Binary File Formats
+
+Preferred User Interface Style
+
+Intended Audience
+
+Entry Barriers to Development
+
+Operating-System Comparisons
+
+VMS
+
+MacOS
+
+OS/2
+
+Windows NT
+
+BeOS
+
+MVS
+
+VM/CMS
+
+Linux
+
+What Goes Around, Comes Around
+
+If you have any trouble sounding condescending, find a Unix user to show you how it's done.
+
+-- Scott Adams Dilbert newsletter 3.0, 1994
+
+The design of operating systems conditions the style of software development under them in many ways both obvious and subtle. Much of this book traces connections between the design of the Unix operating system and the philosophy of program design that has evolved around it. For contrast, it will therefore be instructive to compare the classic Unix way with the styles of design and programming native to other major operating systems.
+
+------------------------------------------------------------------------
+
+  ------------------------------ ------ -----------------------------------------
+  Prev                             Up                                        Next
+  The Lessons of Unix History     Home     The Elements of Operating-System Style
+  ------------------------------ ------ -----------------------------------------

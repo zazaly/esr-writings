@@ -1,0 +1,343 @@
+  Language Evaluations                           
+  ---------------------- ----------------------- -------
+  Prev                    Chapter 14. Languages     Next
+
+------------------------------------------------------------------------
+
+Language Evaluations
+
+Mixing languages is a knowledge-intensive (rather than coding-intensive) style of programming. To make it work, you have to have both working knowledge of a suitable variety of languages and expertise about what they're best at and how to fit them together. In this section, we will try to point you at references to help you with the first and an overview to convey the second. For each language surveyed we will include case studies of successful programs that exemplify its strengths.
+
+C
+
+Despite the memory-management problem, there are some application niches for which C is still king. Programs that require maximum speed, have real-time requirements, or are tightly coupled to the OS kernel are good candidates for C.
+
+Programs that must be portable across multiple operating systems may also be good candidates for C. Some of the alternatives to C that we shall discuss below are, however, increasingly penetrating major non-Unix operating systems; in the near future, portability may be less a distinguishing advantage of C.
+
+Sometimes the leverage to be gained from existing programs like parser generators or GUI builders that generate C code is so great that it justifies C coding of the rest of a small application.
+
+And, of course, C proved indispensable to the developers of all its alternatives. Dig down through enough implementation layers under any of the other languages surveyed here and you will find a core implemented in pure, portable C. These languages inherit many of the advantages of C.
+
+Under modern conditions, it's perhaps best to think of C as a high-level assembler for the Unix virtual machine (recall the discussion of the success of C as a case study in Chapter 4). C standards have exported many of the facilities of this virtual machine, such as the standard I/O library, to other operating systems. C is where you go when you want to get as close as possible to the bare metal but stay portable.
+
+One good reason to learn C, even if your programming needs are satisfied by a higher-level language, is that it can help you learn to think at hardware-architecture level. The best reference and tutorial on C for people who are already programmers is still The C Programming Language [Kernighan-Ritchie].
+
+Porting C code between Unix variants is almost always possible and usually easy, but specific areas of variation (like signals and process control) can be tricky to get right. We highlight some of these issues in Chapter 17. Differing C bindings on other operating systems can of course cause C portability problems, although Windows NT at least theoretically supports an ANSI/POSIX-compliant C API.
+
+High-quality C compilers are available as open-source software over the Internet; the best-known and most widely used is the Free Software Foundation's GNU C compiler (part of GCC, the GNU Compiler Collection), which has become the native C of all open-source Unix systems and many even in the closed-source world. GCC ports are even available for Microsoft's family of operating systems. GCC sources are available at the FSF's FTP site.
+
+Summing up: C's best side is resource efficiency and closeness to the machine. Its worst side is that programming in it is a resource-management hell.
+
+C Case Study: fetchmail
+
+The best case study for C is the Unix kernel itself, for which a language that naturally supports hardware-level operations is actually a strong advantage. But fetchmail is a good example of the kind of user-land utility that is still best coded in C.
+
+fetchmail does only the simplest kind of dynamic-memory management; its only complex data structure is a singly-linked list of per-mailserver control blocks built just once, at startup time, and changed only in fairly trivial ways afterwards. This substantially erodes the case against using C by sidestepping C's greatest weakness.
+
+On the other hand, these control blocks are fairly complex (including all of string, flag, and numeric data) and would be difficult to handle as coherent fast-access objects in an implementation language without an equivalent of the C struct feature. Most of the alternatives to C are weaker than C in this respect (Python and Java being notable exceptions).
+
+Finally, fetchmail requires the ability to parse a fairly complex specification syntax for per-mail-server control information. In the Unix world this sort of thing is classically handled by using C code generators that grind out source code for a tokenizer and grammar parser from declarative specifications. The existence of yacc and lex was a point in favor of C.
+
+fetchmail might reasonably have been coded in Python, albeit with possibly significant loss of performance. Its size and data-structure complexity would have excluded shell and Tcl right off and strongly counterindicated Perl, and the application domain is outside the natural scope of Emacs Lisp. A Java implementation wouldn't have been an unreasonable path, but Java's object-oriented style and garbage collection would have offered little purchase on fetchmail's specific problems over what C already yields. Nor could C++ have done much to simplify the relatively simple internal logic of fetchmail.
+
+However, the real reason fetchmail is a C program is that it evolved by gradual mutation from an ancestor already written in C. The existing implementation has been extensively tested on many different platforms and against many odd and quirky servers. Carrying all that implicit knowledge through to a re-implementation in a different language would be messy and difficult. Furthermore, fetchmail depends on imported code for functions (like NTLM authentication) that don't seem to be available above C level.
+
+fetchmail's interactive configurator, which did not have a C legacy problem, is written in Python; we'll discuss that case along with that language.
+
+C++
+
+When C++ was first released to the world in the mid-1980s object-oriented (OO) languages were being widely touted as the silver bullet for the software-complexity problem. C++'s OO features appeared to be an overwhelming advantage over the ancestral C, and partisans expected that it would rapidly make the older language obsolete.
+
+This has not happened. Part of the fault can be laid to problems in C++ itself; the requirement that it be backward-compatible with C forced a great many compromises on the design. Among other things, that requirement prevented C++ from going to fully automatic dynamic-memory management and addressing C's most serious problem. Later, feature arms races between different compiler implementers, unconstrained by a weak and premature standardization effort, pushed C++ to become rather baroque and excessively complicated.
+
+Another part of the fault must be laid to the failure of OO itself to live up to expectations. We examined this problem in Chapter 4, observing the tendency of OO methods to lead to thick glue layers and maintenance problems. Today (2003), inspection of open-source archives (in which choice of language reflects developers' judgments rather than corporate mandates) reveals that C++ usage is still heavily concentrated in GUIs, multimedia toolkits and games (the major success areas for OO design), and little used elsewhere.
+
+It may be that C++'s realization of OO is particularly problem-prone. There is some evidence that C++ programs have higher life-cycle costs than equivalents in C, FORTRAN, or Ada. Whether this is a problem with OO or specifically with C++ or both remains unclear, though there is reason to suspect both are implicated [Hatton98].
+
+In recent years, C++ has incorporated some important non-OO ideas. It has exceptions similar to those in Lisp; that is, it is possible to throw an object or value up the call stack until it is caught by a handler. STL (Standard Template Library) provides generic programming; that is, it is possible to code algorithms that are independent of the type signature of their data and have them compiled to do the right thing at runtime. (Only languages that do compile-time static type-checking need this; more dynamic languages simply pass around typeless references and support type identification at runtime.)
+
+Efficient compiled language; upward-compatible with C; object-oriented platform; vehicle for cutting-edge techniques like STL and generics — C++ tries to be all things to all people, but the cost is more complexity than the mind of any individual programmer can handle. As we noted in Chapter 4, the language's principal designer has conceded that he doesn't expect any one programmer to grasp it all. Unix hackers do not react well to this; one anonymous but famous characterization is “C++: an octopus made by nailing extra legs onto a dog”.
+
+When all is said and done, however, C++'s most fundamental problem is that it is basically just another conventional language. It confines the memory-management problem better than it did before the invention of the Standard Template Library, and a lot better than C does, but the confinement is brittle; it breaks unless your code uses objects and only objects. For many types of application its OO features are not significant, and simply add complexity to C without yielding much advantage. Open-source C++ compilers are available; if C++ were unequivocally superior to C it would now dominate.
+
+Summing up: C++'s best side is its combination of compiled efficiency with facilities for OO and generic programming. Its worst side is that it is baroque and complex, and tends to encourage over-complex designs.
+
+Consider using C++ if an existing C++ toolkit or service library offers powerful leverage for your application, or if you're in one of the application areas mentioned above for which an OO language is known to be a large win.
+
+The classic C++ reference is Stroustrup's The C++ Programming Language [Stroustrup]. You will find an excellent beginner's tutorial on C++ and basic OO methods in C++: A Dialog [Heller]. C++ Annotations [Brokken] is a condensed introduction to C++ for expert C programmers.
+
+The Gnu Compiler Collection includes a C++ compiler. The language is therefore universally available on Unix and on Microsoft operating systems; comments made under C above also apply here. Strong collections of open-source support libraries are available. However, portability is compromised by the fact that (as of mid-2003) actual C++ implementations implement widely varying subsets of the draft ISO standard now in preparation.^([125])
+
+C++ Case Study: The Qt Toolkit
+
+The Qt interface toolkit is one of the notable C++ success stories in today's open-source world. It provides a widget set and API for writing graphical user interfaces under X, one deliberately (and rather effectively) designed to emulate the visual look and feel of Motif, MacOS Platinum, or the Microsoft Windows interface. Qt actually provides more than just GUI services; it also provides a portable application layer, with classes for XML, file access, sockets, threads, timers, time/date handling, database access, various abstract data types, and Unicode.
+
+The Qt toolkit is a critical and visible component of the KDE project, the senior of the open-source world's two efforts to produce a competitive GUI and integrated set of desktop productivity tools.
+
+Qt's C++ implementation exhibits the strengths of an OO language for encapsulating user-interface components. In a language supporting objects, a visual hierarchy of interface widgets can be cleanly expressed in the code by a hierarchy of class instances. While this sort of thing can be simulated in C with explicit indirection through hand-rolled method tables, such code is much cleaner in C++. Comparison with the notoriously baroque C API of Motif is instructive.
+
+The Qt source code and reference documentation are available at the Trolltech site.
+
+Shell
+
+The ‘Bourne shell’ (sh) of Version 7 Unix was Unix's first (and for many years its only) portable interpreted language. Today the ancestral Bourne shell has largely been displaced by variants of the upward-compatible Korn Shell (ksh); the single most important of these is the Bourne Again Shell, bash.
+
+A few other shells exist and are used interactively, but are not significant as programming languages; of these, the best known is probably the C shell csh, which is notoriously^([126]) unsuitable for writing scripts.
+
+Simple shell programs are extremely easy and natural to write. The Unix tradition of rapid prototyping in interpretive languages began with shell.
+
+  ------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+                            I wrote the very first version of netnews as a 150-line shellscript. It had multiple newsgroups and cross-posting; newsgroups were directories and cross-posting was implemented as multiple links to the article. It was far too slow to use for production, but the flexibility permitted endless experimentation with the protocol design.    
+  -- Steven M. Bellovin                                                                                                                                                                                                                                                                                                                                                      
+  ------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+
+As program size gets larger, however, they tend to become rather ad-hoc. Some parts of shell syntax (notably its quoting and statement-syntax rules) can be very confusing. These drawbacks generally relate to compromises in the programming-language part of the shell's design made to preserve its utility as an interactive command-line interpreter.
+
+Programs are described as being ‘in shell’ even when they are not pure shell but include heavy use of C filters like sort(1) and of standard text-processing minilanguages like sed(1) or awk(1). This sort of programming has been in decline for some years, however; nowadays such elaborate glue logic is generally written in Perl or Python, with shell being reserved for the simplest kinds of wrappers (for which these languages would be overkill) and system boot-time initialization scripts (which cannot assume they are available).
+
+Such basic shell programming should be adequately covered in any introductory Unix book. The Unix Programming Environment [Kernighan-Pike84] remains one of the best sources on intermediate and advanced shell programming. Korn shell implementations or clones are present on every Unix.
+
+Complex shellscripts often have portability problems, not so much because of the shell itself but because they make assumptions about what other programs are available as components. While Bourne and Korn-shell clones have been sporadically available on non-Unix operating systems, shell programs are not (practically speaking) at all portable off Unix.
+
+Summing up: shell's best side is that it is very natural and quick for small scripts. Its worst side is that large shellscripts depend on lots of auxiliary commands that aren't necessarily identically behaved nor even present on all target machines. Nor is it easy to analyze the dependencies in a large shellscript.
+
+It is almost never necessary to build or install a shell, since all Unix systems and Unix emulators come equipped with them. The standard shell on Linux and other leading-edge Unix variants is now bash.
+
+Case Study: xmlto
+
+xmlto is a driver script that calls all the commands needed to render an XML-DocBook document as HTML, PostScript, plain text, or in any one of several other formats (we'll take a closer look at DocBook in Chapter 18). It is written in bash.
+
+xmlto handles the details of calling an XSLT engine with appropriate stylesheet, then handing off the result to a postprocessor. For HTML and XHTML the XSLT transformation does the entire job. For plain text, the XML is also processed into HTML, but then handed to a postprocessor — lynx(1) in its -dump mode, which renders HTML to flat text. For PostScript, the XML is transformed to XML FO (formatting objects) which a postprocessor then massages into TeX macros, to DVI format via tex(1), and then finally to PostScript via the well-known dvi2ps(1) tool.
+
+xmlto consists of a single front-end shellscript. It calls any one of several script plugins, each named after the target format. Each plugin is a shellscript. Depending on how it's called, it either supplies a stylesheet for the front end to apply, or calls the appropriate postprocessor(s) with various canned arguments.
+
+This architecture means that all the information about a given output format lives in one place (the corresponding script plugin), so adding new output types can be done without disturbing the front-end code at all.
+
+xmlto is a good example of a medium-sized shell application. Neither C nor C++ would have made sense because they are awkward for scripting. Any of the other scripting languages in this chapter could have been used for this job; but it's all simple command dispatching, with no internal data structures or complex logic, so shell is good enough. Shell has the significant advantage of being ubiquitous on the intended target systems.
+
+In theory this script could run on any system supporting bash. The real constraint is the requirement for one of the XSLT engines and all the postprocessors needed to be present on the system. In practice, this script is not likely to run anywhere but under one of the modern open-source Unixes.
+
+Case Study: Sorcery Linux
+
+Sorcerer GNU/Linux is a Linux distribution that you install as a small, bootable foothold system just powerful enough to run bash(1) and a couple of download utilities. With this code in place, you can invoke Sorcery, the Sorcerer package system.
+
+Sorcery handles installing, removing, and integrity-checking software packages. When you “cast spells”, Sorcery downloads the source code, compiles it, installs it, and saves a list of files that were installed (along with a build log and checksums for all the files). Installed packages can be “dispelled” or removed. Package listing and integrity checks are also available. More details are available at the Sorcery project site.
+
+The Sorcery system is written entirely in shell. Program installation procedures tend to be small, simple programs for which shell is appropriate. In this particular application, the main drawback of shell is neutralized because Sorcery's authors can guarantee that the helper programs they need will be present in the foothold system.
+
+Perl
+
+Perl is shell on steroids. It was specifically designed to replace awk(1), and expanded to replace shell as the ‘glue’ for mixed-language script programming. It was first released in 1987.
+
+Perl's strongest point is its extremely powerful built-in facilities for pattern-directed processing of textual, line-oriented data formats; it is unsurpassed at this. It also includes far stronger data structures than shell, including dynamic arrays of mixed element types and a ‘hash’ or ‘dictionary’ type that supports convenient and fast lookup of name-value pairs.
+
+Additionally, Perl includes a rather complete and well-thought-out internal binding of virtually the entire Unix API, drastically reducing the need for C and making it suitable for jobs like simple TCP/IP clients and even servers. Another strong advantage of Perl is that a large and vigorous open-source community has grown up around it. Its home on the net is the Comprehensive Perl Archive Network. Dedicated Perl hackers have written hundreds of freely reusable Perl modules for many different programming tasks. These include everything from structure-walking of directory trees through X toolkits for GUI building, through excellent canned facilities for supporting HTTP robots and CGI programming.
+
+Perl's main drawback is that parts of it are irredeemably ugly, complicated, and must be used with caution and in stereotyped ways lest they bite (its argument-passing conventions for functions are a good example of all three problems). It is harder to get started in Perl than it is in shell. Though small programs in Perl can be extremely powerful, careful discipline is required to maintain modularity and keep a design under control as program size increases. Because some limiting design decisions early in Perl's history could not be reversed, many of the more advanced features have a fragile, klugey feel about them.
+
+The definitive reference on Perl is Programming Perl [Wall2000]. This book has nearly everything you will ever need to know in it, but is notoriously badly organized; you will have to dig to find what you want. A more introductory and narrative treatment is available in Learning Perl [Schwartz-Christiansen].
+
+Perl is universal on Unix systems. Perl scripts at the same major release level tend to be readily portable between Unixes (provided they don't use extension modules). Perl implementations are available (and even well documented) for the Microsoft family of operating systems and on MacOS as well. Perl/Tk provides cross-platform GUI capability.
+
+Summing up: Perl's best side is as a power tool for small glue scripts involving a lot of regular-expression grinding. Its worst side is that it is ugly, spiky, and nigh-unmaintainable in large volumes.
+
+A Small Perl Case Study: blq
+
+The blq script is a tool for querying block lists (lists of Internet sites that have been identified as habitual sources of unsolicited bulk email, aka spam). You can find current sources at the blq project page.
+
+blq is a good example of a small Perl script, illustrating both the strengths and weaknesses of the language. It makes intensive use of regular-expression matching. On the other hand, the Net::DNS Perl extension module it uses has to be conditionally included, because it is not guaranteed to be present in any given Perl installation.
+
+blq is exceptionally clean and disciplined as Perl code goes, and I recommend it as an example of good style (the other Perl tools referenced from the blq project page are good examples as well). But parts of the code are unreadable unless you are familiar with very specific Perl idioms — the very first line of code, $0 =~ s!.*/!!;, is an example. While all languages have some of this kind of opacity, Perl has it worse than most.
+
+Tcl and Python are both good for small scripts of this type, but both lack the Perl convenience features for regular-expression matching that blq uses heavily; an implementation in either would have been reasonable, but probably less compact and expressive. An Emacs Lisp implementation would have been even faster to write and more compact than the Perl one, but probably painfully slow to use.
+
+A Large Perl Case Study: keeper
+
+keeper is the tool used to file incoming packages and maintain both FTP and WWW index files for the huge Linux free-software archives at ibiblio. You can find sources and documentation in the search tools subdirectory of the ibiblio archive.
+
+keeper is a good example of a medium-to-large interactive Perl application. The command-line interface is line-oriented and patterned after a specialized shell or directory editor; note the embedded help facilities. The working parts make heavy use of file and directory handling, pattern matching, and pattern-directed editing. Note the ease with which keeper generates Web pages and electronic-mail notifications from programmatic templates. Note also the use of a canned Perl module to automate walking various functions over directory trees.
+
+At about 3300 lines, this application is probably pushing the size and complexity limit of what one should attempt in a single Perl program. Nevertheless, most of it was written in a period of six days. In C, C++, or Java it would have taken a minimum of six weeks and been extremely difficult to debug or modify after the fact. It is way too large for pure Tcl. A Python version would probably be structurally cleaner, more readable, and more maintainable — but also more verbose (especially near the pattern-matching parts). An Emacs Lisp mode could readily do the job, but Emacs is not well suited for use over a telnet link that is often slowed to a crawl by server congestion.
+
+Tcl
+
+Tcl (Tool Command Language) is a small language interpreter designed to link with compiled C libraries, providing scripted control of C code (extended scripts). Its original application was to control libraries for electronic simulators (SPICE-like applications). Tcl is also suitable for embedded scripts—that is, scripts called from within C programs and returning values to those programs. Tcl had its first general public release in 1990.
+
+Some facilities built on top of Tcl have achieved wide use outside the Tcl community itself. The two most important of these are:
+
+-   The Tk toolkit, a kinder and gentler X interface that makes it easy to rapidly build buttons, dialog boxes, menu trees, and scrolling text widgets and collect input from them.
+
+-   Expect, a language that makes it relatively easy to script fully interactive programs with widely variable responses.
+
+The Tk toolkit is so important that the language is often referred to as Tcl/Tk. Tk is also frequently used with Perl and Python.
+
+The main advantage of Tcl itself is that it is extremely flexible and radically simple. The syntax is very odd (based on a positional parser) but totally consistent. There are no reserved words, and there is no syntactic distinction between a function call and ‘built in’ syntax; thus the Tcl language interpreter itself can be effectively redefined from within Tcl (which is what makes projects like Expect reasonable).
+
+The main drawback of Tcl is that the pure language has only weak facilities for namespace control and modularity, and two of them (upvar and uplevel) are rather dangerous if not used with great caution. Also, there are no data structures other than association lists. Tcl therefore scales up very poorly — it is difficult to organize and debug pure Tcl programs of even moderate size (more than a few hundred lines) without tripping over your own feet. In practice, almost all large Tcl programs use one of several OO extensions to the language.
+
+The oddities of the syntax can at first be a problem as well; the distinction between string quotes and braces will probably give you headaches for a while, and the rules for when things need to be quoted or braced are a bit tricky.
+
+Pure Tcl only provides access to a relatively small and commonly used part of the Unix API (essentially just file handling, process-spawning, and sockets). Indeed, Tcl has the flavor of an experiment in seeing how small a scripting language can get and still be useful. Tcl extensions (similar to Perl modules) provide a richer set of capabilities, but are (like CPAN modules) not guaranteed to be installed everywhere.
+
+The original Tcl reference is Tcl and the Tk Toolkit [Ousterhout94], but that book has been largely superseded by Practical Programming in Tcl and Tk [Welch]. Brian Kernighan has written a description of a real-world Tcl project [Kernighan95] that summarizes Tcl's strengths and weaknesses as a rapid-prototyping and production tool; his contrast with Microsoft Visual Basic is particularly balanced and instructive.
+
+The Tcl world doesn't have one central repository run by a core group analogous to Perl's or Python's, but several excellent websites both point to each other and cover most Tcl tool and extension development. Look at the Tcl Developer Xchange first; among other things, it offers Tcl sources of an interactive Tcl tutorial. There is also a Tcl foundry at SourceForge.
+
+Tcl scripts have portability problems similar to those of shell scripts; the language itself is highly portable, but the components it calls may not be. Tcl implementations exist for the Microsoft family of operating systems, MacOS, and many other platforms. Tcl/Tk scripts will run on any platform with GUI capabilities.
+
+Summing up: Tcl's best side is its spare, compact design and the extensibility of the Tcl interpreter. Its worst side is the odd positional parser and the weakness of its data structures and namespace controls; the latter defect makes it scale poorly for large projects.
+
+Case Study: TkMan
+
+TkMan is a browser for Unix man pages and Texinfo documents. At roughly 1200 lines, it is quite large to be written in pure Tcl, but the code is unusually well-modularized and mature. It uses Tk to provide a GUI interface quite a bit nicer than either the stock man(1) or xman(1) utilities support.
+
+TkMan makes a good case study because it exhibits almost the full gamut of Tcl techniques. Highlights include Tk integration, scripted control of other Unix applications (such as the Glimpse search engine), and the use of Tcl to parse Texinfo markup.
+
+Any of the other languages would have made for a less direct interface to the Tk GUI that constitutes most of this code.
+
+A Web search for “TkMan” should turn up sources and documentation.
+
+Moodss: A Large Tcl Case Study
+
+The Moodss system is a graphical monitoring application for system administrators. It can watch logs and gather statistics for MySQL, Linux, SNMP networks, and Apache, and presents a digested view of them through spreadsheet-like GUI panels called ‘dashboards’. Monitoring modules can be written in Python or Perl as well as Tcl. The code is polished, mature, and considered an exemplar in the Tcl community. There is a project website.
+
+The Moodss core consists of about 18,000 lines of Tcl. It uses several Tcl extensions including a custom object system; the Moodss author admits that without these “writing such a big application would not have been possible”.
+
+Again, any of the other languages would have made for a less direct interface to the Tk GUI that constitutes most of this code.
+
+Python
+
+Python is a scripting language designed for close integration with C. It can both import data from and export data to dynamically loaded C libraries, and can be called as an embedded scripting language from C. Its syntax is rather like a cross between that of C and the Modula family, but has the unusual feature that block structure is actually controlled by indentation (there is no analog of explicit begin/end or C curly brackets). Python was first publicly released in 1991.
+
+The Python language is a very clean, elegant design with excellent modularity features. It offers designers the option to write in an object-oriented style but does not force that choice (it can be coded in a more classically procedural C-like way). It has a type system comparable in expressive power to Perl's, including dynamic container objects and association lists, but less idiosyncratic (actually, it is a matter of record that Perl's object system was built in imitation of Python's). It even pleases Lisp hackers with anonymous lambdas (function-valued objects that can be passed around and used by iterators). Python ships with the Tk toolkit, which can be used to easily build GUI interfaces.
+
+The standard Python distribution includes client classes for most of the important Internet protocols (SMTP, FTP, POP3, IMAP, HTTP) and generator classes for HTML. It is therefore very well suited to building protocol robots and network administrative plumbing. It is also excellent for Web CGI work, and competes successfully with Perl at the high-complexity end of that application area.
+
+Of all the interpreted languages we describe, Python and Java are the two most clearly suited for scaling up to large complex projects with many cooperating developers. In many ways Python is simpler than Java, and its friendliness to rapid prototyping may give it an edge over Java for standalone use in applications that are neither hugely complex nor speed critical. An implementation of Python in Java, designed to facilitate mixed use of these two languages, is available and in production use; it is called Jython.
+
+Python cannot compete with C or C++ on raw execution speed (though using a mixed-language strategy on today's fast processors probably makes that relatively unimportant). In fact it's generally thought to be the least efficient and slowest of the major scripting languages, a price it pays for runtime type polymorphism. Beware of rejecting Python on these grounds, however; most applications do not actually need better performance than Python offers, and even those that appear to are generally limited by external latencies such as network or disk waits that entirely swamp the effects of Python's interpretive overhead. Also, by way of compensation, Python is exceptionally easy to combine with C, so performance-critical Python modules can be readily translated into that language for substantial speed gains.
+
+Python loses in expressiveness to Perl for small projects and glue scripts heavily dependent on regular-expression capability. It would be overkill for tiny projects, to which shell or Tcl might be better suited.
+
+Like Perl, Python has a well-established development community with a central website carrying a great many useful Python implementations, tools and extension modules.
+
+The definitive Python reference is Programming Python [Lutz]. Extensive on-line documentation on Python extensions is also available at the Python website.
+
+Python programs tend to be quite portable between Unixes and even across other operating systems; the standard library is powerful enough to significantly cut the use of nonportable helper programs. Python implementations are available for Microsoft operating systems and for MacOS. Cross-platform GUI development is possible with either Tk or two other toolkits. Python/C applications can be ‘frozen’, quasi-compiled into pure C sources that should be portable to systems with no Python installed.
+
+Summing up: Python's best side is that it encourages clean, readable code and combines accessibility with scaling up well to large projects. Its worst side is inefficiency and slowness, not just relative to compiled languages but relative to other scripting languages as well.
+
+A Small Python Case Study: imgsizer
+
+Imgsizer is a utility that rewrites WWW pages so that image-inclusion tags get the right image size parameters automatically plugged in (this speeds up page loading on many browsers). You can find sources and documentation in the URL WWW tools subdirectory of the ibiblio archive.
+
+imgsizer was originally written in Perl, and was a nearly ideal example of the sort of small, pattern-driven text-processing tool at which Perl excels. It was later translated to Python to take advantage of Python's library support for HTTP fetching; this eliminated a dependency on an external page-fetching utility. Observe the use of file(1) and ImageMagick identify(1) as specialist tools for extracting the pixel sizes of images.
+
+The dynamic string handling and sophisticated regular-expression matching required would have made imgsizer quite painful to write in C or C++; that version would also have been much larger and harder to read. Java would have solved the implicit memory-management problem, but is hardly more expressive than C or C++ at text pattern matching.
+
+A Medium-Sized Python Case Study: fetchmailconf
+
+In Chapter 11 we examined the fetchmail/fetchmailconf pair as an example of one way to separate implementation from interface. Python's strengths are well illustrated by fetchmailconf.
+
+fetchmailconf uses the Tk toolkit to implement a multi-panel GUI configuration editor (Python bindings also exist for GTK+ and other toolkits, but Tk bindings ship with every Python interpreter).
+
+In expert mode, the GUI supports editing of about sixty attributes divided among three panel levels. Attribute widgets include a mix of checkboxes, radio buttons, text fields, and scrolling listboxes. Despite this complexity, the first fully-functional version of the configurator took me less than a week to design and code, counting the four days it took to learn Python and Tk.
+
+Python excels at rapid prototyping of GUI interfaces, and (as fetchmailconf illustrates) such prototypes are often deliverable. Perl and Tcl have similar strengths in this area (including the Tk toolkit, which was written for Tcl) but are hard to control at the complexity level (approximately 1400 lines) of fetchmailconf. Emacs Lisp is not suited for GUI programming. Choosing Java would have increased the complexity overhead of this programming task without delivering significant benefits for this nonspeed-intensive application.
+
+A Large Python Case Study: PIL
+
+PIL, the Python Imaging Library, supports the manipulation of bitmap graphics. It supports many popular formats, including PNG, JPEG, BMP, TIFF, PPM, XBM, and GIF. Python programs can use it to convert and transform images; supported transformations include cropping, rotation, scaling, and shearing. Pixel editing, image convolution, and color-space conversions are also supported. The PIL distribution includes Python programs that make these library facilities available from the command line. Thus PIL can be used either for batch-mode image transformation or as a strong toolkit over which to implement program-driven image processing of bitmaps.
+
+The implementation of PIL illustrates the way Python can be readily augmented with loadable object-code extensions to the Python interpreter. The library core, implementing fundamental operations on bitmap objects, is written in C for speed. The upper levels and sequencing logic are in Python, slower but much easier to read and modify and extend.
+
+The analogous toolkit would be difficult or impossible to write in Emacs Lisp or shell, which don't have or don't document a C extension interface at all. Tcl has a good C extension facility, but PIL would be an uncomfortably large project in Tcl. Perl has such facilities (Perl XS), but they are ad-hoc, poorly documented, complex, and unstable by comparison to Python's and use of them is rare. Java's Native Method Interface appears to provide a facility roughly comparable to Python's; PIL would probably have made a reasonable Java project.
+
+The PIL code and documentation is available at the project website.
+
+Java
+
+The Java programming language was designed to be “write once, run anywhere” and to support embedding interactive programs (or applets) in Web pages that would be runnable from any browser. Thanks to a series of technical and strategic blunders by its owner, Sun Microsystems, it has failed in both its original objectives. But it is still sufficiently strong at both systems and applications programming to be seriously challenging C and C++. Java was announced in 1995.
+
+Java is cleverly designed to capture the huge benefit of automatic memory management and the lesser but not insignificant benefit of supporting OO design, while being far smaller and simpler than C++. It retains a broadly C-like syntax that most programmers will find comfortable. It includes support for callouts to dynamically-loaded C and calling Java as an embedded language from C. Nor is it trivial that Sun has done an excellent job of making good Java documentation available on the Web.
+
+Against Java, we can say that (compared to, say, Python) some parts of it appear over-complex and others deficient. Java's class-visibility and implicit-scoping rules are baroque. The interface facility avoids complex problems with multiple inheritance at the cost of being only slightly less difficult to understand and use in itself. Features like inner and anonymous classes can lead to very confusing code. The absence of reliable destructor methods means that it is difficult to ensure proper management of resources other than memory, such as mutexes and file locks. Significant parts of the Unix operating-system facilities are not accessible from stock Java, including signals, poll, and select. While Java's I/O facilities are very powerful, simple reading of text files is not simple.
+
+There is a particularly invidious problem, resembling Windows DLL hell, with libraries. Java has no method to manage different library versions. This can create huge problems in environments like application servers, where the server might come equipped with one version of (say) an XML library, but the application ships with a different (usually newer) version. The only handle on such problems is the CLASSPATH environment variable, a source of chronic deployment problems.
+
+Furthermore, Sun's handling of the Java language has been both politically and technically obtuse. Java's first GUI toolkit, AWT, was a mess that had to be essentially replaced. Withdrawing the language from ECMA/ISO standardization further nettled many developers already upset by features of the Sun Community Source License (SCSL). Restrictions in the SCSL continue to hamper open-source implementations of Java 1.2 and their J2EE (Java 2 Enterprise Edition) specification. This compromises Java's original objective of universal portability.
+
+Sadly, browser applets are dead. Microsoft's decision not to support Java 1.2 in Internet Explorer effectively killed them. However, Java seems to have found a secure niche in the computing ecology, for ‘servlets’ running within Web application servers. It has also become commonly used for a lot of in-house corporate programming not directly tied to databases or webservers. It has become major competition for both Microsoft's ASP/COM platform and Perl CGIs. Finally, it is in widespread and increasing use as a language for teaching introductory programming (a role for which it is extremely well suited).
+
+Overall, we can fairly judge Java to be superior to C++ (which is both far more complex and does less to attack the memory-management problem) for all but systems programming and the most speed-critical applications. Experience seems to show that Java programmers are somewhat less likely to fall into the trap of excessive OO layering than are C++ programmers, though this remains a significant problem.
+
+How Java will fare in equilibrium with the other languages we describe here is unclear as yet, and may depend largely on project scale. We may expect its proper niche to resemble Python's. Like Python, it cannot compete with C or C++ on raw execution speed, nor against Perl on small projects that use pattern-driven editing heavily. It is (more definitely than Python) overkill for small projects. We may guess that Python will have an edge in smaller projects and Java in larger ones, but the verdict of experience is not yet in.
+
+The best single reference on paper is probably Java In A Nutshell [FlanaganJava], but this is not the best tutorial introduction; that would probably be Thinking in Java [Eckel]. Trails to all the world's Java websites begin at Sun's Java site, which also has complete HTML documentation available for download for free. The Open Directory Java Page also collects useful Java links.
+
+Java implementations are available for all Unixes, for Microsoft operating systems, MacOS, and many other platforms.
+
+Sources for Kaffe, an open-source Java implementation with class libraries conforming to most of JDK 1.1 and portions of JDK 1.2, are available at the Kaffe project site.
+
+There is a Java front end for GCC. GCJ can compile Java code to either Java bytecode or native code, and can compile Java bytecode to native code as well. It comes packaged with open-source class libraries that implement most of JDK 1.2, and a Java bytecode interpreter called gij. Details are at the GCJ project page.
+
+There is a Java IDE for Emacs at the JDEE project site.
+
+Java portability is excellent at the language level. Incomplete library implementations (especially older JDK 1.1 versions that don't support the newer JDK 1.2) can be an issue.
+
+Java's best side is that it comes close enough to achieving write-once-run-anywhere to be useful as an OS-independent environment of its own. Its worst side is that the Java 1/Java 2 split compromises that goal in deeply frustrating ways.
+
+Case Study: FreeNet
+
+Freenet is a peer-to-peer networking project that is intended to make censorship and content suppression impossible.^([127]) Freenet developers envision the following applications:
+
+-   Uncensorable dissemination of controversial information: Freenet protects freedom of speech by enabling anonymous and uncensorable publication of material ranging from grassroots alternative journalism to banned exposés.
+
+-   Efficient distribution of high-bandwidth content: Freenet's adaptive caching and mirroring is being used to distribute Debian Linux software updates.
+
+-   Universal personal publishing: Freenet enables anyone to have a website, without space restrictions or compulsory advertising, even if the would-be webmaster doesn't own a computer.
+
+Freenet addresses these goals by providing a virtual space in which to publish documents that is not tied to any specific machine. Published information and Freenet's own internal data indexes are replicated and distributed across the network in such a way that even Freenet administrators don't know at any given time where all the physical copies are located. Privacy for people browsing or submitting to Freenet is protected by strong cryptography.
+
+Java was a good choice for this project for at least two reasons. First: the goals of the project put a heavy premium on having compatible implementations on the widest possible variety of machines, so Java's high portability is a dominating advantage. Second: the nature of the project is such that the network API is important, and Java has a strong one built in.
+
+C is traditional for infrastructure projects of this kind that have high performance demands, but the lack of a standardized network API would have made porting a significant difficulty. C++ would have had the same difficulty. Tcl, Perl, or Python might have reduced the porting burden, but at a greater cost in performance. Emacs Lisp would have been painfully slow and totally inappropriate.
+
+Emacs Lisp
+
+Emacs Lisp is a scripting language used to program the behavior of the Emacs text editor. Its first public release was in 1984.
+
+Emacs Lisp is not a general-purpose language in quite the same way as the others surveyed in this chapter; while it is powerful enough to theoretically be used as such, it is traditionally employed only to write control programs for the Emacs editor itself and does not communicate as fluently with other software as would a modern scripting language.
+
+Nevertheless, there is a significant range of applications in which Emacs Lisp is more effective than anything else. Many of these have to do with providing a front-end for development tools such as the C compiler and linker, make(1), version-control systems, and symbolic debuggers; we'll discuss these in Chapter 15.
+
+More generally, Emacs is to pattern- or syntax-directed interactive editing what Perl is to pattern-directed batch editing. Any application that involves interactively hacking a special file format or text database is an excellent candidate to be prototyped (and possibly delivered) as an Emacs mode (an Emacs Lisp program that specializes the editor's behavior).
+
+Emacs Lisp is also valuable for building applications that have to be closely integrated with a text editor, or that function primarily as text browsers with some editing capability. User agents for email and Usenet news fall in this category. So do certain kinds of database front ends.
+
+Emacs Lisp is a Lisp. It follows as the night the day that it manages memory automatically and is far more elegant and powerful than most conventional languages, or indeed most unconventional languages; it can compete with Java or Python on this level and laugh at C or C++, Perl, shell or Tcl. Lisp's perennial problem of lacking a standardized OS binding for portability is solved by the Emacs core, which in effect is its OS binding.
+
+Lisp's other perennial problem — being a resource hog — is no longer a real issue on modern machines. Parody expansions like ‘Emacs Makes A Computer Slow’ and ‘Eventually Munches All Computer Storage’ used to be common (in fact the Emacs distribution itself includes a list of them). But many other commonly used categories of programs (such as Web browsers) have nowadays grown larger and more complex than Emacs, which has come to appear rather moderate by comparison.
+
+The definitive Emacs Lisp reference is The GNU Emacs Lisp Reference Manual, which may be browseable through your Emacs's ‘info’ help system. If not, it can be downloaded from the FSF FTP site. If you find that impenetrable, Writing GNU Emacs Extensions [Glickstein] may help.
+
+Portability of Emacs Lisp programs is excellent. Emacs implementations are available for all Unixes, the Microsoft operating systems, and Mac OS.
+
+Summing up: Emacs Lisp's best point is that it combines an excellent base language, Lisp, with powerful domain primitives for text manipulation. Its worst point is poor performance and difficulties using it in communication with other programs.
+
+For more information, see the discussion of Emacs under editors in the next chapter.
+
+------------------------------------------------------------------------
+
+^([125]) The last C++ standard, dating from 1998, was widely implemented but weak, especially in the area of libraries.
+
+^([126]) See Tom Christiansen's essay Csh Programming Considered Harmful, which should be readily findable via Web search.
+
+^([127]) There is a Freenet project website.
+
+------------------------------------------------------------------------
+
+  --------------------------------------------- ------ ------------------------
+  Prev                                            Up                       Next
+  Interpreted Languages and Mixed Strategies     Home     Trends for the Future
+  --------------------------------------------- ------ ------------------------

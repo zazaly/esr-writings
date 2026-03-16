@@ -1,0 +1,50 @@
+  Chapter 14. Languages                              
+  ----------------------- -------------------------- -------
+  Prev                     Part III. Implementation     Next
+
+------------------------------------------------------------------------
+
+Chapter 14. Languages
+
+To C or Not To C?
+
+Table of Contents
+
+Unix's Cornucopia of Languages
+
+Why Not C?
+
+Interpreted Languages and Mixed Strategies
+
+Language Evaluations
+
+C
+
+C++
+
+Shell
+
+Perl
+
+Tcl
+
+Python
+
+Java
+
+Emacs Lisp
+
+Trends for the Future
+
+Choosing an X Toolkit
+
+The limits of my language are the limits of my world.
+
+-- Ludwig Wittgenstein Tractatus Logico-Philosophicus 5.6, 1918
+
+------------------------------------------------------------------------
+
+  --------------------------- ------ ---------------------------------
+  Prev                          Up                                Next
+  Part III. Implementation     Home     Unix's Cornucopia of Languages
+  --------------------------- ------ ---------------------------------

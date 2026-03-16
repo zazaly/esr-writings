@@ -1,0 +1,58 @@
+  Chapter 10. Configuration                     
+  --------------------------- ----------------- -------
+  Prev                         Part II. Design     Next
+
+------------------------------------------------------------------------
+
+Chapter 10. Configuration
+
+Starting on the Right Foot
+
+Table of Contents
+
+What Should Be Configurable?
+
+Where Configurations Live
+
+Run-Control Files
+
+Case Study: The .netrc File
+
+Portability to Other Operating Systems
+
+Environment Variables
+
+System Environment Variables
+
+User Environment Variables
+
+When to Use Environment Variables
+
+Portability to Other Operating Systems
+
+Command-Line Options
+
+The -a to -z of Command-Line Options
+
+Portability to Other Operating Systems
+
+How to Choose among the Methods
+
+Case Study: fetchmail
+
+Case Study: The XFree86 Server
+
+On Breaking These Rules
+
+Let us watch well our beginnings, and results will manage themselves.
+
+-- Alexander Clark
+
+Under Unix, programs can communicate with their environment in a rich variety of ways. It's convenient to divide these into (a) startup-environment queries and (b) interactive channels. In this chapter, we'll focus primarily on startup-environment queries. The next chapter will discuss interactive channels.
+
+------------------------------------------------------------------------
+
+  ------------------------- ------ -------------------------------
+  Prev                        Up                              Next
+  Ad-hoc Code Generation     Home     What Should Be Configurable?
+  ------------------------- ------ -------------------------------

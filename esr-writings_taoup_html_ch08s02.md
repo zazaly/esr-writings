@@ -1,0 +1,638 @@
+::: navheader
+  Applying Minilanguages                                            
+  -------------------------------------- -------------------------- --------------------------------------
+  [Prev](ch08s01.html){accesskey="p"}     Chapter 8. Minilanguages     [Next](ch08s03.html){accesskey="n"}
+
+------------------------------------------------------------------------
+:::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: {.sect1 lang="en"}
+:::: titlepage
+<div>
+
+## []{#id2924730}Applying Minilanguages {#applying-minilanguages .title style="clear: both"}
+
+</div>
+::::
+
+Designing with minilanguages involves two distinct challenges. One is having existing minilanguages handy in your toolkit, and recognizing when they can be applied as-is. The other is knowing when it is appropriate to design a custom minilanguage for an application. To help you develop both aspects of your design sense, about half of this chapter will consist of case studies.
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2924747}Case Study: *sng* {#case-study-sng .title}
+
+</div>
+::::
+
+In [Chapter 6](transparencychapter.html "Chapter 6. Transparency") we looked at sng(1), which translates between PNG[]{#id2924778 .indexterm} and an editable all-text representation of the same bits. The SNG data-file format is worth reexamining for contrast here because it is not quite a domain-specific minilanguage. It describes a data layout, but doesn\'t associate any implied sequence of actions with the data.
+
+SNG does, however, share one important characteristic with domain-specific minilanguages that binary structured data formats like PNG do not --- transparency[]{#id2924799 .indexterm}. Structured data files make it possible for editing, conversion, and generation tools to cooperate without knowing about each others\' design assumptions other than through the medium of the minilanguage. What SNG adds is that, like a domain-specific minilanguage, it\'s designed to be easy to parse by eyeball and edit with general-purpose tools.
+:::::
+
+:::::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#regexps}Case Study: Regular Expressions {#case-study-regular-expressions .title}
+
+</div>
+::::
+
+A kind of specification that turns up repeatedly in Unix tools and scripting languages is the *regular expression* ('regexp' for short). We consider it here as a declarative minilanguage for describing text patterns; it is often embedded in other minilanguages. Regexps are so ubiquitous that the are hardly thought of as a minilanguage, but they replace what would otherwise be huge volumes of code implementing different (and incompatible) search capabilities.
+
+This introduction skates over some details like POSIX []{#id2924849 .indexterm} extensions, back-references, and internationalization features; for a more complete treatment, see *Mastering Regular Expressions* \[[Friedl](http://www.catb.org/~esr/writings/taoup/html/apb.html#Friedl "[Friedl]")\].
+
+Regular expressions describe patterns that may either match or fail to match against strings. The simplest regular-expression tool is grep(1), a filter that passes through to its output every line in its input matching a specified regexp. Regexp notation is summarized in [Table 8.1](ch08s02.html#regexp_table "Table 8.1. Regular-expression examples.").
+
+::: table
+[]{#regexp_table}
+
+**Table 8.1. Regular-expression examples.**
+
+  Regexp          Matches
+  --------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------
+  `"x.y"`         `x` followed by any character followed by `y`.
+  `"x\.y"`        `x` followed by a literal period followed by `y`.
+  `"xz?y"`        `x` followed by at most one `z` followed by `y`; thus, `"xy"` or `"xzy"` but not `"xz"` or `"xdy"`.
+  `"xz*y"`        `x` followed by any number of instances of `z`, followed by `y`; thus, `"xy"` or `"xzy"` or `"xzzzy"` but not `"xz"` or `"xdy"`.
+  `"xz+y"`        `x` followed by one or more instances of `z`, followed by `y`; thus, `"xzy"` or `"xzzy"` but not `"xy"` or `"xz"` or `"xdy"`.
+  `"s[xyz]t"`     `s` followed by any of the characters `x` or `y` or `z`, followed by `t`; thus, `"sxt"` or `"syt"` or `"szt"` but not `"st"` or `"sat"`.
+  `"a[x0-9]b"`    `a` followed by either `x` or characters in the range `0`--`9`, followed by `b`; thus, `"axb"` or `"a0b"` or `"a4b"` but not `"ab"` or `"aab"`.
+  `"s[^xyz]t"`    `s` followed by any character that is not `x` or `y` or `z`, followed by `t`; thus, `"sdt"` or `"set"` but not `"sxt"` or `"syt"` or `"szt"`.
+  `"s[^x0-9]t"`   `s` followed by any character that is not `x` or in the range `0`--`9`, followed by `t`; thus, `"slt"` or `"smt"` but not `"sxt"` or `"s0t"` or `"s4t"`.
+  `"^x"`          `x` at the beginning of a string; thus, `"xzy"` or `"xzzy"` but not `"yzy"` or `"yxy"`.
+  `"x$"`          `x` at the end of a string; thus, `"yzx"` or `"yx"` but not `"yxz"` or `"zxy"`.
+:::
+
+There are a number of minor variants of regexp notation:
+
+::: orderedlist
+1.  [*Glob expressions.*]{.emphasis} This is the limited set of wildcard conventions used by early Unix shells for filename matching. There are only three wildcards: `*`, which matches any sequence of characters (like `.*` in the other variants); `?`, which matches any single character (like `.` in the other variants); and `[...]`, which matches a character class just as in the other variants. Some shells (*csh*, *bash*, *zsh*) later added `{}` for alternation. Thus, `x{a,b}c` matches `xac` or `xbc` but not `xc`. Some shells further extend globs in the direction of extended regular expressions.
+
+2.  [*Basic regular expressions.*]{.emphasis} This is the notation accepted by the original grep(1) utility for extracting lines matching a given regexp from a file. The line editor ed(1), the stream editor sed(1), also use these. Old Unix hands think of these as the basic or 'vanilla' flavor of regexp; people first exposed to the more modern tools tend to assume the extended form described next.
+
+3.  [*Extended regular expressions.*]{.emphasis} This is the notation accepted by the extended grep utility egrep(1) for extracting lines matching a given regexp from a file. Regular expressions in Lex and the *Emacs* editor are very close to the *egrep* flavor.
+
+4.  [*Perl regular expressions.*]{.emphasis} This is the notation accepted by Perl[]{#id2932932 .indexterm} and Python[]{#id2932940 .indexterm} regexp functions. These are quite a bit more powerful than the *egrep* flavor.
+:::
+
+Now that we\'ve looked at some motivating examples, [Table 8.2](ch08s02.html#regexp_intro "Table 8.2. Introduction to regular-expression operations.") is a summary of the standard regular-expression wildcards. Note: we\'re not including the glob variant in this table, so a value of "All" implies only all three of the basic, extended/Emacs, and Perl/Python variants.^\[[81](ch08s02.html#ftn.id2932978){#id2932978}\]^
+
+::: table
+[]{#regexp_intro}
+
+**Table 8.2. Introduction to regular-expression operations.**
+
+  Wildcard   Supported in                                   Matches
+  ---------- ---------------------------------------------- -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  `\`        All                                            Escape next character. Toggles whether following punctuation is treated as a wildcard or not. Following letters or digits are interpreted in various different ways depending on the program.
+  `.`        All                                            Any character.
+  `^`        All                                            Beginning of line
+  `$`        All                                            End of line
+  `[...]`    All                                            Any of the characters between the brackets
+  `[^...]`   All                                            Any characters [*except those*]{.emphasis} between the brackets.
+  `*`        All                                            Accept any number of instances of the previous element.
+  `?`        egrep/Emacs, Perl/Python                       Accept zero or one instances of the previous element.
+  `+`        egrep/Emacs, Perl/Python                       Accept one or more instances of the previous element.
+  `{n}`      egrep, Perl/Python; as `\{n\}` in Emacs        Accept exactly `n` repetitions of the previous element. Not supported by some older regexp engines.
+  `{n,}`     egrep, Perl/Python; as `\{n,\}` in Emacs       Accept `n` or more repetitions of the previous element. Not supported by some older regexp engines.
+  `{m,n}`    egrep, Perl/Python; as `\{m,n\}` in Emacs      Accept at least `m` and at most `n` repetitions of the previous element. Not supported by some older regexp engines.
+  `|`        egrep, Perl/Python; as `\|` in Emacs           Accept the element to the left or the element to the right. This is usually used with some form of pattern-grouping delimiters.
+  `(...)`    Perl/Python; as `\(...\)` in older versions.   Treat this pattern as a group (in newer regexp engines like Perl and Python\'s). Older regexp engines such as those in Emacs and grep require `\(...\)`.
+:::
+
+Design practice in new languages with regexp support has stabilized on the Perl/Python variant. It is more transparent than the others, notably because backlash before a non-alphanumeric character always means that character as a literal, so there is much less confusion about how to quote elements of regexps.
+
+Regular expressions are an extreme example of how concise a minilanguage can be. Simple regular expressions express recognition behavior that would otherwise have to be implenented with hundreds of lines of fussy, bug-prone code.
+::::::::
+
+:::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2933450}Case Study: *Glade* {#case-study-glade .title}
+
+</div>
+::::
+
+*Glade* is an interface builder for the open-source GTK toolkit library for X.^\[[82](ch08s02.html#ftn.id2933471){#id2933471}\]^ *Glade* allows you to develop a GUI interface by interactively picking, placing, and modifying widgets on an interface panel. The GUI editor produces an XML file describing the interface; this, in turn, can be fed to one of several code generators that will actually grind out C[]{#id2933506 .indexterm}, C++[]{#id2933518 .indexterm}, Python[]{#id2933526 .indexterm} or Perl[]{#id2933534 .indexterm} code for the interface. The generated code then calls functions you write to supply behavior to the interface.
+
+*Glade*\'s XML format for describing GUIs is a good example of a simple domain-specific minilanguage. See [Example 8.1](ch08s02.html#glade_example "Example 8.1. Glade Hello, World.") for a "Hello, world!" GUI in Glade format.
+
+::: example
+[]{#glade_example}
+
+**Example 8.1. Glade "Hello, World".**
+
+``` programlisting
+
+<?xml version="1.0"?>
+<GTK-Interface>
+
+<widget>
+  <class>GtkWindow</class>
+  <name>HelloWindow</name>
+  <border_width>5</border_width>
+  <Signal>
+    <name>destroy</name>
+    <handler>gtk_main_quit</handler>
+  </Signal>
+  <title>Hello</title>
+  <type>GTK_WINDOW_TOPLEVEL</type>
+  <position>GTK_WIN_POS_NONE</position>
+  <allow_shrink>True</allow_shrink>
+  <allow_grow>True</allow_grow>
+  <auto_shrink>False</auto_shrink>
+
+  <widget>
+    <class>GtkButton</class>
+    <name>Hello World</name>
+    <can_focus>True</can_focus>
+    <Signal>
+      <name>clicked</name>
+      <handler>gtk_widget_destroy</handler>
+      <object>HelloWindow</object>
+    </Signal>
+    <label>Hello World</label>
+  </widget>
+</widget>
+
+</GTK-Interface>
+```
+:::
+
+A valid specification in *Glade* format implies a repertoire of actions by the GUI in response to user behavior. The *Glade* GUI treats these specifications as structured data files; *Glade* code generators, on the other hand, use them to write programs implementing a GUI. For some languages (including Python[]{#id2933635 .indexterm}), there are runtime libraries that allow you to skip the code-generation step and simply instantiate the GUI directly at runtime from the XML specification (interpreting Glade markup, rather than compiling it to the host language). Thus, you get the choice of trading space efficiency for startup speed or vice versa.
+
+Once you get past the verbosity of XML, *Glade* markup is a fairly simple language. It does just two things: declare GUI-widget hierarchies and associate properties with widgets. You don\'t actually have to know a lot about how *glade* works to read the specification above. In fact, if you have any experience programming in GUI toolkits, reading it will immediately give you a fairly good visualization of what *glade* does with the specification. (Hands up everyone who predicted that this particular specification will give you a single button widget in a window frame.)
+
+This kind of transparency and simplicity is the mark of a good minilanguage design[]{#id2933689 .indexterm}. The mapping between the notation and domain objects is very clear. The relationships between objects are expressed directly, rather than through name references or some other sort of indirection that you have to think to follow.
+
+The ultimate functional test of a minilanguage like this one is simple: can I hack it without reading the manual? For a significant range of cases, the *Glade* answer is yes. For example, if you know the C-level constants that GTK uses to describe window-positioning hints, you\'ll recognize `GTK_WIN_POS_NONE` as one and instantly be able to change the positioning hint associated with this GUI.
+
+The advantage of using *Glade* should be clear. It specializes in code generation so you don\'t have to. That\'s one less routine task you have to hand-code, and one fewer source of hand-coded bugs.
+
+More information, including source code and documentation and links to sample applications, is available at the [Glade project page](http://glade.gnome.org/){target="_top"}. *Glade* has been ported to Windows[]{#id2933764 .indexterm}.
+::::::
+
+:::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2933775}Case Study: *m4* {#case-study-m4 .title}
+
+</div>
+::::
+
+The m4(1) macro processor interprets a declarative minilanguage for describing transformations of text. An *m4* program is a set of macros that specifies ways to expand text strings into other strings. Applying those declarations to an input text with *m4* performs macro expansion and yields an output text. (The C[]{#id2933817 .indexterm} preprocessor performs similar services for C compilers, though in a rather different style.)
+
+[Example 8.2](ch08s02.html#m4_macro "Example 8.2. A sample m4 macro.") shows an *m4* macro that directs *m4* to expand each occurrence of the string \"OS\" in its input into the string \"operating system\" on output. This is a trivial example; *m4* supports macros with arguments that can be used to do more than transform one fixed string into another. Typing **info m4** at your shell prompt will probably display on-line documentation for this language.
+
+::: example
+[]{#m4_macro}
+
+**Example 8.2. A sample *m4* macro.**
+
+``` programlisting
+define(`OS', `operating system')
+```
+:::
+
+The *m4* macro language supports conditionals and recursion. The combination can be used to implement loops, and this was intended; *m4* is deliberately Turing-complete. But actually trying to use *m4* as a general-purpose language would be deeply perverse.
+
+The *m4* macro processor is usually employed as a preprocessor for minilanguages that lack a built-in notion of named procedures or a built-in file-inclusion feature. It\'s an easy way to extend the syntax of the base language so the combination with *m4* supports both these features.
+
+One well-known use of *m4* has been to clean up (or at least effectively hide) another minilanguage design that was called out as a bad example earlier in this chapter. Most system administrators now generate their `sendmail.cf` configuration files using an *m4* macro package supplied with the *sendmail* distribution. The macros start from feature names (or name/value pairs) and generate the corresponding (much uglier) strings in the *sendmail* configuration language.
+
+Use *m4* with caution, however. Unix experience has taught minilanguage designers to be wary of macro expansion,^\[[83](ch08s02.html#ftn.id2934007){#id2934007}\]^ for reasons we\'ll discuss [later in the chapter](ch08s03.html#macroexpansion "Macros — Beware!").
+::::::
+
+::::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2934034}Case Study: XSLT {#case-study-xslt .title}
+
+</div>
+::::
+
+XSLT, like *m4* macros, is a language for describing transformations of a text stream. But it does much more than simple macro substitution; it describes transformations of XML data, including query and report generation. It is the language used to write XML stylesheets. For practical applications, see the description of XML document processing in [Chapter 18](http://www.catb.org/~esr/writings/taoup/html/documentationchapter.html "Chapter 18. Documentation"). XSLT is described by a World Wide Web Consortium standard and has several open-source implementations.
+
+XSLT and *m4* macros are both purely declarative and Turing-complete, but XSLT supports only recursions and not loops. It is quite complex, certainly the most difficult language to master of any in this chapter\'s case studies --- and probably the most difficult of any language mentioned in this book.^\[[84](ch08s02.html#ftn.id2934079){#id2934079}\]^
+
+Despite its complexity, XSLT really is a minilanguage. It shares important (though not universal) characteristics of the breed:
+
+::: itemizedlist
+-   A restricted ontology of types, with (in particular) no analog of record structures or arrays.
+
+-   Restricted interface to the rest of the world. XSLT processors are designed to filter standard input to standard output, with a limited ability to read and write files. They can\'t open sockets or run subcommands.
+:::
+
+::: example
+[]{#xslt_example}
+
+**Example 8.3. A sample XSLT program.**
+
+``` programlisting
+
+<?xml version="1.0"?>
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+                version="1.0">
+  <xsl:output method="xml"/>
+  <xsl:template match="*">
+    <xsl:element name="{name()}">
+      <xsl:for-each select="@*">
+        <xsl:element name="{name()}">
+          <xsl:value-of select="."/>
+        </xsl:element>
+      </xsl:for-each>
+      <xsl:apply-templates select="*|text()"/>
+    </xsl:element>
+  </xsl:template> 
+</xsl:stylesheet>
+```
+:::
+
+The program in [Example 8.3](ch08s02.html#xslt_example "Example 8.3. A sample XSLT program.") transforms an XML document so that each attribute of every element is transformed into a new tag pair directly enclosed by that element, with the attribute value as the tag pair\'s content.
+
+We\'ve included a glance at XSLT here partly to illustrate the point that 'declarative' does not imply either 'simple' or 'weak', and mostly because if you have to work with XML documents, you will someday have to face the challenge that is XSLT.
+
+*XSLT: Mastering XML Transformations* \[[Tidwell](http://www.catb.org/~esr/writings/taoup/html/apb.html#Tidwell "[Tidwell]")\] is a good introduction to the language. A brief tutorial with examples is available on the Web.^\[[85](ch08s02.html#ftn.id2934184){#id2934184}\]^
+:::::::
+
+:::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2934197}Case Study: The Documenter\'s Workbench Tools {#case-study-the-documenters-workbench-tools .title}
+
+</div>
+::::
+
+The troff(1) typesetting formatter was, as we noted in [Chapter 2](historychapter.html "Chapter 2. History"), Unix\'s original killer application. *troff* is the center of a suite of formatting tools (collectively called Documenter\'s Workbench or DWB), all of which are domain-specific minilanguages of various kinds. Most are either preprocessors or postprocessors for troff markup. Open-source Unixes host an enhanced implementation of Documenter\'s Workbench called groff(1), from the Free Software Foundation[]{#id2934244 .indexterm}.
+
+We\'ll examine *troff* in more detail in [Chapter 18](http://www.catb.org/~esr/writings/taoup/html/documentationchapter.html "Chapter 18. Documentation"); for now, it\'s sufficient to note that it is a good example of an imperative minilanguage that borders on being a full-fledged interpreter (it has conditionals and recursion but not loops; it is accidentally Turing-complete).
+
+The postprocessors ('drivers' in DWB terminology) are normally not visible to *troff* users. The original troff emitted codes for the particular typesetter the Unix development group had available in 1970; later in the 1970s these were cleaned up into a device-independent minilanguage for placing text and simple graphics on a page. The postprocessors translate this language (called "ditroff" for "device-independent troff") into something modern imaging printers can actually accept --- the most important of these (and the modern default) is PostScript.
+
+The preprocessors are more interesting, because they actually add capabilities to the troff language. There are three common ones: tbl(1) for making tables, eqn(1) for typesetting mathematical equations, and pic(1) for drawing diagrams. Less used, but still live, are grn(1) for graphics, and refer(1) and bib(1) for formatting bibliographies. Open-source equivalents of all of these ship with *groff*. The grap(1) preprocessor provided a rather versatile plotting facility; there is an open-source implementation separate from *groff*.
+
+Some other preprocessors have no open-source implementation and are no longer in common use. Best known of these was ideal(1), for graphics. A younger sibling of the family, chem(1), draws chemical structural formulas; it is available as part of Bell Labs\'s netlib code.^\[[86](ch08s02.html#ftn.id2934417){#id2934417}\]^
+
+Each of these preprocessors is a little program that accepts a minilanguage and compiles it into troff requests. Each one recognizes the markup it is supposed to interpret by looking for a unique start and end request, and passes through unaltered any markup outside those (*tbl* looks for .TS/.TE, *pic* looks for .PS/.PE, etc.). Thus, most of the preprocessors can normally be run in any order without stepping on each other. There are some exceptions: in particular, *chem* and *grap* both issue *pic* commands, and so must come before it in the pipeline.
+
+``` programlisting
+cat thesis.ms | chem | tbl | refer | grap | pic | eqn \
+                                             | groff -Tps >thesis.ps
+```
+
+The preceding is a full-Monty example of a Documenter\'s Workbench processing pipeline[]{#id2934507 .indexterm}, for a hypothetical thesis incorporating chemical formulas, mathematical equations, tables, bibliographies, plots, and diagrams. (The cat(1) command simply copies its input or a file argument to its output; we use it here to emphasize the order of operations.) In practice modern troff implementations tend to support command-line options that can invoke at least tbl(1), eqn(1) and pic(1), so it isn\'t necessary to write such an elaborate pipeline. Even if it were, these sorts of build recipes are normally composed just once and stashed away in a makefile or shellscript wrapper for repeated use.
+
+The document markup of Documenter\'s Workbench is in some ways obsolete, but the range of problems these preprocessors address gives some indication of the power of the minilanguage model --- it would be extremely difficult to embed equivalent knowledge into a WYSIWYG word processor. There are some ways in which modern XML-based document markups and toolchains are still, in 2003, playing catch-up with capabilities that Documenter\'s Workbench had in 1979. We\'ll discuss these issues in more detail in [Chapter 18](http://www.catb.org/~esr/writings/taoup/html/documentationchapter.html "Chapter 18. Documentation").
+
+The design themes that gave Documenter\'s Workbench so much power should by now be familiar ones; all the tools share a common text-stream representation of documents, and the formatting system is broken up into independent components that can be debugged and improved separately. The pipeline architecture supports plugging in new, experimental preprocessors and postprocessors without disturbing old ones. It is modular and extensible.
+
+The architecture of Documenter\'s Workbench as a whole teaches us some things about how to fit multiple specialist minilanguages into a cooperating system. One preprocessor can build on another. Indeed, the Documenter\'s Workbench tools were an early exemplar of the power of pipes, filtering, and minilanguages that influenced a lot of later Unix design by example. The design of the individual preprocessors has more lessons to teach about what effective minilanguage designs look like.
+
+One of these lessons is negative. Sometimes users writing descriptions in the minilanguages do unclean things with low-level troff markup inserted by hand. This can produce interactions and bugs that are hard to diagnose, because the generated troff coming out of the pipeline is not visible --- and would not be readable if it were. This is analogous to the sorts of bugs that happen in code that mixes C with snippets of in-line assembler. It might have been better to separate the language layers more completely, if that were possible. Minilanguage designers should take note of this.
+
+All the preprocessor languages (though not troff markup itself) have relatively clean, shell-like syntaxes that follow many of the conventions we described in [Chapter 5](textualitychapter.html "Chapter 5. Textuality") for the design of data-file formats. There are a few embarrassing exceptions; notably, tbl(1) defaults to using a tab as a field separator between table columns, replicating an infamous botch in the design of make(1) and causing annoying bugs when editors or other tools invisibly change the composition of whitespace.
+
+While troff itself is a specialized imperative language, one theme that runs through at least three of the Documenter\'s Workbench minilanguages is declarative semantics: doing layout from constraints. This is an idea that shows up in modern GUI toolkits as well --- that, instead of giving pixel coordinates for graphical objects, what you really want to do is declare spatial relationships among them ("widget A is above widget B, which is to the left of widget C") and have your software compute a best-fit layout for A, B, and C according to those constraints.
+
+The pic(1) program uses this approach to lay out elements for diagrams. The language taxonomy diagram at [Figure 8.1](ch08s01.html#taxonomy "Figure 8.1. Taxonomy of languages.") was produced with the *pic* source code in [Example 8.4](ch08s02.html#pic_source "Example 8.4. Taxonomy of languages — the pic source.")^\[[87](ch08s02.html#ftn.id2934708){#id2934708}\]^ run through *pic2graph*, one of our case studies in [Chapter 7](multiprogramchapter.html "Chapter 7. Multiprogramming").
+
+::: example
+[]{#pic_source}
+
+**Example 8.4. Taxonomy of languages --- the *pic* source.**
+
+``` programlisting
+# Minilanguage taxonomy
+#
+# Base ellipses
+define smallellipse {ellipse width 3.0 height 1.5}
+M: ellipse width 3.0 height 1.8 fill 0.2
+line from M.n to M.s dashed
+D: smallellipse() with .e at M.w + (0.8, 0)
+line from D.n to D.s dashed
+I: smallellipse() with .w at M.e - (0.8, 0)
+#
+# Captions
+"" "Data formats" at D.s
+"" "Minilanguages" at M.s
+"" "Interpreters" at I.s
+#
+# Heads
+arrow from D.w + (0.4, 0.8) to D.e + (-0.4, 0.8)
+"flat to structured" "" at last arrow.c
+arrow from M.w + (0.4, 1.0) to M.e + (-0.4, 1.0)
+"declarative to imperative" "" at last arrow.c
+arrow from I.w + (0.4, 0.8) to I.e + (-0.4, 0.8)
+"less to more general" "" at last arrow.c
+#
+# The arrow of loopiness
+arrow from D.w + (0, 1.2) to I.e + (0, 1.2)
+"increasing loopiness" "" at last arrow.c
+#
+# Flat data files
+"/etc/passwd" ".newsrc" at 0.5 between D.c and D.w
+# Structured data files
+"SNG" at 0.5 between D.c and M.w
+# Datafile/minilanguage borderline cases
+"regexps" "Glade" at 0.5 between M.w and D.e
+# Declarative minilanguages
+"m4" "Yacc" "Lex" "make" "XSLT" "pic" "tbl" "eqn" \
+            at 0.5 between M.c and D.e
+# Imperative minilanguages
+"fetchmail" "awk" "troff" "Postscript" at 0.5 between M.c and I.w
+# Minilanguage/interpreter borderline cases
+"dc" "bc" at 0.5 between I.w and M.e
+# Interpreters
+"Emacs Lisp" "JavaScript" at 0.25 between M.e and I.e
+"sh" "tcl" at 0.55 between M.e and I.e
+"Perl" "Python" "Java" at 0.8 between M.e and I.e
+```
+:::
+
+This is a very typical Unix minilanguage design, and as such has some points of interest even on the purely syntactic level. Notice how much it looks like a shell program: \# leads comments, and the syntax is obviously token-oriented with the simplest possible convention for strings. The designer of pic(1) knew that Unix programmers expect minilanguage syntaxes to look like this unless there is a strong and specific reason they should not. The Rule of Least Surprise is in full operation here.
+
+It probably doesn\'t take a lot of effort to discern that the first line of code is a macro definition; the later references to `smallellipse()` encapsulate a repeated design element of the diagram. Nor will it take much scrutiny to deduce that `box invis` declares a box with invisible borders, actually just a frame for text to be stacked inside. The `arrow` command is equally obvious.
+
+With these as clues and one eye on the actual diagram, the meaning of the remaining pieces of the syntax (position references like `M.s` and constructions like `last arrow` or `at 0.25 between M.e and I.e` or the addition of vector offsets to a location) should become rapidly apparent. As with Glade markup and *m4*, an example like this one can teach a good bit of the language without any reference to a manual (a compactness property troff(1) markup, unfortunately, does [*not*]{.emphasis} have).
+
+The example of pic(1) reflects a common design theme in minilanguages, which we also saw reflected in Glade --- the use of a minilanguage interpreter to encapsulate some form of constraint-based reasoning and turn it into actions. We could actually choose to view pic(1) as an imperative language rather than a declarative one; it has elements of both, and the dispute would quickly grow theological.
+
+The combination of macros with constraint-based layout gives pic(1) the ability to express the structure of diagrams in a way that more modern vector-based markups like SVG cannot. It is therefore fortunate that one effect of the Documenter\'s Workbench design is to make it relatively easy to keep pic(1) useful outside the DWB context. The *pic2graph* script we used as a case study in [Chapter 7](multiprogramchapter.html "Chapter 7. Multiprogramming") was an ad-hoc way to accomplish this, using the retrofitted PostScript capability of groff(1) as a half-way step to a modern bitmap format.
+
+A cleaner solution is the pic2plot(1) utility distributed with the GNU plotutils package[]{#id2935019 .indexterm}, which exploited the internal modularity of the GNU pic(1) code. The code was split into a parsing front end and a back end that generated troff markup, the two communicating through a layer of drawing primitives. Because this design obeyed the Rule of Modularity, *pic2plot(1)* implementers were able to split off the GNU *pic* parsing stage and reimplement the drawing primitives using a modern plotting library. Their solution has the disadvantage, however, that text in the output is generated with fonts built into *pic2plot* that won\'t match those of troff.
+::::::
+
+:::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#fetchmailrc}Case Study: *fetchmail* Run-Control Syntax {#case-study-fetchmail-run-control-syntax .title}
+
+</div>
+::::
+
+[]{#id2935090 .indexterm}
+
+See [Example 8.5](ch08s02.html#hogwarts "Example 8.5. Synthetic example of a fetchmailrc.") for an example.
+
+::: example
+[]{#hogwarts}
+
+**Example 8.5. Synthetic example of a `fetchmailrc`.**
+
+``` programlisting
+# Poll this site first each cycle.
+poll pop.provider.net proto pop3
+    user "jsmith" with pass "secret1" is "smith" here
+    user jones with pass "secret2" is "jjones" here with options keep
+
+# Poll this site second, unless Lord Voldemort zaps us first.
+poll billywig.hogwarts.com with proto imap:
+    user harry_potter with pass "floo" is harry_potter here
+
+# Poll this site third in the cycle.  
+# Password will be fetched from ~/.netrc
+poll mailhost.net with proto imap:
+    user esr is esr here
+```
+:::
+
+This run-control file can be viewed as an imperative minilanguage. There is an implied flow of execution: cycle through the list of poll commands repeatedly (sleeping for a while at the end of each cycle), and for each site entry collect mail for each associated user in sequence. It is far from being general-purpose; all it can do is sequence the program\'s polling behavior.
+
+As with pic(1), one could choose to view this minilanguage as either declarations or a very weak imperative language, and argue endlessly over the distinction. On the one hand, it has neither conditionals nor recursion nor loops; in fact, it has no explicit control structures at all. On the other hand, it does describe actions rather than just relationships, which distinguishes it from a purely declarative syntax like Glade GUI descriptions.
+
+Run-control minilanguages for complex programs often straddle this border. We\'re making a point of this fact because not having explicit control structures in an imperative minilanguage can be a tremendous simplification if the problem domain lets you get away with it.
+
+One notable feature of `.fetchmailrc` syntax is the use of optional noise keywords that are supported simply in order to make the specifications read a bit more like English. The 'with' keywords and single occurrence of 'options' in the example aren\'t actually necessary, but they help make the declarations easier to read at a glance.
+
+The traditional term for this sort of thing is *syntactic sugar*; the maxim that goes with this is a famous quip that "syntactic sugar causes cancer of the semicolon".^\[[88](ch08s02.html#ftn.id2935218){#id2935218}\]^ Indeed, syntactic sugar needs to be used sparingly lest it obscure more than help.
+
+In [Chapter 9](generationchapter.html "Chapter 9. Generation") we\'ll see how data-driven programming helps provide an elegant solution to the problem of editing *fetchmail* run-control files through a GUI.
+::::::
+
+:::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#awk}Case Study: *awk* {#case-study-awk .title}
+
+</div>
+::::
+
+The *awk* minilanguage is an old-school Unix tool, formerly much used in shellscripts. Like *m4*, it\'s intended for writing small but expressive programs to transform textual input into textual output. Versions ship with all Unixes, several in open source; the command **info gawk** at your Unix shell prompt is quite likely to take you to on-line documentation.
+
+Programs in *awk* consist of pattern/action pairs. Each pattern is a *regular expression*, a concept we\'ll describe in detail in [Chapter 9](generationchapter.html "Chapter 9. Generation"). When an *awk* program is run, it steps through each line of the input file. Each line is checked against every pattern/action pair in order. If the pattern matches the line, the associated action is performed.
+
+Each action is coded in a language resembling a subset of C, with variables and conditionals and loops and an ontology of types including integers, strings, and (unlike C) dictionaries.^\[[89](ch08s02.html#ftn.id2935337){#id2935337}\]^
+
+The *awk* action language is Turing-complete, and can read and write files. In some versions it can open and use network sockets. But *awk* has primarily seen use as a report generator, especially for interpreting and reducing tabular data. It is seldom used standalone, but rather embedded in scripts. There is an example *awk* program in the [case study on HTML generation](ch09s02.html#htmlgen "Case Study: Generating HTML Code for a Tabular List") included in [Chapter 9](generationchapter.html "Chapter 9. Generation").
+
+A case study of *awk* is included to point out that it is [*not*]{.emphasis} a model for emulation; in fact, since 1990 it has largely fallen out of use. It has been superseded by new-school scripting languages[]{#id2935419 .indexterm}---notably Perl[]{#id2935427 .indexterm}, which was explicitly designed to be an *awk* killer. The reasons are worthy of examination, because they constitute a bit of a cautionary tale for minilanguage designers.
+
+The *awk* language was originally designed to be a small, expressive special-purpose language for report generation. Unfortunately, it turns out to have been designed at a bad spot on the complexity-vs.-power curve. The action language is noncompact[]{#id2935461 .indexterm}, but the pattern-driven framework it sits inside keeps it from being generally applicable --- that\'s the worst of both worlds. And the new-school scripting languages can do anything *awk* can; their equivalent programs are usually just as readable, if not more so.
+
+::: blockquote
+  ---------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+                                                                         Awk has also fallen out of use because more modern shells have floating point arithmetic, associative arrays, RE pattern matching, and substring capabilities, so that equivalents of small awk scripts can be done without the overhead of process creation.    
+  \--[ [David Korn]{.author} []{#id2935496 .indexterm} ]{.attribution}                                                                                                                                                                                                                                                                    
+  ---------------------------------------------------------------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+:::
+
+For a few years after the release of Perl in 1987, *awk* remained competitive simply because it had a smaller, faster implementation. But as the cost of compute cycles and memory dropped, the economic reasons for favoring a special-purpose language that was relatively thrifty with both lost their force. Programmers increasingly chose to do awklike things with Perl or (later) Python, rather than keep two different scripting languages[]{#id2935533 .indexterm} in their heads.^\[[90](ch08s02.html#ftn.id2935542){#id2935542}\]^ By the year 2000 *awk* had become little more than a memory for most old-school Unix hackers[]{#id2935572 .indexterm}, and not a particularly nostalgic one.
+
+Falling costs have changed the tradeoffs in minilanguage design. Restricting your design\'s capabilities to buy compactness[]{#id2935587 .indexterm} may still be a good idea, but doing so to economize on machine resources is a bad one. Machine resources get cheaper over time, but space in programmers\' heads only gets more expensive. Modern minilanguages can either be general but noncompact, or specialized but very compact[]{#id2935601 .indexterm}; specialized but noncompact simply won\'t compete.
+::::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2935613}Case Study: PostScript {#case-study-postscript .title}
+
+</div>
+::::
+
+PostScript is a minilanguage specialized for describing typeset text and graphics to imaging devices. It is an import into Unix, based on design work done at the legendary Xerox Palo Alto Research Center[]{#id2935625 .indexterm} along with the earliest laser printers. For years after its first commercial release in 1984, it was available only as a proprietary product from Adobe, Inc., and was primarily associated with Apple computers. It was cloned under license terms very close to open-source in 1988, and has since become the de-facto standard for printer control under Unix. A fully open-source version is shipped with most most modern Unixes.^\[[91](ch08s02.html#ftn.id2935641){#id2935641}\]^ A good technical introduction to PostScript is also available.^\[[92](ch08s02.html#ftn.id2935658){#id2935658}\]^
+
+PostScript bears some functional resemblance to troff markup; both are intended to control printers and other imaging devices, and both are normally generated by programs or macro packages rather than being hand-written by humans. But where troff requests are a jumped-up set of format-control codes with some language features tacked on as an afterthought, PostScript was designed from the ground up as a language and is far more expressive and powerful. The main thing that makes Postscript useful is that algorithmic descriptions of images written in it are far smaller than the bitmaps they render to, and so take up less storage and communication bandwidth.
+
+PostScript is explicitly Turing-complete, supporting conditionals and loops and recursion and named procedures. The ontology of types includes integers, reals, strings, and arrays (each element of an array may be of any type) but no equivalent of structures. Technically, PostScript is a stack-based language; arguments of PostScript\'s primitive procedures (operators) are normally popped off a push-down stack of arguments, and the result(s) are pushed back onto it.
+
+There are about 40 basic operators out of a total of around 400. The one that does most of the work is **show**, which draws a string onto the page. Others set the current font, change the gray level or color, draw lines or arcs or Bezier curves, fill closed regions, set clipping regions, etc. A PostScript interpreter is supposed to be able to interpret these commands into bitmaps to be thrown on a display or print medium.
+
+Other PostScript operators implement arithmetic, control structures, and procedures. These allow repetitive or stereotyped images (such as text, which is composed of repeated letterforms) to be expressed as programs that combine images. Part of the utility of PostScript comes from the fact that PostScript programs to print text or simple vector graphics are much less bulky than the bitmaps the text or vectors render to, are device-resolution independent, and travel more quickly over a network cable or serial line.
+
+Historically, PostScript\'s stack-based interpretation resembles a language called FORTH, originally designed to control telescope motors in real time, which was briefly popular in the 1980s. Stack-based languages are famous for supporting extremely tight, economical coding and infamous for being difficult to read. PostScript shares both traits.
+
+PostScript is often implemented as firmware built into a printer. The open-source implementation Ghostscript can translate PostScript to various graphics formats and (weaker) printer-control languages. Most other software treats PostScript as a final output format, meant to be handed to a PostScript-capable imaging device but not edited or eyeballed.
+
+PostScript (either in the original or the trivial variant EPSF[]{#id2935763 .indexterm}, with a bounding box declared around it so it can be embedded in other graphics) is a very well designed example of a special-purpose control language and deserves careful study as a model. It is a component of other standards such as PDF, the Portable Document Format.
+:::::
+
+:::::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2935779}Case Study: *bc* and *dc* {#case-study-bc-and-dc .title}
+
+</div>
+::::
+
+We first examined bc(1) and dc(1) in [Chapter 7](multiprogramchapter.html "Chapter 7. Multiprogramming") as a case study in shellouts. They are examples of domain-specific minilanguages of the imperative type.
+
+::: blockquote
+  ----------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------ ---
+                                                                          *dc* is the oldest language on Unix; it was written on the PDP-7 and ported to the PDP-11 before Unix \[itself\] was ported.    
+  \--[ [Ken Thompson]{.author} []{#id2935842 .indexterm}]{.attribution}                                                                                                                                   
+  ----------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------ ---
+:::
+
+The domain of these two languages is unlimited-precision arithmetic. Other programs can use them to do such calculations without having to worry about the special techniques needed to do those calculations.
+
+::: blockquote
+  ------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+                                                                            In fact, the original motivation for dc had nothing to do with providing a general-purpose interactive calculator, which could have been done with a simple floating-point program. The motivation was Bell Labs\' long interest in numerical analysis: calculating constants for numerical algorithms, [*accurately*]{.emphasis} is greatly aided by being able to work to much higher precision than the algorithm itself will use. Hence dc\'s arbitrary-precision arithmetic.    
+  \--[ [Henry Spencer]{.author} []{#id2935886 .indexterm} ]{.attribution}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+  ------------------------------------------------------------------------- ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+:::
+
+Like SNG and *Glade* markup, one of the strengths of both of these languages is their simplicity. Once you know that dc(1) is a reverse-Polish-notation calculator and bc(1) an algebraic-notation calculator, very little about interactive use of either of these languages is going to be novel. We\'ll return to the importance of the Rule of Least Surprise in interfaces in [Chapter 11](interfacechapter.html "Chapter 11. Interfaces").
+
+These minilanguages have both conditionals and loops; they are Turing-complete, but have a very restricted ontology of types including only unlimited-precision integers and strings. This puts them in the borderland between interpreted minilanguages and full scripting languages[]{#id2935961 .indexterm}. The programming features have been designed not to intrude on the common use as a calculator; indeed, most *dc*/*bc* users are probably unaware of them.
+
+Normally, *dc*/*bc* are used conversationally, but their capacity to support libraries of user-defined procedures gives them an additional kind of utility --- programmability. This is actually the most important advantage of imperative minilanguages, one that we observed in the case study of the Documenter\'s Workbench tools to be very powerful whether or not a program\'s normal mode is conversational; you can use them to write high-level programs that embody task-specific intelligence.
+
+Because the interface of *dc*/*bc* is so simple (send a line containing an expression, get back a line containing a value) other programs and scripts can easily get access to all these capabilities by calling these programs as slave processes. [Example 8.6](ch08s02.html#rsa "Example 8.6. RSA implementation using dc.") is one famous example, an implementation of the Rivest-Shamir-Adelman public-key cipher in Perl[]{#id2936041 .indexterm} that was widely published in signature blocks and on T-shirts as a protest against U.S. export retrictions on cryptography, c. 1995; it shells out to *dc* to do the unlimited-precision arithmetic required.
+
+::: example
+[]{#rsa}
+
+**Example 8.6. RSA implementation using *dc*.**
+
+``` programlisting
+print pack"C*",split/\D+/,`echo "16iII*o\U@{$/=$z;[(pop,pop,unpack
+"H*",<>)]}\EsMsKsN0[lN*1lK[d2%Sa2/d0<X+d*lMLa^*lN%0]dsXx++\
+lMlN/dsM0<J]dsJxp"|dc`
+```
+:::
+::::::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#emacs_lisp_study}Case Study: Emacs Lisp {#case-study-emacs-lisp .title}
+
+</div>
+::::
+
+[]{#id2936099 .indexterm}
+
+Rather than merely being run as a slave process to accomplish specific tasks, a special-purpose interpreted language can become the core of an entire architecture; we\'ll consider the advantages and disadvantages of this approach in [Chapter 13](complexitychapter.html "Chapter 13. Complexity"). troff requests were an early example; today, the *Emacs* editor is one of the best-known and most powerful modern ones. It\'s built around a dialect of Lisp[]{#id2936135 .indexterm} with primitives for both describing actions on editing buffers and controlling slave processes.
+
+The fact that Emacs is built around a powerful language for describing editing actions or front ends for other programs means that it can be used for many other things besides ordinary editing. We\'ll examine the applications of Emacs\'s task-specific intelligence for day-to-day program development (compilation, debugging, version control) in [Chapter 15](http://www.catb.org/~esr/writings/taoup/html/toolschapter.html "Chapter 15. Tools"). Emacs 'modes' are user-defined libraries --- programs written in Emacs Lisp that specialize the editor for a particular job --- usually, but not necessarily, one related to editing.
+
+Thus there are specialized modes that know the syntax of a large number of programming languages, and of markup languages like SGML[]{#id2936172 .indexterm}, XML, and HTML. But many people also use Emacs modes to send and receive email (these use Unix system mail utilities as slaves) or Usenet news. Emacs can browse the web, or act as a front-end for various chat programs. There is also a calendaring package, Emacs\'s own calculator program, and even a fairly wide selection of games written as Emacs Lisp modes (including a descendant of the famous ELIZA program that simulates a Rogersian psychiatrist).^\[[93](ch08s02.html#ftn.id2936188){#id2936188}\]^
+:::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#javascript}Case Study: JavaScript {#case-study-javascript .title}
+
+</div>
+::::
+
+[]{#id2936217 .indexterm}
+
+JavaScript is an open-source language designed to be embedded in C[]{#id2936232 .indexterm} programs. Though it is also embedded in web servers, its original and best-known manifestation is client-side JavaScript, which allows you to embed executable code in Web pages to be run by any JavaScript-capable browser. That is the version we will survey here.
+
+JavaScript is a fully Turing-complete interpreted language with integers, real numbers, booleans, strings, and lightweight dictionary-based objects resembling those of Python[]{#id2936252 .indexterm}. Values are typed, but variables can hold any type; conversions between types are automatic in many contexts. Syntactically JavaScript resembles Java[]{#id2936264 .indexterm} with some influence from Perl[]{#id2936273 .indexterm}, and features Perl-like regular expressions.
+
+Despite all these features, client-side JavaScript is not quite a general-purpose language. Its capabilities are severely restricted to prevent attacks on the browser user through Web pages containing JavaScript code. It can accept input from the user and generate or modify Web pages, but it cannot directly alter the contents of disk files and cannot open its own network connections.
+
+Over time, the JavaScript language has become more general and less bound to its client-side environment. This is something that can be expected to happen to any successful specialized language as its possibilities unfold in the minds of developers and users. Client JavaScript now interacts with its environment by reading and writing values in a single special object called the browser DOM (Document Object Model). The language still has some legacy APIs to the browser that don\'t go through the DOM, but these are deprecated, not present in the ECMA-262 standard for JavaScript, and may not be supported in future versions.
+
+The standard reference for JavaScript is *JavaScript: The Definitive Guide* \[[FlanaganJavaScript](http://www.catb.org/~esr/writings/taoup/html/apb.html#FlanaganJavaScript "[FlanaganJavaScript]")\]. Source code is downloadable.^\[[94](ch08s02.html#ftn.id2936325){#id2936325}\]^ JavaScript makes an interesting study for two reasons. First, it\'s about as close to being a general-purpose language as one can get without actually being there. Second, the binding between client-side JavaScript and its browser environment via a single DOM object is well designed, and could serve as a model for other embedding situations.
+:::::
+
+::::::::::::::::: footnotes
+\
+
+------------------------------------------------------------------------
+
+::: footnote
+^\[[81](ch08s02.html#id2932978){#ftn.id2932978}\]^ The POSIX standard for regular expressions introduces some symbolic ranges like `[[:lower;;]]` and `[[:digit:]]`, and some specific tools have extra wildcards not covered here, but these will suffice to interpret most regexps.
+:::
+
+::: footnote
+^\[[82](ch08s02.html#id2933471){#ftn.id2933471}\]^ For non-Unix programmers, an X toolkit is a graphics library that supplies GUI widgets (like labels, buttons, and pull-down menus) to the programs that link to it. Under most other graphical operating systems, the OS supplies one toolkit that everyone uses. Unix and X support multiple toolkits; this is part of the separation of policy from mechanism that we called out as a design goal of X in [Chapter 1](philosophychapter.html "Chapter 1. Philosophy"). GTK and Qt are the two most popular open-source X toolkits.
+:::
+
+::: footnote
+^\[[83](ch08s02.html#id2934007){#ftn.id2934007}\]^ Whether or not "macro expansion" should be spelled "macroexpansion" is a matter for some dispute. The latter is found mainly among Lisp programmers.
+:::
+
+::: footnote
+^\[[84](ch08s02.html#id2934079){#ftn.id2934079}\]^ It is not clear that XSLT could be any simpler and still do its job, however, so we cannot characterize it as a bad design.
+:::
+
+::: footnote
+^\[[85](ch08s02.html#id2934184){#ftn.id2934184}\]^ [XSL Concepts and Practical Use](http://nwalsh.com/docs/tutorials/xsl/xsl/slides.html){target="_top"}.
+:::
+
+::: footnote
+^\[[86](ch08s02.html#id2934417){#ftn.id2934417}\]^ [http://www.netlib.org/](http://www.netlib.org/){target="_top"}
+:::
+
+::: footnote
+^\[[87](ch08s02.html#id2934708){#ftn.id2934708}\]^ It is also quite traditional for Unix books that describe pic(1) to include their own illustrations as coding examples.
+:::
+
+::: footnote
+^\[[88](ch08s02.html#id2935218){#ftn.id2935218}\]^ The line is owed to Alan Perlis, who did some of the pioneering work in software modularity around 1970. The semicolon in question was the statement separator or terminator in various Algol-descended languages, including Pascal and C.
+:::
+
+::: footnote
+^\[[89](ch08s02.html#id2935337){#ftn.id2935337}\]^ For those who have never programmed in a modern scripting language, a dictionary is a lookup table of key-to-value associations, often implemented through a hash table. C[]{#id2935344 .indexterm} programmers spend a lot of their coding time implementing dictionaries in various elaborate ways.
+:::
+
+::: footnote
+^\[[90](ch08s02.html#id2935542){#ftn.id2935542}\]^ I was at one time an *awk* wizard, but I had to be reminded by someone else that the language was applicable to the HTML-generation problem where this book\'s only *awk* example occurs.
+:::
+
+::: footnote
+^\[[91](ch08s02.html#id2935641){#ftn.id2935641}\]^ There is a [GhostScript Project site](http://www.cs.wisc.edu/~ghost/){target="_top"}.
+:::
+
+::: footnote
+^\[[92](ch08s02.html#id2935658){#ftn.id2935658}\]^ [A First Guide To PostScript](http://www.cs.indiana.edu/docproject/programming/postscript/postscript.html){target="_top"}.
+:::
+
+::: footnote
+^\[[93](ch08s02.html#id2936188){#ftn.id2936188}\]^ One of the silliest things you can do with a modern Unix machine is run the Eliza mode of Emacs against random quotes from Zippy the Pinhead. **M-x psychoanalyze-pinhead**; type control-G when you\'ve had enough.
+:::
+
+::: footnote
+^\[[94](ch08s02.html#id2936325){#ftn.id2936325}\]^ Open-source JavaScript implementations in C and Java are [available](http://www.mozilla.org/js/){target="_top"}.
+:::
+:::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::: navfooter
+
+------------------------------------------------------------------------
+
+  ------------------------------------------ ------------------------------------------------ --------------------------------------
+  [Prev](ch08s01.html){accesskey="p"}         [Up](minilanguageschapter.html){accesskey="u"}     [Next](ch08s03.html){accesskey="n"}
+  Understanding the Taxonomy of Languages           [Home](index.html){accesskey="h"}                        Designing Minilanguages
+  ------------------------------------------ ------------------------------------------------ --------------------------------------
+:::
