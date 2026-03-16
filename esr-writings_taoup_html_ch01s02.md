@@ -1,0 +1,60 @@
+::: navheader
+  The Durability of Unix                                         
+  -------------------------------------- ----------------------- --------------------------------------
+  [Prev](ch01s01.html){accesskey="p"}     Chapter 1. Philosophy     [Next](ch01s03.html){accesskey="n"}
+
+------------------------------------------------------------------------
+:::
+
+:::::::: {.sect1 lang="en"}
+:::: titlepage
+<div>
+
+## []{#id2876838}The Durability of Unix {#the-durability-of-unix .title style="clear: both"}
+
+</div>
+::::
+
+Unix was born in 1969 and has been in continuous production use ever since. That\'s several geologic eras by computer-industry standards --- older than the PC or workstations or microprocessors or even video display terminals, and contemporaneous with the first semiconductor memories. Of all production timesharing systems today, only IBM\'s VM/CMS can claim to have existed longer, and Unix machines have provided hundreds of thousands of times more service hours; indeed, Unix has probably supported more computing than all other timesharing systems put together.
+
+Unix has found use on a wider variety of machines than any other operating system can claim. From supercomputers to handhelds and embedded networking hardware, through workstations and servers and PCs and minicomputers, Unix has probably seen more architectures and more odd hardware than any three other operating systems combined.
+
+Unix has supported a mind-bogglingly wide spectrum of uses. No other operating system has shone simultaneously as a research vehicle, a friendly host for technical custom applications, a platform for commercial-off-the-shelf business software, and a vital component technology of the Internet.
+
+Confident predictions that Unix would wither away, or be crowded out by other operating systems, have been made yearly since its infancy. And yet Unix, in its present-day avatars as Linux[]{#id2876884 .indexterm} and BSD and Solaris and MacOS X and half a dozen other variants, seems stronger than ever today.
+
+::: blockquote
+  ------------------------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+                                                                           Robert Metcalf \[the inventor of Ethernet\] says that if something comes along to replace Ethernet, it will be called "Ethernet", so therefore Ethernet will never die.^\[[4](ch01s02.html#ftn.id2876928){#id2876928}\]^ Unix has already undergone several such transformations.    
+  \--[ [Ken Thompson]{.author} []{#id2876909 .indexterm} ]{.attribution}                                                                                                                                                                                                                                                                                        
+  ------------------------------------------------------------------------ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- ---
+:::
+
+At least one of Unix\'s central technologies --- the C language --- has been widely naturalized elsewhere. Indeed it is now hard to imagine doing software engineering without C[]{#id2876947 .indexterm} as a ubiquitous common language of systems programming. Unix also introduced both the now-ubiquitous tree-shaped file namespace with directory nodes and the pipeline for connecting programs.
+
+Unix\'s durability and adaptability have been nothing short of astonishing. Other technologies have come and gone like mayflies. Machines have increased a thousandfold in power, languages have mutated, industry practice has gone through multiple revolutions --- and Unix hangs in there, still producing, still paying the bills, and still commanding loyalty from many of the best and brightest software technologists on the planet.
+
+One of the many consequences of the exponential power-versus-time curve in computing, and the corresponding pace of software development, is that 50% of what one knows becomes obsolete over every 18 months. Unix does not abolish this phenomenon, but does do a good job of containing it. There\'s a bedrock of unchanging basics --- languages, system calls, and tool invocations --- that one can actually keep using for years, even decades. Elsewhere it is impossible to predict what will be stable; even entire operating systems cycle out of use. Under Unix, there is a fairly sharp distinction between transient knowledge and lasting knowledge, and one can know ahead of time (with about 90% certainty) which category something is likely to fall in when one learns it. Thus the loyalty Unix commands.
+
+Much of Unix\'s stability and success has to be attributed to its inherent strengths, to design decisions Ken Thompson[]{#id2876997 .indexterm}, Dennis Ritchie[]{#id2877006 .indexterm}, Brian Kernighan[]{#id2877015 .indexterm}, Doug McIlroy[]{#id2877023 .indexterm}, Rob Pike[]{#id2877032 .indexterm} and other early Unix developers made back at the beginning; decisions that have been proven sound over and over. But just as much is due to the design philosophy, art of programming, and technical culture that grew up around Unix in the early days. This tradition has continuously and successfully propagated itself in symbiosis with Unix ever since.
+
+:::: footnotes
+\
+
+------------------------------------------------------------------------
+
+::: footnote
+^\[[4](ch01s02.html#id2876928){#ftn.id2876928}\]^ In fact, Ethernet has already been replaced by a different technology with the same name --- twice. Once when coax was replaced with twisted pair, and a second time when gigabit Ethernet came in.
+:::
+::::
+::::::::
+
+::: navfooter
+
+------------------------------------------------------------------------
+
+  -------------------------------------- --------------------------------------------- -----------------------------------------
+  [Prev](ch01s01.html){accesskey="p"}     [Up](philosophychapter.html){accesskey="u"}        [Next](ch01s03.html){accesskey="n"}
+  Culture? What Culture?                       [Home](index.html){accesskey="h"}          The Case against Learning Unix Culture
+  -------------------------------------- --------------------------------------------- -----------------------------------------
+:::

@@ -1,0 +1,428 @@
+::: navheader
+  Operating-System Comparisons                                  
+  -------------------------------------- ---------------------- --------------------------------------
+  [Prev](ch03s01.html){accesskey="p"}     Chapter 3. Contrasts     [Next](ch03s03.html){accesskey="n"}
+
+------------------------------------------------------------------------
+:::
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::: {.sect1 lang="en"}
+:::: titlepage
+<div>
+
+## []{#id2888653}Operating-System Comparisons {#operating-system-comparisons .title style="clear: both"}
+
+</div>
+::::
+
+The logic of Unix\'s design choice stands out more clearly when we contrast it with other operating systems. Here we will attempt only a design overview; for detailed discussion of the technical features of different operating systems.^\[[24](ch03s02.html#ftn.id2888666){#id2888666}\]^
+
+:::: figure
+[]{#os-history}
+
+**Figure 3.1. Schematic history of timesharing.**
+
+::: mediaobject
+![Schematic history of timesharing.](http://www.catb.org/~esr/writings/taoup/html/graphics/os-history.png)
+:::
+::::
+
+[Figure 3.1](ch03s02.html#os-history "Figure 3.1. Schematic history of timesharing.") indicates the genetic relationships among the timesharing operating systems we\'ll survey. A few other operating systems (marked in gray, and not necessarily timesharing) are included for context. Sytems in solid boxes are still live. The 'birth' are dates of first shipment;^\[[25](ch03s02.html#ftn.id2888745){#id2888745}\]^ the 'death' dates are generally when the system was end-of-lifed by its vendor.
+
+Solid arrows indicate a genetic relationship or very strong design influence (e.g., a later system with an API deliberately reverse-engineered to match an earlier one). Dashed lines indicate significant design influence. Dotted lines indicate weak design influence. Not all the genetic relationships are acknowledged by the developers; indeed, some have been officially denied for legal or corporate-strategy reasons but are open secrets in the industry.
+
+The 'Unix' box includes all proprietary Unixes, including both AT&T and early Berkeley versions. The 'Linux' box includes the open-source Unixes, all of which launched in 1991. They have genetic inheritance from early Unix through code that was freed from AT&T proprietary control by the settlement of a 1993 lawsuit.^\[[26](ch03s02.html#ftn.id2888778){#id2888778}\]^
+
+:::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#vms}VMS {#vms .title}
+
+</div>
+::::
+
+[]{#id2888798 .indexterm}
+
+VMS is the proprietary operating system originally developed for the VAX minicomputer from Digital Equipment Corporation. It was first released in 1978, was an important production operating system in the 1980s and early 1990s, and continued to be maintained when DEC was acquired by Compaq and Compaq was acquired by Hewlett-Packard. It is still sold and supported in mid-2003, though little new development goes on in it today.^\[[27](ch03s02.html#ftn.id2888820){#id2888820}\]^ VMS is surveyed here to show the contrast between Unix and other CLI-oriented operating systems from the minicomputer era.
+
+VMS has full preemptive multitasking, but makes process-spawning very expensive. The VMS file system has an elaborate notion of record types (though not attributes). These traits have all the consequences we outlined earlier on, especially (in VMS\'s case) the tendency for programs to be huge, clunky monoliths.
+
+VMS features long, readable COBOL-like system commands and command options. It has very comprehensive on-line help (not for APIs, but for the executable programs and command-line syntax). In fact, the VMS CLI and its help system are the organizing metaphor of VMS. Though X windows[]{#id2888858 .indexterm} has been retrofitted onto the system, the verbose CLI remains the most important stylistic influence on program design. This has the following major implications:
+
+::: itemizedlist
+-   The frequency with which people use command-line functions --- the more voluminously you have to type, the less you want to do it.
+
+-   The size of programs --- people want to type less, so they want to use fewer programs, and write larger ones with more bundled functions.
+
+-   The number and types of options your program accepts --- they must conform to the syntactic constraints imposed by the help system.
+
+-   The ease of using the help system --- it\'s very complete, but search and discovery tools for it are absent and it has poor indexing. This makes acquiring broad knowledge difficult, encourages specialization, and discourages casual programming.
+:::
+
+VMS has a respectable system of internal boundaries. It was designed for true multiuser operation and fully employs the hardware MMU to protect processes from each other. The system command interpreter is privileged, but the encapsulation of critical functions is otherwise reasonably good. Security cracks against VMS have been rare.
+
+VMS tools were initially expensive, and its interfaces are complex. Enormous volumes of VMS programmer documentation are only available in paper form, so looking up anything is a time-consuming, high-overhead operation. This has tended to discourage exploratory programming and learning a large toolkit. Only since being nearly abandoned by its vendor has VMS developed casual programming and a hobbyist culture, and that culture is not particularly strong.
+
+Like Unix, VMS predated the client/server distinction. It was successful in its day as a general-purpose timesharing operating system. The intended audience was primarily technical users and software-intensive businesses, implying a moderate tolerance for complexity.
+::::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#mac_os_contrast}MacOS {#macos .title}
+
+</div>
+::::
+
+[]{#id2888962 .indexterm}
+
+The Macintosh operating system was designed at Apple in the early 1980s, inspired by pioneering work on GUIs done earlier at Xerox\'s Palo Alto Research Center. It saw its debut with the Macintosh in 1984. MacOS has gone through two significant design transitions since, and is undergoing a third. The first transition was the shift from supporting only a single application at a time to being able to cooperatively multitask multiple applications (MultiFinder); the second was the shift from 68000 to PowerPC processors, which both preserved backward binary compatibility with 68K applications and brought in an advanced shared library management system for PowerPC applications, replacing the original 68K trap instruction-based code-sharing system. The third was the merger of MacOS design ideas with a Unix-derived infrastructure in MacOS X. Except where specifically noted, the discussion here applies to pre-OS-X versions.
+
+MacOS has a very strong unifying idea that is very different from Unix\'s: the Mac Interface Guidelines. These specify in great detail what an application GUI should look like and how it should behave. The consistency of the Guidelines influenced the culture of Mac users in significant ways. Not infrequently, simple-minded ports of DOS or Unix programs that did not follow the Guidelines have been summarily rejected by the Mac user base and failed in the marketplace.
+
+One key idea of the Guidelines is that things stay where you put them. Documents, directories, and other objects have persistent locations on the desktop that the system doesn\'t mess with, and the desktop context persists through reboots.
+
+The Macintosh\'s unifying idea is so strong that most of the other design choices we discussed above are either forced by it or invisible. All programs have GUIs. There is no CLI at all. Scripting facilities are present but much less commonly used than under Unix; many Mac programmers never learn them. MacOS\'s captive-interface GUI metaphor (organized around a single main event loop) leads to a weak scheduler without preemption. The weak scheduler, and the fact that all MultiFinder applications run in a single large address space, implies that it is not practical to use separated processes or even threads rather than polling.
+
+MacOS applications are not, however, invariably monster monoliths. The system\'s GUI support code, which is partly implemented in a ROM shipped with the hardware and partly implemented in shared libraries, communicates with MacOS programs through an event interface that has been quite stable since its beginnings. Thus, the design of the operating system encourages a relatively clean separation between application engine and GUI interface.
+
+MacOS also has strong support for isolating application metadata like menu structures from the engine code. MacOS files have both a 'data fork' (a Unix-style bag of bytes that contains a document or program code) and a 'resource fork' (a set of user-definable file attributes). Mac applications tend to be designed so that (for example) the images and sound used in them are stored in the resource fork and can be modified separately from the application code.
+
+The MacOS system of internal boundaries is very weak. There is a wired-in assumption that there is but a single user, so there are no per-user privilege groups. Multitasking is cooperative, not pre-emptive. All MultiFinder applications run in the same address space, so bad code in any application can corrupt anything outside the operating system\'s low-level kernel. Security cracks against MacOS machines are very easy to write; the OS has been spared an epidemic mainly because very few people are motivated to crack it.
+
+Mac programmers tend to design in the opposite direction from Unix programmers; that is, they work from the interface inward, rather than from the engine outward (we\'ll discuss some of the implications of this choice in [Chapter 20](http://www.catb.org/~esr/writings/taoup/html/futurechapter.html "Chapter 20. Futures")). Everything in the design of the MacOS conspires to encourage this.
+
+The intended role for the Macintosh was as a client operating system for nontechnical end users, implying a very low tolerance for interface complexity. Developers in the Macintosh culture became very, very good at designing simple interfaces.
+
+The incremental cost of becoming a developer, assuming you have a Macintosh already, has never been high. Thus, despite rather complex interfaces, the Mac developed a strong hobbyist culture early on. There is a vigorous tradition of small tools, shareware, and user-supported software.
+
+Classic MacOS has been end-of-lifed. Most of its facilities have been imported into MacOS X, which mates them to a Unix infrastructure derived from the Berkeley[]{#id2889114 .indexterm} tradition.^\[[28](ch03s02.html#ftn.id2889123){#id2889123}\]^ At the same time, leading-edge Unixes such as Linux[]{#id2889132 .indexterm} are beginning to borrow ideas like file attributes (a generalization of the resource fork) from MacOS.
+:::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#os_2}OS/2 {#os2 .title}
+
+</div>
+::::
+
+OS/2 began life as an IBM[]{#id2889156 .indexterm} development project called ADOS ('Advanced DOS'), one of three competitors to become DOS 4. At that time, IBM and Microsoft[]{#id2889167 .indexterm} were formally collaborating to develop a next-generation operating system for the PC. OS/2 1.0 was first released in 1987 for the 286, but was unsuccessful. The 2.0 version for the 386 came out in 1992, but by that time the IBM/Microsoft[]{#id2889175 .indexterm} alliance had already fractured. Microsoft went in a different (and more lucrative) direction with Windows 3.0. OS/2 attracted a loyal minority following, but never attracted a critical mass of developers and users. It remained third in the desktop market, behind the Macintosh, until being subsumed into IBM\'s Java[]{#id2892763 .indexterm} initiative after 1996. The last released version was 4.0 in 1996. Early versions found their way into embedded systems and still, as of mid-2003, run inside many of the world\'s automated teller machines.
+
+Like Unix, OS/2 was built to be preemptively multitasking and would not run on a machine without an MMU (early versions simulated an MMU using the 286\'s memory segmentation). Unlike Unix, OS/2 was never built to be a multiuser system. Process-spawning was relatively cheap, but IPC was difficult and brittle. Networking was initially focused on LAN protocols, but a TCP/IP stack was added in later versions. There were no programs analogous to Unix service daemons, so OS/2 never handled multi-function networking very well.
+
+OS/2 had both a CLI and GUI. Most of the positive legendry around OS/2 was about the Workplace Shell (WPS), the OS/2 desktop. Some of this technology was licensed from the developers of the AmigaOS Workbench,^\[[29](ch03s02.html#ftn.id2892797){#id2892797}\]^ a pioneering GUI desktop that still as of 2003 has a loyal fan base in Europe. This is the one area of the design in which OS/2 achieved a level of capability which Unix arguably has not yet matched. The WPS was a clean, powerful, object-oriented design with understandable behavior and good extensibility. Years later it would become a model for Linux\'s GNOME project.
+
+The class-hierarchy design of WPS was one of OS/2\'s unifying ideas. The other was multithreading. OS/2 programmers used threading heavily as a partial substitute for IPC between peer processes. No tradition of cooperating program toolkits developed.
+
+OS/2 had the internal boundaries one would expect in a single-user OS. Running processes were protected from each other, and kernel space was protected from user space, but there were no per-user privilege groups. This meant the file system had no protection against malicious code. Another consequence was that there was no analog of a home directory; application data tended to be scattered all over the system.
+
+A further consequence of the lack of multiuser capability was that there could be no privilege distinctions in userspace. Thus, developers tended to trust only kernel code. Many system tasks that in Unix would be handled by user-space daemons were jammed into the kernel or the WPS. Both bloated as a result.
+
+OS/2 had a text vs. binary mode (that is, a mode in which CR/LF was read as a single end-of-line, versus one in which no such interpretation was performed), but no other file record structure. It supported file attributes, which were used for desktop persistence after the manner of the Macintosh. System databases were mostly in binary formats.
+
+The preferred UI style was through the WPS. User interfaces tended to be ergonomically better than Windows, though not up to Macintosh standards (OS/2\'s most active period was relatively early in the history of MacOS Classic[]{#id2892870 .indexterm}). Like Unix and Windows, OS/2\'s user interface was themed around multiple, independent per-task groups of windows, rather than capturing the desktop for the running application.
+
+The intended audience for OS/2 was business and nontechnical end users, implying a low tolerance for interface complexity. It was used both as a client operating system and as a file and print server.
+
+In the early 1990s, developers in the OS/2 community began to migrate to a Unix-inspired environment called EMX that emulated POSIX[]{#id2892896 .indexterm} interfaces. Ports of Unix software started routinely showing up under OS/2 in the latter half of the 1990s.
+
+Anyone could download EMX, which included the GNU Compiler Collection and other open-source development tools. IBM[]{#id2892913 .indexterm} intermittently gave away copies of the system documentation in the OS/2 developer\'s toolkit, which was posted on many BBSs and FTP sites. Because of this, the "Hobbes" FTP archive of user-developed OS/2 software had already grown to over a gigabyte in size by 1995. A very vigorous tradition of small tools, exploratory programming, and shareware developed and retained a loyal following for some years after OS/2 itself was clearly headed for the dustbin of history.
+
+After the release of Windows 95 the OS/2 community, feeling beleaguered by Microsoft and encouraged by IBM[]{#id2892940 .indexterm}, became increasingly interested in Java. After the Netscape source code release in early 1998, the direction of migration changed (rather suddenly), toward Linux[]{#id2892951 .indexterm}.
+
+OS/2 is interesting as a case study in how far a multitasking but single-user operating-system design can be pushed. Most of the observations in this case study would apply well to other operating systems of the same general type, notably AmigaOS^\[[30](ch03s02.html#ftn.id2892968){#id2892968}\]^ and GEM.^\[[31](ch03s02.html#ftn.id2892980){#id2892980}\]^ A wealth of OS/2 material is still available on the Web in 2003, including some good histories.^\[[32](ch03s02.html#ftn.id2892994){#id2892994}\]^
+:::::
+
+:::::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#nt_contrast}Windows NT {#windows-nt .title}
+
+</div>
+::::
+
+[]{#id2893023 .indexterm}
+
+Windows NT (New Technology) is Microsoft\'s operating system for high-end personal and server use; it is shipped in several variants that can all be considered the same for our purposes. All of Microsoft\'s operating systems since the demise of Windows ME in 2000 have been NT-based; Windows 2000 was NT 5, and Windows XP (current in 2003) is NT 5.1. NT is genetically descended from VMS, with which it shares some important characteristics.
+
+NT has grown by accretion, and lacks a unifying metaphor corresponding to Unix\'s "everything is a file" or the MacOS[]{#id2893058 .indexterm} desktop.^\[[33](ch03s02.html#ftn.id2893067){#id2893067}\]^ Because core technologies are not anchored in a small set of persistent central metaphors, they become obsolete every few years. Each of the technology generations --- DOS (1981), Windows 3.1 (1992), Windows 95 (1995), Windows NT 4 (1996), Windows 2000 (2000), Windows XP (2002), and Windows Server 2003 (2003) --- has required that developers relearn fundamental things in a different way, with the old way declared obsolete and no longer well supported.
+
+There are other consequences as well:
+
+::: itemizedlist
+-   The GUI facilities coexist uneasily with the weak, remnant command-line interface inherited from DOS and VMS.
+
+-   Socket programming has no unifying data object analogous to the Unix everything-is-a-file-handle, so multiprogramming and network applications that are simple in Unix require several more fundamental concepts in NT.
+:::
+
+NT has file attributes in some of its file system types. They are used in a restricted way, to implement access-control lists on some file systems, and don\'t affect development style very much. It also has a record-type distinction, between text and binary files, that produces occasional annoyances (both NT and OS/2 inherited this misfeature from DOS).
+
+Though pre-emptive multitasking is supported, process-spawning is expensive --- not as expensive as in VMS, but (at about 0.1 seconds per spawn) up to an order of magnitude more so than on a modern Unix. Scripting facilities are weak, and the OS makes extensive use of binary file formats. In addition to the expected consequences we outlined earlier are these:
+
+::: itemizedlist
+-   Most programs cannot be scripted at all. Programs rely on complex, fragile *remote procedure call* (RPC) methods to communicate with each other, a rich source of bugs.
+
+-   There are no generic tools at all. Documents and databases can\'t be read or edited without special-purpose programs.
+
+-   Over time, the CLI has become more and more neglected because the environment there is so sparse. The problems associated with a weak CLI have gotten progressively worse rather than better. (Windows Server 2003 attempts to reverse this trend somewhat.)
+:::
+
+System and user configuration data are centralized in a central properties registry rather than being scattered through numerous dotfiles and system data files as in Unix. This also has consequences throughout the design:
+
+::: itemizedlist
+-   The registry makes the system completely non-orthogonal. Single-point failures in applications can corrupt the registry, frequently making the entire operating system unusable and requiring a reinstall.
+
+-   The *registry creep* phenomenon: as the registry grows, rising access costs slow down all programs.
+:::
+
+NT systems on the Internet are notoriously vulnerable to worms, viruses, defacements, and cracks of all kinds. There are many reasons for this, some more fundamental than others. The most fundamental is that NT\'s internal boundaries are extremely porous.
+
+NT has access control lists that can be used to implement per-user privilege groups, but a great deal of legacy code ignores them, and the operating system permits this in order not to break backward compatibility. There are no security controls on message traffic between GUI clients, either,^\[[34](ch03s02.html#ftn.id2893243){#id2893243}\]^ and adding them would also break backward compatibility.
+
+While NT will use an MMU, NT versions after 3.5 have the system GUI wired into the same address space as the privileged kernel for performance reasons. Recent versions even wire the webserver into kernel space in an attempt to match the speed of Unix-based webservers.
+
+These holes in the boundaries have the synergistic effect of making actual security on NT systems effectively impossible.^\[[35](ch03s02.html#ftn.id2893270){#id2893270}\]^ If an intruder can get code run as any user at all (e.g., through the Outlook email-macro feature), that code can forge messages through the window system to any other running application. And any buffer overrun or crack in the GUI or webserver can be exploited to take control of the entire system.
+
+[]{#dll_hell}Because Windows does not handle library versioning properly, it suffers from a chronic configuration problem called "DLL hell", in which installing new programs can randomly upgrade (or even downgrade!) the libraries on which existing programs depend. This applies to the vendor-supplied system libraries as well as to application-specific ones: it is not uncommon for an application to ship with specific versions of system libraries, and break silently when it does not have them.^\[[36](ch03s02.html#ftn.id2893313){#id2893313}\]^
+
+On the bright side, NT provides sufficient facilities to host Cygwin, which is a compatibility layer implementing Unix at both the utilities and the API level, with remarkably few compromises.^\[[37](ch03s02.html#ftn.id2893328){#id2893328}\]^ Cygwin permits C programs to make use of both the Unix and the native APIs, and is the first thing many Unix hackers install on such Windows systems as they are compelled by circumstances to make use of.
+
+The intended audience for the NT operating systems is primarily nontechnical end users, implying a very low tolerance for interface complexity. It is used in both client and server roles.
+
+Early in its history Microsoft relied on third-party development to supply applications. They originally published full documentation for the Windows APIs, and kept the price of development tools low. But over time, and as competitors collapsed, Microsoft\'s strategy shifted to favor in-house development, they began hiding APIs from the outside world, and development tools grew more expensive. As early as Windows 95, Microsoft was requiring nondisclosure agreements as a condition for purchasing professional-quality development tools.
+
+The hobbyist and casual-developer culture that had grown up around DOS and earlier Windows versions was large enough to be self-sustaining even in the face of increasing efforts by Microsoft to lock them out (including such measures as certification programs designed to delegitimize amateurs). Shareware never went away, and Microsoft\'s policy began to reverse somewhat after 2000 under market pressure from open-source operating systems and Java. However, Windows interfaces for 'professional' programming continued to grow more complex over time, presenting an increasing barrier to casual (or serious!) coding.
+
+The result of this history is a sharp dichotomy between the design styles practiced by amateur and professional NT developers --- the two groups barely communicate. While the hobbyist culture of small tools and shareware is very much alive, professional NT projects tend to produce monster monoliths even bulkier than those characteristic of 'elitist' operating systems like VMS.
+
+Unix-like shell facilities, command sets, and library APIs are available under Windows through third-party libraries including UWIN, Interix, and the open-source Cygwin.
+::::::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#beos}BeOS {#beos .title}
+
+</div>
+::::
+
+[]{#id2893409 .indexterm}
+
+Be, Inc. was founded in 1989 as a hardware vendor, building pioneering multiprocessing machines around the PowerPC chip. BeOS was Be\'s attempt to add value to the hardware by inventing a new, network-ready operating system model incorporating the lessons of both Unix and the MacOS family, without being either. The result was a tasteful, clean, and exciting design with excellent performance in its chosen role as a multimedia platform.
+
+BeOS\'s unifying ideas were 'pervasive threading', multimedia flows, and the file system as database. BeOS was designed to minimize latency in the kernel, making it well-suited for processing large volumes of data such as audio and video streams in real time. BeOS 'threads' were actually lightweight processes in Unix terminology, since they supported thread-local storage and therefore did not necessarily share all address spaces. IPC via shared memory was fast and efficient.
+
+BeOS followed the Unix model in having no file structure above the byte level. Like the MacOS, it supported and used file attributes. In fact, the BeOS file system was actually a database that could be indexed by any attribute.
+
+One of the things BeOS took from Unix was intelligent design of internal boundaries. It made full use of an MMU, and sealed running processes off from each other effectively. While it presented as a single-user operating system (no login), it supported Unix-like privilege groups in the file system and elsewhere in the OS internals. These were used to protect system-critical files from being touched by untrusted code; in Unix terms, the user was logged in as an anonymous guest at boot time, with the only other 'user' being root. Full multiuser operation would have been a small change to the upper levels of the system, and there was in fact a BeLogin utility.
+
+BeOS tended to use binary file formats and the native database built into the file system, rather than Unix-like textual formats.
+
+The preferred UI style of BeOS was GUI, and it leaned heavily on MacOS experience in interface design. CLI and scripting were, however, also fully supported. The command-line shell of BeOS was a port of bash(1), the dominant open-source Unix shell, running through a POSIX[]{#id2893494 .indexterm} compatibility library. Porting of Unix CLI software was, by design, trivially easy. Infrastructure to support the full panoply of scripting, filters, and service daemons that goes with the Unix model was in place.
+
+BeOS\'s intended role was as a client operating system specialized for near-real-time multimedia processing (especially sound and video manipulation). Its intended audience included technical and business end users, implying a moderate tolerance for interface complexity.
+
+Entry barriers to BeOS development were low; though the operating system was proprietary, development tools were inexpensive and full documentation was readily available. The BeOS effort began as part of one of the efforts to unseat Intel\'s hardware with RISC technology, and was continued as a software-only effort after the Internet explosion. Its strategists were paying attention during Linux\'s formative period in the early 1990s, and were fully aware of the value of a large casual-developer base. In fact they succeeded in attracting an intensely loyal following; as of 2003 no fewer than five separate projects are attempting to resurrect BeOS in open source.
+
+Unfortunately, the business strategy surrounding BeOS was not as astute as the technical design. The BeOS software was originally bundled with dedicated hardware, and marketed with only vague hints about intended applications. Later (1998) BeOS was ported to generic PCs and more closely focused on multimedia applications, but never attracted a critical mass of applications or users. BeOS finally succumbed in 2001 to a combination of anticompetitive maneuvering by Microsoft (lawsuit in progress as of 2003) and competition from variants of Linux[]{#id2893547 .indexterm} that had been adapted for multimedia handling.
+:::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#mvs}MVS {#mvs .title}
+
+</div>
+::::
+
+[]{#id2893567 .indexterm}
+
+MVS (Multiple Virtual Storage) is IBM\'s flagship operating system for its mainframe computers. Its roots stretch back to OS/360, which began life in the mid-1960s as the operating system IBM wanted its customers to use on the then-new System/360 computer systems. Descendants of this code remain at the heart of today\'s IBM mainframe operating systems. Though the code has been almost entirely rewritten, the basic design is largely untouched; backward compatibility has been religiously maintained, to the point that applications written for OS/360 run unmodified on the MVS of 64-bit z/Series mainframe computers three architectural generations later.
+
+Of all the operating systems surveyed here, MVS is the only one that could be considered older than Unix (the ambiguity stems from the degree to which it has evolved over time). It is also the least influenced by Unix concepts and technology, and represents the strongest design contrast with Unix. The unifying idea of MVS is that all work is batch; the system is designed to make the most efficient possible use of the machine for batch processing of huge amounts of data, with minimal concessions to interaction with human users.
+
+Native MVS terminals (the 3270 series) operate only in block mode. The user is presented with a screen that he fills in, modifying local storage in the terminal. No interrupt is presented to the mainframe until the user presses the send key. Character-level interaction, in the manner of Unix\'s raw mode, is impossible.
+
+TSO, the closest equivalent to the Unix interactive environment, is limited in native capabilities. Each TSO user is represented to the rest of the system as a simulated batch job. The facility is expensive --- so much so that its use is typically limited to programmers and support staff. Ordinary users who need to merely run applications from a terminal almost never use TSO. Instead, they work through transaction monitors, a kind of multiuser application server that does cooperative multitasking and supports asynchronous I/O. In effect, each kind of transaction monitor is a specialized timesharing plugin (almost, but not entirely unlike a webserver running CGI).
+
+Another consequence of the batch-oriented architecture is that process spawning is a slow operation. The I/O system deliberately trades high setup cost (and associated latency) for better throughput. These choices are a good match for batch operation, but deadly to interactive response. A predictable result is that TSO users nowadays spend almost all their time inside a dialog-driven interactive environment, ISPF. It is rare for a programmer to do anything inside native TSO except start up an instance of ISPF. This does away with process-spawn overhead, at the cost of introducing a very large program that does everything but start the machine room coffeepot.
+
+MVS uses the machine MMU; processes have separate address spaces. Interprocess communication is supported only through shared memory. There are facilities for threading (which MVS calls "subtasking"), but they are lightly used, mainly because the facility is only easily accessible from programs written in assembler. Instead, the typical batch application is a short series of heavyweight program invocations glued together by JCL (Job Control Language) which provides scripting, though in a notoriously difficult and inflexible way. Programs in a job communicate through temporary files; filters and the like are nearly impossible to do in a usable manner.
+
+Every file has a record format, sometimes implied (inline input files in JCL are implied to have an 80-byte fixed-length record format inherited from punched cards, for example), but more often explicitly specified. Many system configuration files are in text format, but application files are usually in binary formats specific to the application. Some general tools for examining files have evolved out of sheer necessity, but it is still not an easy problem to solve.
+
+File system security was an afterthought in the original design. However, when security was found to be necessary, IBM added it in an inspired fashion: They defined a generic security API, then made all file access requests pass by that interface before being processed. As a result, there are at least three competing security packages with differing design philosophies --- and all of them are quite good, with no known cracks against them between 1980 and mid-2003. This variety allows an installation to select the package that best suits local security policy.
+
+Networking facilities are another afterthought. There is no concept of one interface for both network connections and local files; their programming interfaces are separate and quite different. This did allow TCP/IP to supplant IBM\'s native SNA (Systems Network Architecture) as the network protocol of choice fairly seamlessly. It is still common in 2003 to see both in use at a given installation, but SNA is dying out.
+
+Casual programming for MVS is almost nonexistent except within the community of large enterprises that run MVS. This is not due so much to the cost of the tools themselves as it is to the cost of the environment --- when one must spend several million dollars on the computer system, a few hundred dollars a month for a compiler is almost incidental. Within that community, however, there is a thriving culture of freely available software, mainly programming and system-administration tools. The first computer user\'s group, SHARE, was founded in 1955 by IBM users, and is still going strong today.
+
+Considering the vast architectural differences, it is a remarkable fact that MVS was the first non-System-V operating system to meet the Single Unix Specification (there is less to this than meets the eye, however, as ports of Unix software from elsewhere have a strong tendency to founder on ASCII-vs.-EBCDIC character-set issues). It\'s possible to start a Unix shell from TSO; Unix file systems are specially formatted MVS data sets. The MVS Unix character set is a special EBCDIC codepage with newline and linefeed swapped (so that what appears as linefeed to Unix appears like newline to MVS), but the system calls are real system calls implemented in the MVS kernel.
+
+As the cost of the environment drops into the hobbyist range, there is a small but growing group of users of the last public-domain version of MVS (3.8, dating from 1979). This system, as well as development tools and the emulator to run them, are all available for the cost of a CD.^\[[38](ch03s02.html#ftn.id2893754){#id2893754}\]^
+
+The intended role of MVS has always been in the back office. Like VMS and Unix itself, MVS predates the server/client distinction. Interface complexity for back-office users is not only tolerated but expected, in the name of making the computer spend fewer expensive resources on interfaces and more on the work it\'s there to get done.
+:::::
+
+::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#id2893777}VM/CMS {#vmcms .title}
+
+</div>
+::::
+
+VM/CMS is IBM\'s [*other*]{.emphasis} mainframe operating system. Historically speaking, it is Unix\'s uncle: the common ancestor is the CTSS[]{#id2893791 .indexterm} system, developed at MIT around 1963 and running on the IBM 7094 mainframe. The group that developed CTSS then went on to write Multics, the immediate ancestor of Unix. IBM established a group in Cambridge to write a timesharing system for the IBM 360/40, a modified 360 with (for the first time on an IBM system) a paging MMU.^\[[39](ch03s02.html#ftn.id2893806){#id2893806}\]^ The MIT and IBM programmers continued to interact for many years thereafter, and the new system got a user interface that was very CTSS-like, complete with a shell named EXEC and a large supply of utilities analogous to those used on Multics and later on Unix.
+
+In another sense, VM/CMS and Unix are funhouse mirror images of one another. The unifying idea of the system, provided by the VM component, is virtual machines, each of which looks exactly like the underlying physical machine. They are preemptively multitasked, and run either the single-user operating system CMS or a complete multitasking operating system (typically MVS, Linux, or another instance of VM itself). Virtual machines correspond to Unix processes, daemons, and emulators, and communication between them is accomplished by connecting the virtual card punch of one machine to the virtual card reader of another. In addition, a layered tools environment called CMS Pipelines is provided within CMS, directly modeled on Unix\'s pipes but architecturally extended to support multiple inputs and outputs.
+
+When communication between them has not been explicitly set up, virtual machines are completely isolated from each other. The operating system has the same high reliability, scalability, and security as MVS, and has far greater flexibility and is much easier to use. In addition, the kernel-like portions of CMS do not need to be trusted by the VM component, which is maintained completely separately.
+
+Although CMS is record-oriented, the records are essentially equivalent to the lines that Unix textual tools use. Databases are much better integrated into CMS Pipelines than is typically the case on Unix, where most databases are quite separate from the operating system. In recent years, CMS has been augmented to fully support the Single Unix Specification.
+
+The UI style of CMS is interactive and conversational, very unlike MVS but like VMS and Unix. A full-screen editor called XEDIT is heavily used.
+
+VM/CMS predates the client/server distinction, and is nowadays used almost entirely as a server operating system with emulated IBM terminals. Before Windows came to dominate the desktop so completely, VM/CMS provided word-processing services and email both internally to IBM and between mainframe customer sites --- indeed, many VM systems were installed exclusively to run those applications because of VM\'s ready scalability to tens of thousands of users.
+
+A scripting language called Rexx supports programming in a style not unlike shell, awk, Perl or Python. Consequently, casual programming (especially by system administrators) is very important on VM/CMS. Free cycles permitting, admins often prefer to run production MVS in a virtual machine rather than directly on the bare iron, so that CMS is also available and its flexibility can be taken advantage of. (There are CMS tools that permit access to MVS file systems.)
+
+There are even striking parallels between the history of VM/CMS within IBM and Unix within Digital Equipment Corporation (which made the hardware that Unix first ran on). It took IBM years to understand the strategic importance of its unofficial timesharing system, and during that time a community of VM/CMS programmers arose that was closely analogous in behavior to the early Unix community. They shared ideas, shared discoveries about the system, and above all shared source code for utilities. No matter how often IBM tried to declare VM/CMS dead, the community --- which included IBM\'s own MVS system developers! --- insisted on keeping it alive. VM/CMS even went through the same cycle of de facto open source to closed source back to open source, though not as thoroughly as Unix did.
+
+What VM/CMS lacks, however, is any real analog to C. Both VM and CMS were written in assembler and have remained so implemented. The nearest equivalent to C was various cut-down versions of PL/I that IBM used for systems programming, but did not share with its customers. Therefore, the operating system remains trapped on its original architectural line, though it has grown and expanded as the 360 architecture became the 370 series, the XA series, and finally the current z/Series.
+
+Since the year 2000, IBM has been promoting VM/CMS on mainframes to an unprecedented degree --- as ways to host thousands of virtual Linux machines at once.
+:::::
+
+:::::: {.sect2 lang="en"}
+:::: titlepage
+<div>
+
+### []{#linux}Linux {#linux .title}
+
+</div>
+::::
+
+[]{#id2893945 .indexterm}
+
+Linux, originated by Linus Torvalds in 1991, leads the pack of new-school open-source Unixes that have emerged since 1990 (also including FreeBSD, NetBSD, OpenBSD, and Darwin[]{#id2893962 .indexterm}), and is representative of the design direction being taken by the group as a whole. The trends in it can be taken as typical for this entire group.
+
+Linux does not include any code from the original Unix source tree, but it was designed from Unix standards to behave like a Unix. In the rest of this book, we emphasize the continuity between Unix and Linux. That continuity is extremely strong, both in terms of technology and key developers --- but here we emphasize some directions Linux is taking that mark a departure from 'classical' Unix tradition.
+
+Many developers and activists in the Linux community have ambitions to win a substantial share of end-user desktops. This makes Linux\'s intended audience quite a bit broader than was ever the case for the old-school Unixes, which have primarily aimed at the server and technical-workstation markets. This has implications for the way Linux hackers design software.
+
+The most obvious change is a shift in preferred interface styles. Unix was originally designed for use on teletypes and slow printing terminals. Through much of its lifetime it was strongly associated with character-cell video-display terminals lacking either graphics or color capabilities. Most Unix programmers stayed firmly wedded to the command line long after large end-user applications had migrated to X-based GUIs, and the design of both Unix operating systems and their applications have continued to reflect this fact.
+
+Linux users and developers, on the other hand, have been adapting themselves to address the nontechnical user\'s fear of CLIs. They have moved to building GUIs and GUI tools much more intensively than was the case in old-school Unix, or even in contemporary proprietary Unixes. To a lesser but significant extent, this is true of the other open-source Unixes as well.
+
+The desire to reach end users has also made Linux developers much more concerned with smoothness of installation and software distribution issues than is typically the case under proprietary Unix systems. One consequence is that Linux features binary-package systems far more sophisticated than any analogs in proprietary Unixes, with interfaces designed (as of 2003, with only mixed success) to be palatable to nontechnical end users.
+
+The Linux community wants, more than the old-school Unixes ever did, to turn their software into a sort of universal pipefitting for connecting together other environments. Thus, Linux features support for reading and (often) writing the file system formats and networking methods native to other operating systems. It also supports multiple-booting with them on the same hardware, and simulating them in software inside Linux itself. The long-term goal is subsumption; Linux emulates so it can absorb.^\[[40](ch03s02.html#ftn.id2894051){#id2894051}\]^
+
+The goal of subsuming the competition, combined with the drive to reach the end-user, has motivated Linux developers to adopt design ideas from non-Unix operating systems to a degree that makes traditional Unixes look rather insular. Linux applications using Windows .INI format files for configuration is a minor example we\'ll cover in [Chapter 10](configurationchapter.html "Chapter 10. Configuration"); Linux 2.5\'s incorporation of extended file attributes, which among other things can be used to emulate the semantics of the Macintosh resource fork, is a recent major one at time of writing.
+
+::: blockquote
+  ------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------- ---
+                                                                           But the day Linux gives the Mac diagnostic that you can\'t open a file because you don\'t have the application is the day Linux becomes non-Unix.    
+  \--[ [Doug McIlroy]{.author} []{#id2894104 .indexterm} ]{.attribution}                                                                                                                                                        
+  ------------------------------------------------------------------------ --------------------------------------------------------------------------------------------------------------------------------------------------- ---
+:::
+
+The remaining proprietary Unixes (such as Solaris, HP-UX, AIX, etc.) are designed to be big products for big IT budgets. Their economic niche encourages designs optimized for maximum power on high-end, leading-edge hardware. Because Linux has part of its roots among PC hobbyists, it emphasizes doing more with less. Where proprietary Unixes are tuned for multiprocessor and server-cluster operation at the expense of performance on low-end hardware, core Linux developers have explicitly chosen not to accept more complexity and overhead on low-end machines for marginal performance gains on high-end hardware.
+
+Indeed, a substantial fraction of the Linux user community is understood to be wringing usefulness out of hardware as technically obsolete today as Ken Thompson\'s PDP-7 was in 1969. As a consequence, Linux applications are under pressure to stay lean and mean that their counterparts under proprietary Unix do not experience.
+
+These trends have implications for the future of Unix as a whole, a topic we\'ll return to in [Chapter 20](http://www.catb.org/~esr/writings/taoup/html/futurechapter.html "Chapter 20. Futures").
+::::::
+
+:::::::::::::::::::: footnotes
+\
+
+------------------------------------------------------------------------
+
+::: footnote
+^\[[24](ch03s02.html#id2888666){#ftn.id2888666}\]^ See the [OSData website](http://www.osdata.com/){target="_top"}.
+:::
+
+::: footnote
+^\[[25](ch03s02.html#id2888745){#ftn.id2888745}\]^ Except for Multics which exerted most of its influence between the time its specifications were published in 1965 and when it actually shipped in 1969.
+:::
+
+::: footnote
+^\[[26](ch03s02.html#id2888778){#ftn.id2888778}\]^ For details on the lawsuit, see Marshall Kirk McKusick\'s paper in \[[OpenSources](http://www.catb.org/~esr/writings/taoup/html/apb.html#OpenSources "[OpenSources]")\].
+:::
+
+::: footnote
+^\[[27](ch03s02.html#id2888820){#ftn.id2888820}\]^ More information is available at the [OpenVMS.org site](http://www.openvms.org){target="_top"}.
+:::
+
+::: footnote
+^\[[28](ch03s02.html#id2889123){#ftn.id2889123}\]^ MacOS X actually consists of two proprietary layers (ports of the OpenStep and Classic Mac GUIs) layered over an open-source Unix core (Darwin).
+:::
+
+::: footnote
+^\[[29](ch03s02.html#id2892797){#ftn.id2892797}\]^ In return for some Amiga technology, IBM gave Commodore a license for its REXX scripting language. The deal is described at [http://www.os2bbs.com/os2news/OS2Warp.html](http://www.os2bbs.com/os2news/OS2Warp.html){target="_top"}.
+:::
+
+::: footnote
+^\[[30](ch03s02.html#id2892968){#ftn.id2892968}\]^ [AmigaOS Portal](http://os.amiga.com/){target="_top"}.
+:::
+
+::: footnote
+^\[[31](ch03s02.html#id2892980){#ftn.id2892980}\]^ [The GEM Operating System](http://www.geocities.com/SiliconValley/Vista/6148/gem.html){target="_top"}.
+:::
+
+::: footnote
+^\[[32](ch03s02.html#id2892994){#ftn.id2892994}\]^ See, for example, the [OS Voice](http://www.os2voice.org/){target="_top"} and [OS/2 BBS.COM](http://www.os2bbs.com/){target="_top"} sites.
+:::
+
+::: footnote
+^\[[33](ch03s02.html#id2893067){#ftn.id2893067}\]^ Perhaps. It has been argued that the unifying metaphor of all Microsoft operating systems is "the customer must be locked in".
+:::
+
+::: footnote
+^\[[34](ch03s02.html#id2893243){#ftn.id2893243}\]^ [http://security.tombom.co.uk/shatter.html](http://security.tombom.co.uk/shatter.html){target="_top"}
+:::
+
+::: footnote
+^\[[35](ch03s02.html#id2893270){#ftn.id2893270}\]^ Microsoft actually admitted publicly that NT security is impossible in March 2003. See [http://www.microsoft.com/technet/treeview/default.asp?url=/technet/security/bulletin/MS03-010.asp](http://www.microsoft.com/technet/treeview/default.asp?url=/technet/security/bulletin/MS03-010.asp){target="_top"}.
+:::
+
+::: footnote
+^\[[36](ch03s02.html#id2893313){#ftn.id2893313}\]^ The DLL hell problem is somewhat mitigated by the .NET development framework, which handles library versioning --- but as of 2003 .NET only ships on the highest-end server versions of NT.
+:::
+
+::: footnote
+^\[[37](ch03s02.html#id2893328){#ftn.id2893328}\]^ Cygwin is largely compliant with the Single Unix Specification, but programs requiring direct hardware access run into limitations in the Windows kernel that hosts it. Ethernet cards are notoriously problematic.
+:::
+
+::: footnote
+^\[[38](ch03s02.html#id2893754){#ftn.id2893754}\]^ [http://www.cbttape.org/cdrom.htm](http://www.cbttape.org/cdrom.htm){target="_top"}
+:::
+
+::: footnote
+^\[[39](ch03s02.html#id2893806){#ftn.id2893806}\]^ The development machine and initial target was a 40 with customized microcode, but it proved insufficiently powerful; production deployment was on the 360/67.
+:::
+
+::: footnote
+^\[[40](ch03s02.html#id2894051){#ftn.id2894051}\]^ The results of Linux\'s emulate-and-subsume strategy differ noticeably from the embrace-and-extend practiced by some of its competitors. For starters, Linux does not break compatibility with what it is emulating in order to lock customers into the "extended" version.
+:::
+::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+::: navfooter
+
+------------------------------------------------------------------------
+
+  ----------------------------------------- ------------------------------------------- --------------------------------------
+  [Prev](ch03s01.html){accesskey="p"}        [Up](contrastchapter.html){accesskey="u"}     [Next](ch03s03.html){accesskey="n"}
+  The Elements of Operating-System Style         [Home](index.html){accesskey="h"}              What Goes Around, Comes Around
+  ----------------------------------------- ------------------------------------------- --------------------------------------
+:::

@@ -1,0 +1,56 @@
+::: navheader
+  Measure before Optimizing                                         
+  -------------------------------------- -------------------------- --------------------------------------
+  [Prev](ch12s01.html){accesskey="p"}     Chapter 12. Optimization     [Next](ch12s03.html){accesskey="n"}
+
+------------------------------------------------------------------------
+:::
+
+:::::: {.sect1 lang="en"}
+:::: titlepage
+<div>
+
+## []{#id2960884}Measure before Optimizing {#measure-before-optimizing .title style="clear: both"}
+
+</div>
+::::
+
+When you have real-world evidence that your application is too slow, then (and [*only*]{.emphasis} then) is the time to think about optimizing the code. But before you do more than think about optimizing, measure.
+
+Recall Rob Pike\'s six rules in [Chapter 1](philosophychapter.html "Chapter 1. Philosophy"). One of the lessons that the original Unix programmers learned early is that intuition is a poor guide to where the bottlenecks are, even for one who knows the code in question intimately. Unixes, unlike most other operating systems, usually come with profilers; use them.
+
+Reading profiler results is something of an art. There are a couple of recurring problems: one is instrumentation noise, another is the effect of imposed external latencies, and a third is overweighting of upper nodes in the call graph.
+
+The instrumentation-noise problem is fundamental. Profilers work by inserting instructions that report execution time at the entry and exit points of subroutines, also at fixed intervals within the inline code of routines. These instructions themselves take time to execute. The effect is to reduce the dispersion of call times: very short subroutines tend to look more expensive than they are, with a lot of noise in their comparative call times, while for longer ones the instrumentation overhead is invisible.
+
+Bearing instrumentation noise in mind, it\'s wise to assume that the times listed for the fastest, shortest subroutines are going to have a lot of froth and air in them. They can still be eating a lot of time if they are called very frequently, however, so pay particular attention to their call-count statistics.
+
+The external-latency problem is also fundamental. There are various sorts of delay and distortion that can happen behind the profiler\'s back. The simplest is overhead from operations with unpredictable latency --- disk and network accesses, cache fills, process-context switches, and the like. The problem is not so much that these overheads happen --- they may actually be what you\'re trying to measure, especially if you\'re focusing on whole-system performance rather than just tuning a critical inner loop. The problem is that they have a random component that means the results from any individual profiling run may not be very useful.
+
+One way to minimize the effects of these noise sources, and get a better picture of where the time is going in the average case, is to add together the results from a lot of profiling runs. There are a lot of good reasons to build test harnesses and test loads for your programs before you get to optimizing; the most important reason, usually far more important than performance tuning, is so you can regression-test your program for correctness as you change it. Once you\'ve done this, being able to profile repeated tests under load is a nice side effect that will often give you better information than a few runs by hand.
+
+Various effects tend to allocate time spent to calling routines rather than callees, overweighting upper modes in the call graph. Function-call overhead, for example, is often charged to the calling routine (whether or not this is true depends partly on your machine architecture and where the profiler is allowed to insert probes). Macros and inline functions, if your compiler supports them, won\'t show up in the profiling report at all; every bit of their time gets charged to the calling function.
+
+More importantly, many time-reporting tools give a display in which time spent in subroutines is charged to the caller. (The gprof(1) profiler distributed with open-source Unixes has this trait.) Naïvely subtracting callee time from caller time won\'t give you a useful result if the same routine can have more than one caller --- the effect would be to artificially deflate both callers\' times. Especially nasty is the common case of a utility function with multiple call sites, some of which make lots of trivial calls and others of which make a few complicated ones.
+
+To get more transparent results, factor your code so that upper-level routines consist as much as possible of calls to lower-level routines, rather than in-line code. If you keep the overhead of upper-level control logic to a minimum, the call structure of the code will tend to organize the profile report in a way that is relatively easy to read.
+
+You\'ll get more insight from using profilers if you think of them less as ways to collect individual performance numbers, and more as ways to learn how performance varies as a function of interesting parameters (e.g., problem size, CPU speed, disc speed, memory size, compiler optimization, or whatever else is relevant). Try fitting those numbers to a model, using open-source software like R or a good-quality proprietary tool like MATLAB.
+
+::: blockquote
+  ------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ ---
+                                                                            The natural smoothing of the data that results from model fitting tends to focus on the big effects and cover up the small, noisy ones. For example, by fitting a cubic to the matrix inversion routine in MATLAB on random matrices from 10 × 10 to 1000 × 1000, it is clear that we actually have three cubics, with clearly defined boundaries, that correspond roughly to "in cache", "in memory but out of cache", and "out of memory". The data shows us this effect even if weren\'t looking for it, just by looking at the deviations from the best fit.    
+  \--[ [Steve Johnson]{.author} []{#id2961055 .indexterm} ]{.attribution}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
+  ------------------------------------------------------------------------- ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ ---
+:::
+::::::
+
+::: navfooter
+
+------------------------------------------------------------------------
+
+  ----------------------------------------- ----------------------------------------------- --------------------------------------
+  [Prev](ch12s01.html){accesskey="p"}        [Up](optimizationchapter.html){accesskey="u"}     [Next](ch12s03.html){accesskey="n"}
+  Don\'t Just Do Something, Stand There!           [Home](index.html){accesskey="h"}                Nonlocality Considered Harmful
+  ----------------------------------------- ----------------------------------------------- --------------------------------------
+:::

@@ -1,0 +1,344 @@
+  Part II. Design       
+  ----------------- --- -------
+  Prev                     Next
+
+------------------------------------------------------------------------
+
+Design
+
+Table of Contents
+
+4. Modularity
+
+Encapsulation and Optimal Module Size
+
+Compactness and Orthogonality
+
+Compactness
+
+Orthogonality
+
+The SPOT Rule
+
+Compactness and the Strong Single Center
+
+The Value of Detachment
+
+Software Is a Many-Layered Thing
+
+Top-Down versus Bottom-Up
+
+Glue Layers
+
+Case Study: C Considered as Thin Glue
+
+Libraries
+
+Case Study: GIMP Plugins
+
+Unix and Object-Oriented Languages
+
+Coding for Modularity
+
+5. Textuality
+
+The Importance of Being Textual
+
+Case Study: Unix Password File Format
+
+Case Study: .newsrc Format
+
+Case Study: The PNG Graphics File Format
+
+Data File Metaformats
+
+DSV Style
+
+RFC 822 Format
+
+Cookie-Jar Format
+
+Record-Jar Format
+
+XML
+
+Windows INI Format
+
+Unix Textual File Format Conventions
+
+The Pros and Cons of File Compression
+
+Application Protocol Design
+
+Case Study: SMTP, the Simple Mail Transfer Protocol
+
+Case Study: POP3, the Post Office Protocol
+
+Case Study: IMAP, the Internet Message Access Protocol
+
+Application Protocol Metaformats
+
+The Classical Internet Application Metaprotocol
+
+HTTP as a Universal Application Protocol
+
+BEEP: Blocks Extensible Exchange Protocol
+
+XML-RPC, SOAP, and Jabber
+
+6. Transparency
+
+Studying Cases
+
+Case Study: audacity
+
+Case Study: fetchmail's -v option
+
+Case Study: GCC
+
+Case Study: kmail
+
+Case Study: SNG
+
+Case Study: The Terminfo Database
+
+Case Study: Freeciv Data Files
+
+Designing for Transparency and Discoverability
+
+The Zen of Transparency
+
+Coding for Transparency and Discoverability
+
+Transparency and Avoiding Overprotectiveness
+
+Transparency and Editable Representations
+
+Transparency, Fault Diagnosis, and Fault Recovery
+
+Designing for Maintainability
+
+7. Multiprogramming
+
+Separating Complexity Control from Performance Tuning
+
+Taxonomy of Unix IPC Methods
+
+Handing off Tasks to Specialist Programs
+
+Pipes, Redirection, and Filters
+
+Wrappers
+
+Security Wrappers and Bernstein Chaining
+
+Slave Processes
+
+Peer-to-Peer Inter-Process Communication
+
+Problems and Methods to Avoid
+
+Obsolescent Unix IPC Methods
+
+Remote Procedure Calls
+
+Threads — Threat or Menace?
+
+Process Partitioning at the Design Level
+
+8. Minilanguages
+
+Understanding the Taxonomy of Languages
+
+Applying Minilanguages
+
+Case Study: sng
+
+Case Study: Regular Expressions
+
+Case Study: Glade
+
+Case Study: m4
+
+Case Study: XSLT
+
+Case Study: The Documenter's Workbench Tools
+
+Case Study: fetchmail Run-Control Syntax
+
+Case Study: awk
+
+Case Study: PostScript
+
+Case Study: bc and dc
+
+Case Study: Emacs Lisp
+
+Case Study: JavaScript
+
+Designing Minilanguages
+
+Choosing the Right Complexity Level
+
+Extending and Embedding Languages
+
+Writing a Custom Grammar
+
+Macros — Beware!
+
+Language or Application Protocol?
+
+9. Generation
+
+Data-Driven Programming
+
+Case Study: ascii
+
+Case Study: Statistical Spam Filtering
+
+Case Study: Metaclass Hacking in fetchmailconf
+
+Ad-hoc Code Generation
+
+Case Study: Generating Code for the ascii Displays
+
+Case Study: Generating HTML Code for a Tabular List
+
+10. Configuration
+
+What Should Be Configurable?
+
+Where Configurations Live
+
+Run-Control Files
+
+Case Study: The .netrc File
+
+Portability to Other Operating Systems
+
+Environment Variables
+
+System Environment Variables
+
+User Environment Variables
+
+When to Use Environment Variables
+
+Portability to Other Operating Systems
+
+Command-Line Options
+
+The -a to -z of Command-Line Options
+
+Portability to Other Operating Systems
+
+How to Choose among the Methods
+
+Case Study: fetchmail
+
+Case Study: The XFree86 Server
+
+On Breaking These Rules
+
+11. Interfaces
+
+Applying the Rule of Least Surprise
+
+History of Interface Design on Unix
+
+Evaluating Interface Designs
+
+Tradeoffs between CLI and Visual Interfaces
+
+Case Study: Two Ways to Write a Calculator Program
+
+Transparency, Expressiveness, and Configurability
+
+Unix Interface Design Patterns
+
+The Filter Pattern
+
+The Cantrip Pattern
+
+The Source Pattern
+
+The Sink Pattern
+
+The Compiler Pattern
+
+The ed pattern
+
+The Roguelike Pattern
+
+The ‘Separated Engine and Interface’ Pattern
+
+The CLI Server Pattern
+
+Language-Based Interface Patterns
+
+Applying Unix Interface-Design Patterns
+
+The Polyvalent-Program Pattern
+
+The Web Browser as a Universal Front End
+
+Silence Is Golden
+
+12. Optimization
+
+Don't Just Do Something, Stand There!
+
+Measure before Optimizing
+
+Nonlocality Considered Harmful
+
+Throughput vs. Latency
+
+Batching Operations
+
+Overlapping Operations
+
+Caching Operation Results
+
+13. Complexity
+
+Speaking of Complexity
+
+The Three Sources of Complexity
+
+Tradeoffs between Interface and Implementation Complexity
+
+Essential, Optional, and Accidental Complexity
+
+Mapping Complexity
+
+When Simplicity Is Not Enough
+
+A Tale of Five Editors
+
+ed
+
+vi
+
+Sam
+
+Emacs
+
+Wily
+
+The Right Size for an Editor
+
+Identifying the Complexity Problems
+
+Compromise Doesn't Work
+
+Is Emacs an Argument against the Unix Tradition?
+
+The Right Size of Software
+
+------------------------------------------------------------------------
+
+  --------------------------------- ------ ------------------------
+  Prev                                Up                       Next
+  What Goes Around, Comes Around     Home     Chapter 4. Modularity
+  --------------------------------- ------ ------------------------
