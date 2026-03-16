@@ -1,0 +1,50 @@
+id=
+
+::: {#Header}
+  ---------------------- -------------
+  Let Java Go, Round 2     19 Feb 2004
+  ---------------------- -------------
+:::
+
+::: {#Menu}
+
+------------------------------------------------------------------------
+
+[Home Page](http://www.catb.org/~esr "My home page")\
+[What\'s New](http://www.catb.org/~esr/whatsnew.html "What's new on this site")\
+[Site Map](http://www.catb.org/~esr/sitemap.html "Map of the site")\
+[Software](http://www.catb.org/~esr/software.html "Software I maintain")\
+[Projects](http://www.catb.org/~esr/projects.html "My projects")\
+[HOWTOs](http://www.catb.org/~esr/faqs/ "My FAQ documents")\
+[Essays](index.html "Essays and ruminations")\
+[Personal](http://www.catb.org/~esr/personal.html "Portrait of the author")\
+[Weblog](http://www.ibiblio.org/esrblog/)\
+[Freedom!](http://www.catb.org/~esr/netfreedom/)\
+[Firearms!](http://www.catb.org/~esr/guns/)\
+
+------------------------------------------------------------------------
+:::
+
+::: {#Content}
+Sun Microsystems might have responded to my open letter of 12 Feb ([Let Java Go](http://catb.org/~esr/writings/let-java-go.html)) by at least sketching a rational business case for Sun\'s rather inconsistent stance towards the open-source community; that might have led to an interesting discussion. Instead, Sun seems to have elected to try to [shoot the messenger](http://www.pcpro.co.uk/news/news_story.php?id=53646). This is unfortunate and not what I expected. Nor is it likely to win Sun friends or influence people --- after all, I was only writing what many people in the open-source community (including many of Sun\'s own employees) are thinking.
+
+The response comes from Simon Phipps, Sun\'s Chief Technology Evangelist. Note that I have to go by published reports of his response, as Sun did not extend the courtesy of sending me a full copy and I have not yet seen one. It is possible that Mr. Phipps\'s full remarks are more sensible; I certainly hope they are, as the excerpts suggest an astonishing lack of professionalism on someone\'s part.
+
+Mr. Phipps objects to my having responded to remarks Scott McNealy made to analysts as though they had been addressed to the open-source community. I deduce from his objection that Mr. Phipps thinks his boss has a right to tell conflicting stories to different audiences without being called on it. I suppose it is possible that analysts accept being handed spin and fabulations, but we in the open-source community do not.
+
+In general, if you call yourself a \"friend of open source\" *anywhere* in public, you\'d best expect the open-source community to have an equally public opinion about whether you really are one or not --- and not to be shy about expressing that opinion, either, whether it\'s through me or any one of half-a-dozen other community spokespeople.
+
+Mr. Phipps then launches into a list of Sun projects that he characterizes as contributions to open source. The proper response to this is to ask: where\'s the code? Marketing and spin and \'initiatives\' are all very well, but what code is Sun issuing under licenses conformant to the [Open Source Definition](http://www.opensource.org/docs/definition.php)? That, ultimately, is what the community cares about. Show us the code.
+
+Mr. Phipps could have said \"OpenOffice.org\" and had the beginnings of a good answer; instead he chose to wave a flag for projects like Java Enterprise System that primarily use open-source technology without contributing significantly back to it. By doing so, Mr. Phipps harms his own case. While we in the open-source community are happy to see our technology being used and propagated, that is not enough in itself to qualify Sun as a \"friend\"; only serious contributions of money, manpower and especially *code* can do that. He would have been well advised to spend more time listing those and less on an ad-hominem attack.
+
+If Mr. Phipps truly thinks \"Java is everywhere\" Sun may be setting itself up for a rude shock. I did some research on language use patterns for my [most recent book](http://catb.org/~esr/writings/taoup/); it revealed that Java is not only still a minority language in the open-source community but that it has not gained significant mindshare there since 1997. Given the adoption curve of open source this is much worse news for Sun than it looks like --- it suggests that in the fastest-growing and most dynamic part of the software industry, Java has lost the edge. Nor is the reason hard to find; no amount of talk or posturing can change the fact that Java\'s \"Sun Community Source License\" is an instrument of proprietary lock-in, and most open-source developers simply do not want any part of that.
+
+But the most serious problem in Mr. Phipps\'s statements (at least, in the excerpts that I have of them) is his claim that Sun exercises no more control over Java than anyone else in the Java Community Process. This is simply false: *Sun controls the license.* If and when the Sun Java codebase is open-sourced, it will be Sun\'s decision and Sun\'s *alone* to do that. Again, Mr. Phipps damages Sun\'s case by the manner in which he chooses to defend it. Hiding behind the \"Java Community Process\" is disingenuous and dishonest.
+
+We don\'t presume to dictate Sun\'s strategy. But what we *do* require of anyone before we will accept them as a \"friend of the open-source community\" is more honesty than this. Sun should be nervous about the consequences of allowing its spokespeople to indulge in flames, spin, and prevarication when there are serious issues on the table. Because an attempt to shoot the messenger won\'t make those issues go away; indeed, it makes some of them worse.
+
+Can we do better than this? I did not publish my letter to attack Sun, only to call it to account for its claim to be a friend of open source. There are questions that need answers. There is a potential for more and better cooperation. The open source community would like \"friendship\" with Sun to be real and solid from both ends --- but the nature of our community is such that the statement of positions, the argument, and the agreement (if there is to be one) all have to be developed in the sight of the community. Let\'s talk.
+:::
+
+------------------------------------------------------------------------

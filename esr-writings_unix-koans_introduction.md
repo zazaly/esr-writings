@@ -1,0 +1,88 @@
+::: navheader
+  Editor\'s Introduction                                                                                    
+  ----------------------------------------------------------------------------------------------------- --- ------------------------------------------------------------------------------------------------------------
+  [![Prev](http://www.catb.org/~esr/writings/unix-koans/images/prev.png)](index.html){accesskey="p"}           [![Next](http://www.catb.org/~esr/writings/unix-koans/images/next.png)](ten-thousand.html){accesskey="n"}
+
+------------------------------------------------------------------------
+:::
+
+::::::::::::: sect1
+::::: titlepage
+<div>
+
+<div>
+
+## []{#introduction}Editor\'s Introduction {#editors-introduction .title style="clear: both"}
+
+</div>
+
+</div>
+:::::
+
+The discovery of the collection of koans known as the *Rootless Root*, apparently preserved for decades in the dry upper air of the Western Mountains, has ignited great controversy in scholarly circles. Are these authentic documents shedding new light on the teaching of the early Unix patriarchs? Or are they clever pastiches from a later age, commanding the authority of semi-mythical figures such as the Patriarchs Thompson, Ritchie and McIlroy for doctrines which evolved closer to our own era?
+
+It is impossible to say for certain. All sides in the dispute have made much of an alleged similarity to that venerable classic, *The Tao of Programming*[^\[1\]^](introduction.html#ftn.idm45906435101392){#idm45906435101392 .footnote}. But *Rootless Root* is quite different in tone and style from the loose, poetic anecdotes of the James translation, focused as it is on the remarkable and enigmatic figure of Master Foo.
+
+A newer work, the *Unix Power Classic*[^\[2\]^](introduction.html#ftn.idm45906435056848){#idm45906435056848 .footnote}, translates the *Tao Te Ching* into an idiom similar to that of *Rootless Root*. *Unix Power Classic* may well have been influenced by *Rootless Root*, or further research may disclose that they had common sources.
+
+It would be more apposite to seek parallels in the *AI Koans*[^\[3\]^](introduction.html#ftn.idm45906435053408){#idm45906435053408 .footnote}; indeed, there are textual clues that the author of the *Rootless Root* may have redacted certain versions of the *AI Koans*. We are also on much firmer ground in seeking connections with the *Loginataka*[^\[4\]^](introduction.html#ftn.idm45906435050880){#idm45906435050880 .footnote}; indeed, it is quite possible that the unknown authors of *Rootless Root* and of *Loginataka* were one and the same person, possibly a student of Master Foo himself.
+
+Mention should also be made of the *Tales of Zen Master Greg*[^\[5\]^](introduction.html#ftn.idm45906435048080){#idm45906435048080 .footnote}, though the Nine Inch Nails references have cast some doubt on their antiquity and it is thus unlikely that they influenced *Rootless Root*.
+
+That the title of the work was intended as a reference to the Zen classic *Gateless Gate*[^\[6\]^](introduction.html#ftn.idm45906435045632){#idm45906435045632 .footnote} of Mumon, we can say with fair confidence. There are echoes of Mumon in several of the koans.
+
+There is considerable dispute over whether Master Foo should be assigned to the Eastern (New Jersey) School, or the Western School that grew out of the Patriarch Thompson\'s epochal early journey to Berkeley. If this question has not been settled, it is perhaps because we cannot even establish that Master Foo ever existed! He might merely be a composite of a group of teachers, or of an entire dharma lineage.
+
+Even supposing the legend of Master Foo accreted around the teaching of some a single person, what of his favored student Nubi? Nubi has all the earmarks of a stock figure, the perfect disciple. One is reminded of the tales surrounding the Buddha\'s favorite follower Ananda. It seems likely that there was a historical Ananda, but no trace of his actual personality has survived the euhemerizing process by which the life of the Buddha was polished into timeless myth.
+
+In the end, all we can do is take these teaching stories on their own terms, and extract what kernels of wisdom may be found there.
+
+The redaction of the *Rootless Root* is a work in progress, as the source materials present many difficulties in reconstruction and interpretation. Future versions may include more stories as these difficulties are overcome.
+
+::::::::: footnotes
+\
+
+------------------------------------------------------------------------
+
+::: {#ftn.idm45906435101392 .footnote}
+[^\[1\]^](introduction.html#idm45906435101392){.para} *The Tao of Programming* is available [on the Web.](http://www.canonical.org/~kragen/tao-of-programming.html){.ulink target="_top"}
+:::
+
+::: {#ftn.idm45906435056848 .footnote}
+[^\[2\]^](introduction.html#idm45906435056848){.para} *The Unix Power Classic* is available [on the Web.](http://mercury.ccil.org/~cowan/upc/){.ulink target="_top"}
+:::
+
+::: {#ftn.idm45906435053408 .footnote}
+[^\[3\]^](introduction.html#idm45906435053408){.para} The *AI Koans* are available [on the Web.](http://www.catb.org/~esr//jargon/html/koans.html){.ulink target="_top"}
+:::
+
+::: {#ftn.idm45906435050880 .footnote}
+[^\[4\]^](introduction.html#idm45906435050880){.para} The *Loginataka* is available [on the Web.](http://www.catb.org/~esr//faqs/loginataka.html){.ulink target="_top"}
+:::
+
+::: {#ftn.idm45906435048080 .footnote}
+[^\[5\]^](introduction.html#idm45906435048080){.para} The *Tales of Zen Master Greg* are available [on the Web.](http://www.gu.uwa.edu.au/users/greg/){.ulink target="_top"}
+:::
+
+::: {#ftn.idm45906435045632 .footnote}
+[^\[6\]^](introduction.html#idm45906435045632){.para} The *Gateless Gate* is available [on the Web.](http://www.ibiblio.org/zen/cgi-bin/koan-index.pl){.ulink target="_top"}
+:::
+:::::::::
+:::::::::::::
+
+::: navfooter
+
+------------------------------------------------------------------------
+
++:----------------------------------------------------------------------------------------------------+:--------------------------------------------------------------------------------------------------:+-----------------------------------------------------------------------------------------------------------:+
+| [![Prev](http://www.catb.org/~esr/writings/unix-koans/images/prev.png)](index.html){accesskey="p"}  |                                                                                                    |  [![Next](http://www.catb.org/~esr/writings/unix-koans/images/next.png)](ten-thousand.html){accesskey="n"} |
++-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Rootless Root                                                                                       | [![Home](http://www.catb.org/~esr/writings/unix-koans/images/home.png)](index.html){accesskey="h"} |  Master Foo and the Ten Thousand Lines                                                                     |
+|                                                                                                     |                                                                                                    |                                                                                                            |
+| ::: mediaobject                                                                                     |                                                                                                    |                                                                                                            |
+| ![](http://www.catb.org/~esr/writings/unix-koans/images/rootlessroot.png)                           |                                                                                                    |                                                                                                            |
+| :::                                                                                                 |                                                                                                    |                                                                                                            |
+|                                                                                                     |                                                                                                    |                                                                                                            |
+|                                                                                                     |                                                                                                    |                                                                                                            |
++-----------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+:::

@@ -1,0 +1,27 @@
+------------------------------------------------------------------------
+
+The Nerligig Revealed
+
+I asked Steve "Um. Do you in fact know what a nerligig does?"
+
+He replied "Well, yes and no. It is a sort of non-stop `look-at-me' device -- things moving about, lights, motion, activity, a bit of noise but not too much -- intended to attract attention from passersby while at the same time almost hypnotically making people comfortable so that they want to stay in the area and bask in feeling that while they are watching it they are doing something worth doing. Like watching the river flow, or watching the tide come in, or a waterfall...."
+
+I replied:
+
+"Now that I've seen your spec, though, *I* know how it works :-)."
+
+"Mix your background soundtrack from pink noise, a human heartbeat, voices just below audibility, and polyrhythmic percussion. Have occasional events like chimes, soft bells, the rumble of distant thunder, snatches of wordless choral singing. For visuals, a kinetic sculpture incorporating diodes in soft, fully saturated colors, with lots of moire effects. (See http://www.woodthatworks.com for appropriately hypnotic sculptural forms on which to hang the lightshow.) There's an air ionizer, too."
+
+"Your really high-end nerligig, of course, includes stuff like a scent organ and infrasonics emitted at soothing frequencies. And there are illegal customizations that broadcast euphoriants or aphrodisiacs."
+
+"I couldn't build this myself. But I could run the design project to produce one."
+
+Steve replied:
+
+"That's pretty close. [...] From the context of the quotes you can see we'd intended the nerligig that Shan was working on to be a portable -- call it oversize boombox or something -- while the bar unit that Daav was working on was obviously a jukebox size player-piano size or 77 inch tv size or equivalent -- a professional entertainment device..."
+
+So there you have it.
+
+------------------------------------------------------------------------
+
+Eric S. Raymond <esr@thyrsus.com>

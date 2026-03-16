@@ -1,0 +1,60 @@
+::: {#Header}
+  -------------------------------- ------------
+  Shut Up And Show Them The Code     28 June 99
+  -------------------------------- ------------
+:::
+
+::: {#Menu}
+
+------------------------------------------------------------------------
+
+[Home Page](http://www.catb.org/~esr "My home page")\
+[What\'s New](http://www.catb.org/~esr/whatsnew.html "What"){s="" new="" on="" this="" site'=""}\
+[Site Map](http://www.catb.org/~esr/sitemap.html "Map of the site")\
+[Software](http://www.catb.org/~esr/software.html "Software I maintain")\
+[Projects](http://www.catb.org/~esr/projects.html "My projects")\
+[HOWTOs](http://www.catb.org/~esr/faqs/ "My FAQ documents")\
+[Essays](index.html "Essays and ruminations")\
+[Personal](http://www.catb.org/~esr/personal.html "Portrait of the author")\
+[Weblog](http://www.ibiblio.org/esrblog/)\
+[Freedom!](http://www.catb.org/~esr/netfreedom/)\
+[Firearms!](http://www.catb.org/~esr/guns/)\
+
+------------------------------------------------------------------------
+:::
+
+::: {#Content}
+[Japanese](http://www1.neweb.ne.jp/wa/yamdas/column/technique/shutupj.html) translation is available.
+
+\
+
+In a [Slashdot posting](http://slashdot.org/article.pl?sid=99/06/28/1311232&mode=thread) published today, RMS distances himself from the Open Source movement because (he says) we avoid talking about \"freedom, about principle, about the rights that computer users are entitled to\".
+
+He\'s right. We do avoid that. But not because we don\'t care about \"freedom\", \"principle\" or \"rights\". Speaking for myself, I trust that anybody who\'s ever heard me speak or read my writings on the [First](http://www.tuxedo.org/~esr/netfreedom/) or [Second](http://www.tuxedo.org/~esr/guns/) Amendments knows that I am quite passionate and vocal about freedom and rights; like RMS, I defend them even when they are unpopular with my audience. Other Open Source advocates don\'t seem to me to be any slower than I to speak the language of \"freedom\" and \"rights\" when they judge it is appropriate.
+
+But \"when they judge it is appropriate\" is a very important qualifier. There are two different kinds of reasons an open-source advocate might avoid speaking about RMS\'s \`freedom\'; either disagreement with his goals, or a judgment that doing so is ineffective, is bad tactics.
+
+The difference is important, and this is where RMS misrepresents what we are about. He would have you believe that the FSF and OSI have diverged over vast matters of principle, when in fact the OSI (and the Open Source movement as a whole) is carefully designed to be able to include people with beliefs like RMS\'s.
+
+The Open Source Initiative does not have a position for or against RMS\'s goals. Please don\'t take my word for this; go look at our advocacy materials on the [Open Source website](http://www.opensource.org), especially the part in the FAQ where it says \"Open Source is a marketing program for free software\".
+
+Now it is true that some individuals associated with OSI occasionally argue with some of RMS\'s goals and principles (and one of those individuals is me). But the OSI is a big-tent organization; we have never condemned RMS\'s principles, and never will \-- because we don\'t need to!
+
+The real disagreement between OSI and FSF, the real axis of discord between those who speak of \"open source\" and \"free software\", is not over principles. It\'s over tactics and rhetoric. The open-source movement is largely composed not of people who reject RMS\'s ideals, but rather of people who reject his *rhetoric*.
+
+Is this justified? Well \-- consider the 180-degree turnaround in press and mainstream perception that has taken place in the last fourteen months, since many people in our tribe started pushing the same licenses and the same code we used to call \"free software\" under the \"open source\" banner.
+
+Where we used to be ignored and dismissed, we are now praised and respected. The same press that used to dismiss \"free software\" as a crackpot idea now falls over itself writing laudatory articles about \"open source\". And the same corporate titans who dismissed RMS as a \`communist\' are lining up to pour money and effort into open-source development. Our market share and mind share have both zoomed to a level that would have seemed the stuff of delirious fancy as recently as January of last year.
+
+Have all the opinion leaders and executives who have turned around suddenly seen the pure light of the GNU manifesto? No; instead, they point to the work of Open Source advocates to explain their conversion.
+
+OSI\'s tactics *work*. That\'s the easy part of the lesson. The hard part is that the FSF\'s tactics *don\'t work*, and never did. If RMS\'s rhetoric had been effective outside the hacker community, we\'d have gotten where we are now five or ten years sooner and OSI would have been completely unnecessary (and I could be writing code, which I\'d much rather be doing than this\...).
+
+None of this takes anything away from RMS\'s prowess as a programmer or his remarkable effectiveness at mobilizing other hackers to do good work. Emacs and gcc and the GNU code base are an absolutely essential part of our toolkit and our cultural inheritance, for which RMS deserves every praise (which is why I led a standing ovation to him at last LinuxWorld after observing that \"without RMS, none of us would be here today\"). But as an evangelist to the mainstream, he\'s been one fifteen-year long continuous disaster.
+
+It\'s important for all of us hackers to be clear about that, because RMS\'s rhetoric is very seductive to the kind of people we are. We hackers are thinkers and idealists who readily resonate with appeals to \"principle\" and \"freedom\" and \"rights\". Even when we disagree with bits of his program, we want RMS\'s rhetorical *style* to work; we think it ought to work; we tend to be puzzled and disbelieving when it fails on the 95% of people who aren\'t wired like we are.
+
+So when RMS insists that we talk about \"computer users\' rights\", he\'s issuing a dangerously attractive invitation to us to repeat old failures. It\'s one we should reject \-- not because his principles are wrong, but because that kind of language, applied to software, simply does not persuade anybody but us. In fact, it confuses and repels most people outside our culture.
+
+RMS\'s best propaganda has always been his hacking. So it is for all of us; to the rest of the world outside our little tribe, the excellence of our software is a *far* more persuasive argument for openness and freedom than any amount of highfalutin appeal to abstract principles. So the next time RMS, or anybody else, urges you to \"talk about freedom\", I urge you to reply \"Shut up and show them the code.\"
+:::

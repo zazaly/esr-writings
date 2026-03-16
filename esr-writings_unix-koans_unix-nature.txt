@@ -1,0 +1,40 @@
+  Master Foo Discourses on the Unix-Nature       
+  ------------------------------------------ --- ---------
+  [Prev]                                            [Next]
+
+------------------------------------------------------------------------
+
+Master Foo Discourses on the Unix-Nature
+
+A student said to Master Foo: “We are told that the firm called Novell holds true dominion over Unix.”
+
+Master Foo nodded.
+
+The student continued, “Yet we are also told that the firm called OpenGroup also holds true dominion over Unix.”
+
+Master Foo nodded.
+
+“How can this be?” asked the student.
+
+Master Foo replied:
+
+“Novell indeed has dominion over the code of Unix, but the code of Unix is not Unix. OpenGroup indeed has dominion over the name of Unix, but the name of Unix is not Unix.”
+
+“What, then, is the Unix-nature?” asked the student.
+
+Master Foo replied:
+
+“Not code. Not name. Not mind. Not things. Always changing, yet never changing.”
+
+“The Unix-nature is simple and empty. Because it is simple and empty, it is more powerful than a typhoon.”
+
+“Moving in accordance with the law of nature, it unfolds inexorably in the minds of programmers, assimilating designs to its own nature. All software that would compete with it must become like to it; empty, empty, profoundly empty, perfectly void, hail!”
+
+Upon hearing this, the student was enlightened.
+
+------------------------------------------------------------------------
+
+  --------------------------------- -------- --------------------------
+  [Prev]                                                         [Next]
+  Master Foo and the Unix Zealot     [Home]     Master Foo and the MCSE
+  --------------------------------- -------- --------------------------

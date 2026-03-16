@@ -1,0 +1,28 @@
+  Master Foo and the MCSE       
+  ------------------------- --- ---------
+  [Prev]                           [Next]
+
+------------------------------------------------------------------------
+
+Master Foo and the MCSE
+
+Once, a famous Windows system administrator came to Master Foo and asked him for instruction: “I have heard that you are a powerful Unix wizard. Let us trade secrets, that we may both gain thereby.”
+
+Master Foo said: “It is good that you seek wisdom. But in the Way of Unix, there are no secrets.”
+
+The administrator looked puzzled at this. “But it is said that you are a great Unix guru who knows all the innermost mysteries. As do I in Windows; I am an MCSE, and I have many other certifications of knowledge not common in the world. I know even the most obscure registry entries by heart. I can tell you everything about the Windows API, yes, even secrets those of Redmond have half-forgotten. What is the arcane lore that gives you your power?”
+
+Master Foo said: “I have none. Nothing is hidden, nothing is revealed.”
+
+Growing angry, the administrator said “Very well, if you hold no secrets, then tell me: what do I have to know to become as powerful in the Unix way as you?”
+
+Master Foo said: “A man who mistakes secrets for knowledge is like a man who, seeking light, hugs a candle so closely that he smothers it and burns his hand.”
+
+Upon hearing this, the administrator was enlightened.
+
+------------------------------------------------------------------------
+
+  ------------------------------------------- -------- ------------------------------
+  [Prev]                                                                       [Next]
+  Master Foo Discourses on the Unix-Nature     [Home]     Master Foo and the End User
+  ------------------------------------------- -------- ------------------------------

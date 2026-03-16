@@ -1,0 +1,30 @@
+  Master Foo and the Nervous Novice       
+  ----------------------------------- --- ---------
+  [Prev]                                     [Next]
+
+------------------------------------------------------------------------
+
+Master Foo and the Nervous Novice
+
+There was a novice who learned much at the Master's feet, but felt something to be missing. After meditating on his doubts for some time, he found the courage to approach Master Foo about his problem.
+
+“Master Foo,” he asked “why do Unix users not employ antivirus programs? And defragmentors? And malware cleaners?”
+
+Master Foo smiled, and said “When your house is well constructed, there is no need to add pillars to keep the roof in place.”
+
+The novice replied “Would it not be better to use these things anyway, just to be certain?”
+
+Master Foo reached for a nearby ball of string, and began wrapping it around the novice's feet.
+
+“What are you doing?” the novice asked in surprise.
+
+Master Foo replied simply: “Tying your shoes.”
+
+Upon hearing this, the novice was enlightened.
+
+------------------------------------------------------------------------
+
+  --------------------------------- -------- -------------------------------
+  [Prev]                                                              [Next]
+  Master Foo and the Shell Tools     [Home]     Master Foo and the Recruiter
+  --------------------------------- -------- -------------------------------

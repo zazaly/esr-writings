@@ -1,0 +1,43 @@
+  ------------------------------------------------------- --------------------------------------------------------- ------------------
+  Back to [Eric\'s Home Page](http://www.catb.org/~esr)    Up to [Site Map](http://www.catb.org/~esr/sitemap.html)    16 November 1998
+  ------------------------------------------------------- --------------------------------------------------------- ------------------
+
+------------------------------------------------------------------------
+
+##### (A [Japanese](http://www1.neweb.ne.jp/wa/yamdas/column/technique/libgatesj.html) translation is available.)
+
+# Why Libertarians Should Not Love Bill Gates {#why-libertarians-should-not-love-bill-gates .c1}
+
+Bill Gates seems to confuse the thinking of a lot of libertarians. The Department of Justice antitrust lawsuit has spawned among libertarians at least two vocal camps of opinion both of which bid fair to damage libertarian credibility.
+
+One camp holds that Bill Gates is a big enough devil to justify the government in coercively putting him down. Another camp (largely, and predictably, composed of Randites) canonizes Gates, casting him in the Roarkian role of hero-entrepreneur beset by statist little men.
+
+The argument of the devil-Gates crowd is that the Microsoft monopoly is a classic case of market failure, requiring government intervention to set it right. These people need a remedial course in economic history; the antitrust laws have a very bad record, having been used mainly as a tool with which to reward the well-connected and injure the politically disfavored. Thus, it would not be a sufficient defense of antitrust law to establish that it happens to be whacking a real villain this time. We have to look at its accumulated record over time.
+
+After all, even legislation as wrongheaded as the anti-drug and anti-gun laws catches a real villain occasionally. As libertarians we judge the cost in lost freedom too high for the good they occasionally do. So too we should judge antitrust law.
+
+Market failure is only solved by freer markets. Historically, monopolies are unstable with a half-life of around fifteen years unless propped up by government-created barriers to market entry. Any public-choice economist will tell you that government intervention is chronically subject to *political* failure, a cure worse than the disease. In fact, not only does government intervention fail to be a reliable cure for \`market failure\', it is the primary *cause* of market failure \-- as Theodor Vail, the founder of the government-sanctioned Bell Telephone monopoly, knew full well.
+
+The devil-Gates crowd is making a bad mistake, copying statist rhetoric and statist arguments in a way that will end up benefiting only statists. But the hero-Gates crowd is doing something much worse. *They* are teaching non-libertarians that libertarians cannot be relied upon to condemn behavior that is clearly wrong.
+
+In some other contexts, libertarians routinely distinguish between behavior which is criminal (aggression, fraud) and behavior which, though not criminal and indeed protected by individual rights, is nevertheless wrong (hate speech being perhaps the classic example).
+
+We have no difficulty both defending the hate-speaker\'s right not to be censored and condemning the hateful content. Similarly, we should be able to defend Microsoft\'s right not to be coerced by would-be \`trustbusters\' while condemning Microsoft business practices that are genuinely monopolistic and injure the software consumer.
+
+Whatever one may think of the law underlying the DOJ suit, the trial evidence exposes a long-established pattern of Microsoft seeking monopoly lock-in through mendacity, intimidation and anticompetitive tactics such as tying agreements. The [Halloween Documents](http://catb.org/esr/halloween/) amply confirm the sleaziness of Microsoft tactics with Microsoft\'s own words.
+
+Libertarians must be willing to forthrightly *condemn* such behavior. Otherwise we will justly be accused of desiring a future in which such tactics are the norm. If we are not willing to be part of the market \`invisible hand\' that non-coercively punishes Microsoft for its misbehavior, we invite the argument that only coercion will do.
+
+The only principled response to the facts is to condemn both the DOJ *and* Microsoft. That one party is a villain does not make the other a saint, and even the fact that one side is clearly using coercion does not automatically redeem the other from the charge of having behaved badly.
+
+Indeed, publicly taking a position condemning both antitrust law and Microsoft could provide libertarians with a valuable opportunity to set a moral example and educate the public about our values.
+
+------------------------------------------------------------------------
+
+  ------------------------------------------------------- --------------------------------------------------------- ------------------
+  Back to [Eric\'s Home Page](http://www.catb.org/~esr)    Up to [Site Map](http://www.catb.org/~esr/sitemap.html)    16 November 1995
+  ------------------------------------------------------- --------------------------------------------------------- ------------------
+
+\
+
+Eric S. Raymond [\<esr@snark.thyrsus.com\>](mailto:esr@thyrsus.com)

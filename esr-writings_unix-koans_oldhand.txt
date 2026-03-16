@@ -1,0 +1,26 @@
+  Master Foo and the Old Hand       
+  ----------------------------- --- ---------
+  [Prev]                               [Next]
+
+------------------------------------------------------------------------
+
+Master Foo and the Old Hand
+
+An experienced Unix programmer, hearing of Master Foo's wisdom, came to him for guidance. Approaching the Master, he bowed three times and said:
+
+“Master Foo, I am gravely troubled. In my youth, those who followed the Great Way of Unix used software that was simple and unaffected, like ed and mailx. Today, they use vim and mutt. Tomorrow I fear they will use KMail and Evolution, and Unix will have become like Windows — bloated and covered over with GUIs.”
+
+Master Foo said: “But what software do you use when you want to draw a poster?”
+
+The programmer replied: “I...have never done that. But I am sure that I could use LaTeX or pic to accomplish it without GUIs, in the proper Unix way.”
+
+Master Foo then said: “Which one will reach the other side of the river: The one who dreams of a raft, or the one that hitchhikes to the next bridge?”
+
+Upon hearing this, the programmer was enlightened.
+
+------------------------------------------------------------------------
+
+  -------------------------------------------------------- -------- ---------------------------------
+  [Prev]                                                                                       [Next]
+  Master Foo Discourses on the Graphical User Interface     [Home]     Master Foo and the Shell Tools
+  -------------------------------------------------------- -------- ---------------------------------

@@ -1,0 +1,66 @@
+::: {#Header}
+  ---------------------- --
+  Keeping an Open Mind   
+  ---------------------- --
+:::
+
+::: {#Menu}
+
+------------------------------------------------------------------------
+
+[Home Page](http://www.catb.org/~esr "My home page")\
+[What\'s New](http://www.catb.org/~esr/whatsnew.html "What's new on this site")\
+[Site Map](http://www.catb.org/~esr/sitemap.html "Map of the site")\
+[Software](http://www.catb.org/~esr/software.html "Software I maintain")\
+[Projects](http://www.catb.org/~esr/projects.html "My projects")\
+[HOWTOs](http://www.catb.org/~esr/faqs/ "My FAQ documents")\
+[Essays](index.html "Essays and ruminations")\
+[Personal](http://www.catb.org/~esr/personal.html "Portrait of the author")\
+[Weblog](http://www.ibiblio.org/esrblog/)\
+[Freedom!](http://www.catb.org/~esr/netfreedom/)\
+[Firearms!](http://www.catb.org/~esr/guns/)\
+
+------------------------------------------------------------------------
+:::
+
+::: {#Content}
+A lightly edited version of this essay appeared in the March/April 1999 \"Cyberian Express\", a publication of Barnes & Noble booksellers. Translations into: [Dutch](http://users.pandora.be/hellsgamerz/openmindtrans.htm), [Hungarian](http://goliat.eik.bme.hu/~emese/esr/hu/esr.html), and [Japanese](http://www1.neweb.ne.jp/wa/yamdas/column/technique/openmindj.html) are available.
+
+\
+
+The advent of the Internet is driving some drastic changes in the software industry. We usually think of dramatically lower communications and transaction costs as the Internet\'s major value (and challenge!). That\'s the noisy, well-hyped part of the Internet revolution.
+
+But there\'s something else going on, as well. The Internet\'s engineering tradition, its native culture, and even its folklore are turning out to hold lessons that are going to be critical for the creativity-and software-intensive economy of the coming century.
+
+The shot heard \'round the world in this quieter revolution was the source release of Netscape\'s \`Mozilla\' browser at midnight of April Fool\'s Day, 1998. This brought to widespread press and public attention a face-off between two dramatically different and fundamentally opposed styles of software development --- a confrontation that had been building for thirty years, but became inevitable after the the advent of the World Wide Web and the popular Internet explosion of 1993-94.
+
+One of these styles is what we\'ve now learned to call \`closed source\' --- the traditional factory-production model of proprietary software, in which the customer gets a sealed block of bits which cannot be examined, modified, or evolved. The standard-bearer of this approach is Microsoft.
+
+The other is \`open source\', the Internet engineering tradition, in which source code is generally available for inspection, independent peer review and rapid evolution. The standard-bearer of this approach is the Linux operating system.
+
+The now-notorious [Halloween Documents](http://www.opensource.org/halloween/) ratified in Microsoft\'s own words what has become increasingly clear in the last nine months --- that the open-source model is well on its way to obsolescing the closed-source one. But to understand why, and to think clearly about what this means for the future, we need to step back from the particularities of Microsoft and Linux and consider some qualitative, general issues about three things: reliability, total cost of ownership, and software risks.
+
+Historically, the way we get high reliability of results in engineering and the sciences is by institutionalizing peer review. Physicists don\'t hide their experimental plans from each other; instead, they skeptically check each others\' work. Engineers don\'t build dams or suspension bridges without having the blueprints vetted first by other engineers independent of the original design group.
+
+In the software industry, our reliability has historically been terrible. Crashes, hangs, and lost data are still commonplace. Also, we don\'t as a rule do peer review. You might think these facts are unconnected, until you look at the infrastructure of the Internet. All of the Internet\'s core software is open-source --- and its reliability is extremely good. This is an even stronger demonstration because the Internet is multi-platform, heterogenous, international, and has remained essentially backward-compatible through thirty years and several generations of technology.
+
+The pattern is simple and compelling. Where we have open-source software, we have peer review and high reliability. Where we don\'t, reliability suffers terribly. This fact in itself is probably sufficient to marginalize closed-source development in the future.
+
+Total cost of ownership is also drastically affected by open source. In a closed-source world, the software producer can charge for the bits and has an effective monopoly lock on service. Accordingly, major closed-source packages cost thousands of dollars up front and thousands of dollars a year in continuing service and upgrade costs.
+
+In the open-source world, the bits are free and the provider doesn\'t have a lock on your service and upgrade business. Accordingly, both up-front and annual service/support costs are low. Quite shockingly and threateningly low, by Microsoft\'s standards.
+
+The indirect effect of open-source on total cost of ownership is even stronger. Cash-strapped educational institutions love inexpensive software; they love open-source software especially, because it lets students examine and experiment in ways extremely valuable for learning. Universities and technical schools are now beginning to turn out an increasing flood of Linux-aware graduates, each one far more knowledgeable about the operating system than any MCSE can possibly be about closed-source Windows. The potential impact of this on personnel and training costs should not be hard to imagine.
+
+But the most important long-term effect of open source will be on software risks. To see why, we need to focus again on the supplier-monopoly aspect of closed source. Let\'s say you\'re a CTO at a Fortune 500 company and you\'ve just spent millions of dollars on strategic business system with software you can\'t see inside, can\'t modify, and depend on a single vendor to service.
+
+Now\...are those systems going to change to serve *your* business plan --- or your *vendor\'s* business plan?
+
+When being locked into an unhealthy dependency on your vendor was the only alternative anybody could see, it was hard to evaluate closed source as a risk. But open-source software puts the software consumer back in control of his destiny. It creates a *buyer\'s* market for enhancements, service, and support; it allows a mix of options including in-house development or contracting to any one of multiple competing service groups.
+
+To be concrete: if your OS is Windows, Microsoft is the only choice you have --- you\'re locked in, trapped. If it\'s Linux, Red Hat has to do its service job well or watch its business go to Caldera or S.u.S.E. And if Red Hat and Caldera and S.u.S.E fail, ten thousand Internet developers will cheerfully launch new distributions using the same free, common, exhaustively debugged code base.
+
+We\'ve seen that open source puts the software customer in the driver\'s seat, dramatically lowers total cost of ownership, and is the only recipe that works for high reliability. For these good reasons, it probably won\'t be long before buying closed-source software for any system that must be truly reliable is considered outright irresponsible.
+
+Yes, after the quiet revolution you could be fired for buying Microsoft --- and, if you keep it up, maybe you should be.
+:::
