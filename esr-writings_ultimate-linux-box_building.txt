@@ -1,0 +1,32 @@
+  The Ultimate Linux Box 2001: How to Design Your Dream Machine: (Bigger, Longer, and Uncut)      
+  -------------------------------------------------------------------------------------------- -- ----------
+  <<< Previous                                                                                      Next >>>
+
+------------------------------------------------------------------------
+
+Building the Machine
+
+Dreaming about hot hardware is fun, but it's just mental masturbation unless you actually build and test the design in the real world. Fortunately I was able to do this. Gary Sandine and John Pearson, the principals at Los Alamos Computers, undertook to assemble my Ultimate Linux Box -- in fact, they volunteered to build two, one for me and one for Linus Torvalds. They solicited the vendors on our list for donations of parts, and their courage was rewarded when IBM generously volunteered $15,000 for the project budget.
+
+I flew out to LAC's headquarters in early August. Gary and John had managed to pull together almost all the parts on amazingly short notice; the only things missing from the prototype were the Silverado cooler and the Diamond Pro monitor -- the former is in low-volume production and wasn't to be available for another week, and the latter is being shipped direct to my house to mimize the risk of transit damage. For the machine's acceptance tests we temporarily substituted another monitor with 2048x1536 capability, and two generic PC coolers. The tummy.com folks overnighted us CD-ROMs for the August KRUD distribution, then just three days old.
+
+Plugging the wires together presented no great challenge. Remember to plug the digital cable from the DVD-ROM into the CD port on the SB Live! card. The disk activity pins on the motherboard fire on either IDE or SCSI activity, so do wire them to your front-panel light.
+
+Installing the Silverados is a bit of a challenge if you're inexperienced, however. The installation directions aren't bad, but they don't emphasis the first step enough; you need to slip the short end of the spring bracket around the lug on one side of the processor far enough that it catches firmly underneath before you try pressing down the other, long end of the spring bracket. Also note that you will need to run the Silverados at 8 volts rather than the minimum 6, as otherwise the heat shutoff in the 760 chipset won't believe they are spinning fast enough and will shut the machine down.
+
+Actually, the Silverados turn out to be enough of a pain that we're probably going to have to fall back to a PC cooler that is less vulnerable to shipping damage and can be preinstalled.
+
+Our first serious systems-integration problem was with the graphics card -- the ATI Radeon support in XFree86 4.0.1, it turns out, doesn't play nice with the S2462 chipset. If you enable the Radeon's acceleration, it will throw complete garbage on an X display. Then, when you return to text mode by killing the X server, you get a black screen of death. Turning off the Radeon's acceleration works around the problem but loses you much of the benefit of this expensive card.
+
+It developed that there's a known timing problem in the Radeon driver, which the extreme speed of the Athlons exacerbates; Darryl found us a one-line patch, which worked (it's supplied later in this article). XFree86 4.2 should have issued, with this patch included long before this article reaches print (the fix is already in the XFree86 CVS; I sent it to Red Hat and it has been accepted for their 7.2 release).
+
+Installation of KRUD went smoothly -- and very quickly, just 18 minutes for an `everything' install (that 40x read speed on the DVD-ROM came in handy, though the media were almost uncomfortably warm afterwards).
+
+Then we tested audio. The SB Live! seemed to work with the stock emu10k1.o sound module in Red Hat 7.1, but as it turns out it can't run the earphone out jack on the LiveDrive. Under the emu10k1 driver we were able to successfully burn a CD while listening to another one (the Jimi Hendrix Kiss the Sky compilation, as it happens). The card can also run with the ALSA drivers, but they can't run the earphone jack either.
+
+------------------------------------------------------------------------
+
+  ----------------- ------ -----------------------------
+  <<< Previous       Home                       Next >>>
+  The Recipe File            The Inevitable Horror Story
+  ----------------- ------ -----------------------------

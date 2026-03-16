@@ -1,0 +1,67 @@
+  -------------------------- ---------------- ---------------
+  Back to Eric's Home Page    Up to Site Map    28 April 1997
+  -------------------------- ---------------- ---------------
+
+------------------------------------------------------------------------
+
+Translations: French Russian
+
+See Five Myths of New Media, Revisited for discussion of how these predictions panned out eleven years later.
+
+Five Myths of New Media
+
+Mark Twain once said "It's not the things you don't know that will hurt you, it's the things you think you know that ain't so." The Internet explosion has spawned quite a few popular myths. In this article we'll take a look at what may be the top five.
+
+1. Business use is driving the growth of the Internet.
+
+Don't you believe it. Business use of the Internet is important, sure, but the Internet has always been led and is still by social and expressive use. For every two corporate types soberly exchanging business data there are ten swapping personal email and twenty hanging out in Usenet forums or IRC. The ratio of corporate to personal web pages is similarly lopsided.
+
+These ratios are well known to every ISP and form the basis of their cost structure; $19.95/month flat rate pricing simply wouldn't fly economically if most customers weren't occasional social users.
+
+Then there are the long-term residents. Many people don't realize that the standards that define the Internet, and a lot of the software that embodies those standards, are maintained by a cadre of long-term volunteers. These people, the Internet hacker cadre, have engineering-driven ideas of their own about where they want the Internet to go. While most are not hostile to commercial use of the Internet per se, they have no intention of letting corporate America control its future.
+
+These facts have implications about the culture of the Net. It's not an unformed void waiting to turned into a cyberspatial shopping mall by eager entrepreneurs. It's already got a large native and transient population with their own agendas, habits, and history. Business is finding it has to adapt to that, not the other way around.
+
+2. The Internet is the future of mass entertainment and news.
+
+Of all the myths surrounding the Internet this one is probably both the most amusing and the most thoroughly exploded. There's a certain kind of media mogul that can only comprehend the Internet as a mass medium with accidental interactivity, cable television's smarter brother, a stronger opiate for the couch potatos of America.
+
+Every year or so since 1985 this kind of myopia has spawned yet another grandiose media consortium intenting to turn the Internet into a money-spinning bundle of pay-TV channels -- HBO and MTV on steroids. Or else into a captive news outlet a la CNN (MS-NBC is the latest example of this thinking).
+
+Trouble is, nobody's buying. Every market test of the video-on-demand concept has crashed and burned. Net-based news operations have a history of hemhorraging red ink to collapse. Their putative customers have simply never found continuing value they can't get from older media -- the neighborhood video store, the music CD-ROM, the news magazine.
+
+3. The techno-literacy problem can be solved in isolation.
+
+There's been a great deal of viewing-with-alarm lately about the "technology gap" -- the fear that the Internet is going to widen an achievement divide between educated white and Asian haves and disadvantaged black and Hispanic have-nots. This is generally followed in the next breath by a demand for specific government interventions to get Internet access into the hands of disadvantaged kids.
+
+The trouble with this kind of thinking is that the "technology gap" is a consequence, not a cause. If we can solve the larger problem, which is the near-complete breakdown of education and civil society in the inner cities, this specific illiteracy problem will go away. If we can't, the kids who won't bootstrap themselves out using the Internet are probably going to be the same ones who wouldn't have had the brains and drive to do it without the Internet.
+
+The "technology gap" crusaders are earnest and well-intentioned, but their plans have a potential to do little good and grave harm. Commercial Internet access now costs less per month than a meal at a medium-priced restaurant; it just doesn't make any sense to crank up the engines of bureacracy, raise taxes, and issue another long ton of regulations in order to try to mandate Internet access from the poor from the top down. Not when the real problems are welfare dependency, schools that don't teach, drug addiction, and pervasive crime.
+
+In fact, most Internet old-timers are frankly terrified at the thought of seeing the Internet co-opted by the public-education and social-welfare crowd. And well they might be. If those people did the same job of good management recommended by the state of our public schools and minority neigbhorhoods, they'd destroy the network infrastructure and have the rest of us reduced to a virtuous equality of paper cups and string before long.
+
+4. On-line magazines can make money.
+
+Well, perhaps they can -- but nobody's done it yet, and not for any lack of trying. Since Internet magazines can be and are carried by the net's present bandwidth, this is not quite the pipe dream that video-on-demand has been. But the fact remains that attempts like Slate don't even seem to be making enough subscription revenue to pay even a decent fraction of their operating costs, let alone to amortize their startup costs.
+
+Nor is there any reason to believe this will change in the near future soon. The brutal truth is that the Web 'zines, requiring as they does the specialized high context defined by you sitting at attention at your computer, cannot replace the experience of leafing through a magazine with your feet up. It's not as comfortable, the graphics and fonts are poorer, and you can't take them with you (at least not without an absurdly expensive and fragile combination of laptop and radio modem).
+
+5. Paper will be history soon.
+
+Myth #4 is often considered a consequence of this one; paper-media types are rushing to the net because they fear onrushing obsolescence. But because familarity with technology breeds taking it for granted, people tend to undervalue some of the things paper can do better.
+
+It's a safe bet that paper will never be obsolete until we have computers or network terminals as inexpensive, light, robust, and high in display resolution as a paperback book. And we're still a very long way from that point technologically.
+
+It may sound like I am saying the Internet isn't really good for anything older media can do. That's not true; rather, I am asserting the Internet (like other media) has a natural ecological/economic niche which it fills better than its competitors, but that said niche is different from any of its competitors. We won't serve anyone by trying to fit the Internet on a Procrustean bed of old-media forms, nor by assuming any of them is inevitably going to be completely subsumed by the Internet.
+
+Historically, all of the media revolutions since the Industrial Revolution have supplemented older media rather than supplanting them. The telephone didn't kill off the postal service and television failed to do in either radio or the movies; and none of these media, despite predictions, have smothered the printed word. With this perspective it seems silly to wax apocalyptic about the Internet.
+
+The best way to get beyond the mythology is to look at the media channels invented by the Internet culture itself. Electronic mail; Usenet news; Internet Relay Chat; personal pages on the World Wide Web. These are the things people actually use and the things customers pay for. They're not much like comfort to anyone who believes our five myths of new media, but they are the future.
+
+------------------------------------------------------------------------
+
+  -------------------------- ---------------- ---------------
+  Back to Eric's Home Page    Up to Site Map    28 April 1997
+  -------------------------- ---------------- ---------------
+
+Eric S. Raymond <esr@snark.thyrsus.com>

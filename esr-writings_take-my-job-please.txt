@@ -1,0 +1,83 @@
+  ---------------------- -----------
+  Take My Job, Please!     29 Mar 99
+  ---------------------- -----------
+
+------------------------------------------------------------------------
+
+Home Page
+What's New
+Site Map
+Software
+Projects
+HOWTOs
+Essays
+Personal
+Weblog
+Freedom!
+Firearms!
+
+------------------------------------------------------------------------
+
+Take my job, please.
+
+What job is this? Um...that would be public advocate for the hacker tribe, speaker-to-journalists, evangelist/interface to the corporate world.
+
+It's an important job, because ideas don't sell themselves. Better technology can't win by itself without good propaganda, not when you're taking on both the inertia of the corporate mind and the entrenched power of a market leader determined to wield any FUD it has to to crush all competition. The media and the corporate moguls need to see a face they think they can trust and hear a story they can believe, told in their language. Otherwise, no matter how clever and good and pure we are, we'll be swamped by the next billion-dollar marketing blitz from Redmond.
+
+It's a great job, too. You get to fly all over the U.S. and the world and stay in luxury hotels a lot. You're quoted as an authority in the national press. Fortune 500 executives listen carefully when you talk. Gray eminences in the Pentagon ask you to speak at national-security workshops. You meet all kinds of interesting and powerful people (why, in just the last two weeks I've had face time with Steve Jobs, Jeff Bezos, John Sculley, Mitch Kapor, Esther Dyson, and the Assistant Secretary of the Treasury In Charge Of Russia). You get asked to write columns in national magazines. You're treated like visiting royalty by Linux user groups. You get to have your bio in Wired (next month). You get to make history. You even get groupies (well, OK, this has only happened once. But she was fine.)
+
+So, like, if the job is so important and so cool, why do I want to get rid of it?
+
+Mainly because of all the more important things you lose doing it. Like your privacy and your time and a lot of your personal life. To do the job right, you have to be on the road half the time and fielding requests from journalists most of the other half. You start to miss your wife and your cat and your home pretty badly after two weeks in hotels, and living out of a backpack and eating airline food gets old much sooner. I've been doing this for a year now.
+
+But there's worse. You'll find you have to fight to find any time to really think or reflect about the things that put you on that road in the first place. And you barely have the energy to actually hack code any more. You listen to yourself spinning words to strangers in suits instead, and feel like a plant being pulled slowly out of the ground -- roots not tearing, yet, but feeling the strain, feeling the strain.
+
+That's not what will hurt you the most, though. What will hurt you the most is the people you love, the tribe you've sweated blood to serve. Because they'll turn on you. They will. Not all of them, not even most of them, but enough of them to be wounding.
+
+They'll see the minimum self-promotion you must do to hold mainstream attention in a media-saturated world, and they'll mistake the means for the end -- they'll think you're about the hype instead of the ideas you're hyping and savage you unmercifully. They'll attack your methods. They'll impugn your motives. You'll become the villain in more paranoid fantasies than you knew human beings would utter in public. They'll treat your successes as historical inevitability and crucify you for your failures, and for failures they only imagine are yours.
+
+And it will hurt. Even though you know with the top of your brain that a lot of the hecklers are testosterone-poisoned adolescents acting out at your expense. Even if you know that not one in fifty of the back-seat drivers has anything like your coding creds, not one in a hundred has the right personality type to fill your shoes, and not any damn one of them has walked a mile in those shoes. It will hurt.
+
+Don't pity me -- I walked into this job with my eyes open. I knew the road would wear on me. I expected some people on my own side would damn near bury me in immaturity and bullshit. I knew others would have the knives out for anything that looked for accommodation with the mainstream, too; way too many hackers have come to cherish their resentment of `the system' and developed a sullen love of their own marginalization.
+
+But don't have any illusions, either. It will happen to you, too, no matter how good a job you do; you'll become a psychological lightning rod for every conceivable neurosis about authority and success.
+
+The only way you'll pull through is if you truly believe the job is more important than you are -- that the possibility of an open-source software world means so much for human freedom and the future that the worst shit anybody puts you through hardly matters by comparison.
+
+But even if you believe that, you will get deathly weary of the shit.
+
+Still want the job? Good. Here are the qualifications you'll need:
+
+-   To be credible in the whole hacker community, you'll need a track record of many years as a dedicated hacker, with multiple successful projects under your belt and code in every Linux distribution and the BSDs as well.
+
+-   You'll need excellent speaking and presentation skills. You must be able to address both techies and suits in their own language at length and hold their attention through exposition of complex and novel ideas.
+
+-   You'll need an extroverted personality type to be able to think on your feet, field hostile questions, and generate soundbytes on demand.
+
+-   You'll need to have a knowledge base that includes computer science, microeconomics and business practice, and more than a touch of anthropology/sociology/psychology. Bonus points if you can generate substantial research touching all these fields at once.
+
+-   You'll need to be financially secure enough not to need to have a regular job. (This one will give you some perks but no pay.)
+
+-   You'll need the personal trust of at least a solid majority of the community's leaders. Relationships with many of them going back years would be a valuable bonus.
+
+-   You'll need to know how to not frighten or turn off the suits.
+
+-   You must have a thick skin, tremendous stamina, and a robust sense of the absurd.
+
+If you can meet these quals, please tell me and take my job now. I want you to have it. I need someone else to take it before I burn out. Show me competence and I'll back you to the hilt. I'll hand you all my press contacts, make whatever introductions are needed, and disappear offstage so fast your head will spin. I'd love nothing better than to be able to retire and go back to coding.
+
+If you can't meet these quals, maybe you'd better think a bit about whether you're helping get the job done or hindering it. Which particular person is occupying the job at any given time is not important -- but the job itself sure is. If we have a limited number of possible incumbents and we burn them all out, all of us will lose.
+
+So if you can't lead and you won't follow, at least try not to throw shit at the luckless bastard on the spot. Cut him a little slack; after all, he's working for you.
+
+------------------------------------------------------------------------
+
+Related resources:
+
+The point of this essay was widely misunderstood. I have written a followup: Understand My Job, Please!.
+
+A Dutch translation of this article is available.
+
+A Japanese translation of this article is available.
+
+------------------------------------------------------------------------

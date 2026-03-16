@@ -1,0 +1,25 @@
+::: NAVHEADER
+  The Ultimate Linux Box 2001: How to Design Your Dream Machine: (Bigger, Longer, and Uncut)      
+  -------------------------------------------------------------------------------------------- -- ------------------------------------------
+  [\<\<\< Previous](economizing.html){accesskey="P"}                                                [Next \>\>\>](video.html){accesskey="N"}
+
+------------------------------------------------------------------------
+:::
+
+::: SECT1
+One Disk or Two?
+
+I always build with two disks --- one \"system\" disk and one \"home\" disk. There are two good reasons to do this that have nothing to do with the extra capacity. One of them is the performance advantage of being able to interleave commands to different physical spindles that we discussed above. The other is I am quite a bit less likely to lose two disks at once than I am to trash a single one.
+
+Let\'s suppose you have a fatal disk crash. If you have only one disk, goodbye Charlie. If you have two, maybe the crashed one was your system disk, in which case you can buy another and mess around with a new Linux installation knowing your personal files are safe. Or maybe it was your home disk; in that case, you can still run and do recovery stuff and basic Net communications until you can buy another home disk and restore it from backups (you *did* keep backups, right?).
+:::
+
+::: NAVFOOTER
+
+------------------------------------------------------------------------
+
+  ---------------------------------------------------- ------------------------------------- ------------------------------------------
+  [\<\<\< Previous](economizing.html){accesskey="P"}    [Home](ulb2001.html){accesskey="H"}    [Next \>\>\>](video.html){accesskey="N"}
+  But What If I\'m Economizing?                                                                                       Monitor And Video
+  ---------------------------------------------------- ------------------------------------- ------------------------------------------
+:::

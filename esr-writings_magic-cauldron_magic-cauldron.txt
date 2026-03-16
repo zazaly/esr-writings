@@ -1,0 +1,71 @@
+Next Previous Contents
+
+------------------------------------------------------------------------
+
+The Magic Cauldron
+
+by Eric S. Raymond
+
+June 1999
+
+------------------------------------------------------------------------
+
+This paper analyzes the evolving economic substrate of the open-source phenomenon. We first explode some prevalent myths about the funding of program development and the price structure of software. We present a game-theory analysis of the stability of open-source cooperation. We present nine models for sustainable funding of open-source development; two non-profit, seven for-profit. We continue to develop a qualitative theory of when it is economically rational to be closed. We then examine some novel additional mechanisms the market is now inventing to fund for-profit open-source development, including the reinvention of the patronage system and task markets. We conclude with some tentative predictions of the future.
+
+------------------------------------------------------------------------
+
+1. Indistinguishable From Magic
+
+2. Beyond Geeks Bearing Gifts
+
+3. The Manufacturing Delusion
+
+4. The ``information wants to be free'' Myth
+
+5. The Inverse Commons
+
+6. Reasons for Closing Source
+
+7. Use-Value Funding Models
+
+-   7.1 The Apache case: cost-sharing
+-   7.2 The Cisco case: risk-spreading
+
+8. Why Sale Value is Problematic
+
+9. Indirect Sale-Value Models
+
+-   9.1 Loss-Leader/Market Positioner
+-   9.2 Widget Frosting
+-   9.3 Give Away the Recipe, Open A Restaurant
+-   9.4 Accessorizing
+-   9.5 Free the Future, Sell the Present
+-   9.6 Free the Software, Sell the Brand
+-   9.7 Free the Software, Sell the Content
+
+10. When To Be Open, When To Be Closed
+
+-   10.1 What Are the Payoffs?
+-   10.2 How Do They Interact?
+-   10.3 Doom: A Case Study
+-   10.4 Knowing When To Let Go
+
+11. The Business Ecology of Open Source
+
+12. Coping With Success
+
+13. Open R&D and the Reinvention of Patronage
+
+14. Getting There From Here
+
+15. Conclusion: Life After The Revolution
+
+16. Bibliography and Acknowledgements
+
+17. Appendix: Why Closing Drivers Loses A Vendor Money
+
+18. History
+
+------------------------------------------------------------------------
+
+Next Previous Contents

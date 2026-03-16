@@ -1,0 +1,70 @@
+  The Ultimate Linux Box 2001: How to Design Your Dream Machine: (Bigger, Longer, and Uncut)      
+  -------------------------------------------------------------------------------------------- -- ---
+  <<< Previous                                                                                       
+
+------------------------------------------------------------------------
+
+Acknowledgements and References
+
+Rick Moen and Daryll Strauss contributed substantially to this article. Bruce Benson of VA Linux Systems passed on some valuable tips about noise and heat control. Thanks of course to Gary Sandine and John Pearson for building the ULB, and to Dan McGee of IBM for funding it.
+
+Links to technical datasheets for most components are given where they're first mentioned.
+
+UNIX Hardware Buyer's Guide
+
+    Much more detail on building Linux PCs, organized in a reference rather than narrative format. I've been maintaining this document and its Usenet FAQ ancestor for longer than Linux has existed, and have been running Unix on PC hardware since very shortly after that first became possible in the mid-1980s. The HOWTO includes much more on how to buy economically than we've covered here.
+
+Digitape
+
+    This is where I priced the media and cleaning tape for the DDS4 drive.
+
+Noise Control Silverado
+
+    Noise Control's English-language information page on the product.
+
+RADEON 64MB SDR
+
+    ATI's tech support page for the Radeon
+
+Campanella Associates Acoustics FAQ
+
+    Lots of good basic material on sound, noise, and audiometry.
+
+Handbook of Acoustic Ecology
+
+    This is the "Decibel" definition page from a technical dictionary of acoustics. Has important links to other terms and concepts, and a table relating decibel levels to common sounds.
+
+Decibel Levels
+
+    Another table relating comon sounds to decibel levels.
+
+The Silent PC
+
+    Excellent website on choices and technologies for low-noise PCs.
+
+Quiet and Silent PCs
+
+
+
+Handbook of Acoustic Ecology
+
+    This is the "Decibel" definition page from a technical dictionary of acoustics. Has important links to other terms and concepts, and a table relating decibel levels to common sounds.
+
+Choosing fans for Power Supply Applications
+
+    A white paper from Papst, a leading manufacturer of case fans, on choosing fans for PC cooling. Has interesing formulas relating wattage to required airflow.
+
+Cooling down with fan-speed control
+
+    A detailed technical article on thermostatic fan control.
+
+AMD-760 MP Chipset
+
+    Specs, data sheets, and errata for the support chipset used on the S2462.
+
+------------------------------------------------------------------------
+
+  -------------- ------ ---
+  <<< Previous    Home     
+  Conclusion               
+  -------------- ------ ---

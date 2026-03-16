@@ -1,0 +1,35 @@
+::: NAVHEADER
+  The Ultimate Linux Box 2001: How to Design Your Dream Machine: (Bigger, Longer, and Uncut)      
+  -------------------------------------------------------------------------------------------- -- -------------------------------------------
+  [\<\<\< Previous](twospindles.html){accesskey="P"}                                                [Next \>\>\>](easier.html){accesskey="N"}
+
+------------------------------------------------------------------------
+:::
+
+::: SECT1
+Monitor And Video
+
+For our ULB, we want as many pixels as we can get on screen. There are factors other than the price that have a strong liveability impact, however. A major one is the sheer amount of space big monitors take up. It\'s not a dream system if the display tube won\'t fit on your desk!
+
+Flatscreens should be a lot more friendly, but no flatscreen available in July 2001 can match the 2048x1536 resolution of the highest-end conventional monitors. Today\'s flatscreens also have a really coarse dot pitch with sharp square pixels. As far as I\'m concerned, that puts them right out of the running for the ULB. I do a lot of writing and, not infrequently, my own typesetting; I want to be able to preview two pages of Postscript at actual size and have the fonts look good.
+
+For serious, day-in/day-out use, 21-inch monitors are still the right thing. While larger monitors exist, they are designed for room-display rather than personal use; they too have coarser resolution.
+
+(But the trend curves are clear \-- I do expect that within a year from now flatscreens will have surged past monitors in capability. 2002\'s Ultimate Linux Box, if I design one, will probably sport a flatscreen.)
+
+You should actually see the monitor you\'re contemplating before you buy it. A factory flaw like serious edge misconvergence or a tilted yoke is not a happy thing to discover after you\'ve already cut a check.
+
+Next, buy your card. The major issue here is matching the card to the capacity of your monitor \-- you don\'t want to buy a card and find it can\'t drive your monitor at its maximum capability. If (unlike us) you\'re economizing, you also don\'t want to pay for more card than your monitor can use.
+
+So once you\'ve specified your monitor, find a video card with a maximum video bandwidth equal to or just slightly higher than the monitor\'s. That\'s how you know your video system is properly balanced, with a minimum of wasted capacity.
+:::
+
+::: NAVFOOTER
+
+------------------------------------------------------------------------
+
+  ---------------------------------------------------- ------------------------------------- -------------------------------------------
+  [\<\<\< Previous](twospindles.html){accesskey="P"}    [Home](ulb2001.html){accesskey="H"}    [Next \>\>\>](easier.html){accesskey="N"}
+  One Disk or Two?                                                                                                        Easier Choices
+  ---------------------------------------------------- ------------------------------------- -------------------------------------------
+:::

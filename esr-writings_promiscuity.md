@@ -1,0 +1,63 @@
+  ------------------------------------------------------- --------------------------------------------------------- --------------------------------
+  Back to [Eric\'s Home Page](http://www.catb.org/~esr)    Up to [Site Map](http://www.catb.org/~esr/sitemap.html)    \$Date: 2002/08/02 04:51:34 \$
+  ------------------------------------------------------- --------------------------------------------------------- --------------------------------
+
+------------------------------------------------------------------------
+
+# The Biology of Promiscuity {#the-biology-of-promiscuity .c1}
+
+Why do human beings screw around when it complicates our lives so much? Why do we preach fidelity at each other and then, so often, practice adultery? The cheap and obvious answer, \"because it feels too good to stop\" isn\'t a good one, as it turns out.
+
+Evolutionary biology teaches us that humans being, like other animals, are adaptive machines; \"feels good\" is simply instinct\'s way to steer us towards behaviors that were on average successful for our ancestors. So that answer simply sets up another question: why has our species history favored behavior that is (as the agony columns, bitter ballads, tragic plays and veneral-disease statistics inform us) often destructive to all parties involved?
+
+This question has extra point for humans because human sex and childbirth are risky business compared to that of most of our near relatives. Human infants have huge heads, enough to make giving birth a chancy matter \-- and even so, the period during which they remain dependent on nurturing is astonishingly long and requires a lot of parental investment.
+
+If we were redesigning humans to cope with the high investment requirement, one obvious way would be to rewire our instincts such that we pair-bond exclusively for life. It\'s certainly possible to imagine an evolved variant of humanity in which \"infidelity\" is never an issue because mated pairs imprint on each other so specifically that nobody else is sexually interesting. Some birds are like this. So why aren\'t *we* like this? Why haven\'t promiscuity and adultery been selected out? What adaptive function do they serve that balances out the risk to offspring from unstable matings?
+
+The route to an answer lies in remembering that evolutionary selection is not a benign planner that tries to maximize group survival but rather a blind competition between individual genetic lines. We need to look more closely at the conflicting strategies used by competing players in the reproduction game.
+
+Male promiscuity has always been relatively easy to understand. While total parental investment needs to be pretty intense, men have a dramatically lower *minimum* energy and risk investment in children than women do; one index of the difference is that women not infrequently died in childbirth under pre-modern conditions. This means genetic lines propagating through us hairy male types have an optimum strategy that tilts us a little more towards \"have lots of offspring and don\'t nurture much\", while women tilt towards \"have few offspring, work hard at making sure they survive to breed\".
+
+This also explains why cultures that have not developed an explicit ideology of sexual equality invariably take female adultery much more seriously than male adultery. A man who fails to take a grave view of his mate\'s \"unfaithfulness\" is risking a much larger fraction of his reproductive potential than a woman who ignores her husband\'s philandering.
+
+Indeed, there is a sense in which a man who is always \"faithful\" is under-serving his genes \-- and the behavioral tendency to do that will be selected *against*. His optimal strategy is to be promiscuous enough to pick up opportunities to have his reproductive freight partly paid by other men, while not being so \"faithless\" that potential mates will consider him a bad risk (e.g. for running off with another woman and abandoning the kids).
+
+What nobody had a good theory for until the mid-1990s was why women cooperate in this behavior. Early sociobiological models of human sexual strategy predicted that women should grab the best provider they could attract and then bend heaven and earth to keep him faithful, because if he screwed around some of his effort would be likely to be directed towards providing for children by other women. In these theories, female abstinence before marriage and fidelity during it was modeled as a trade offered men to keep them faithful in turn; an easy trade, because nobody had noticed any evolutionary incentives for women to cheat on the contract.
+
+In retrospect, the resemblence of the female behavior predicted by these models to conventional moral prescriptions should have raised suspicions about the models themselves \-- because they failed to predict the actual pervasiveness of female promiscuity and adultery even in *observable* behavior, let alone concealed.
+
+Start with a simple one: If the trade-your-fidelity-for-his strategy were really a selective optimum, singles bars wouldn\'t exist, because genotypes producing women with singles-bar behavior would have been selected out long ago. But there\'s an even bigger whammy\...
+
+Actual paternity/maternity-marker studies in urban populations done under guarantees that one\'s spouse and others won\'t see the results have found that the percentage of adulterous children born to married women with ready access to other men can be startlingly high, often in the 25% to 45% range. In most cases, the father has no idea and the mother, in the nature of things, was unsure before the assay.
+
+These statistics cry out for explanation \-- and it turns out women do have an evolutionary incentive to screw around. The light began to dawn during studies of chimpanzee populations. Female chimps who spurn low-status bachelor males from their own band are much more willing to have sex with low-status bachelor males from *other* bands.
+
+That turned out to be the critical clue. There may be other incentives we don\'t understand, but it turns out that women genetically \"want\" both to keep an alpha male faithful and to *capture maximum genetic variation in their offspring*. Maximum genetic variation increases the chance that some offspring will survive the vicissitudes of rapidly-changing environmental stresses, of which a notably important one is co-evolving parasites and pathogens.
+
+Assume Jane can keep Tarzan around and raise four children. Her best strategy isn\'t to have all four by Tarzan \-- it\'s to have three by Tarzan and one by some romantic stranger, a bachelor male from another pack. As long as Tarzan doesn\'t catch them at it, the genes conditioning Jane\'s sexual strategy get 50% of the reproductive payoff regardless of who the biological father is. If the stranger is a fitter male than the best mate she could keep faithful, so much the better. Her kids will win.
+
+And this isn\'t just a human strategy either. Similar behavior has been observed in other species with high parental investment, notably among birds.
+
+So. The variation effect predicts that mated women should have a fairly strong genetic incentive to sneak off into the bushes with romantic strangers \-- that is, other men who are (a) from outside their local breeding population, and (b) are physically attractive or talented or intelligent, or (c) show other, socially-mediated signs of high fitness (such as wealth or fame).
+
+It may also explain why polyamorism is only now emerging as a social movement, *after* women\'s liberation, and why its most energetic partisans tend to be women. Our instincts don\'t know about contraceptive intervention; from our genes\' point of view sexual access is equivalent to reproductive use. As our instincts see it, polyamory (the ideology of open marriage) enables married women to have children with bachelor males without risking losing their husband\'s providership for any children. Men gain less from the change, because they trade away a claim on exclusive use of their wives\' scarce reproductive capacity for what may be only a marginal increase in access to other women (relative to the traditional system combining closed marriage and high rates of covert adultery).
+
+This model may not please prudes and Victorians very much, but at least it explains *her* cheatin\' heart as well as his.
+
+------------------------------------------------------------------------
+
+::: c2
+*(Thanks to Gale Pedowitz for the email discussion that stimulated this essay.)*
+:::
+
+In [The evolution of human mating: Trade-offs and strategic pluralism](http://www.cogsci.soton.ac.uk/bbs/Archive/bbs.gangestad.html), Steven W. Gangestad and Jeffry A. Simpson have explored some similar themes, focusing on within-sex variation in mating strategies and the idea that there may be tradeoffs between fitness-to-mate and willingness-to-nurture signals.
+
+------------------------------------------------------------------------
+
+  ------------------------------------------------------- --------------------------------------------------------- --------------------------------
+  Back to [Eric\'s Home Page](http://www.catb.org/~esr)    Up to [Site Map](http://www.catb.org/~esr/sitemap.html)    \$Date: 2002/08/02 04:51:34 \$
+  ------------------------------------------------------- --------------------------------------------------------- --------------------------------
+
+\
+
+Eric S. Raymond [\<esr@thyrsus.com\>](mailto:esr@thyrsus.com)

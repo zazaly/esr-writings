@@ -1,0 +1,45 @@
+::: NAVHEADER
+  The Ultimate Linux Box 2001: How to Design Your Dream Machine: (Bigger, Longer, and Uncut)      
+  -------------------------------------------------------------------------------------------- -- --------------------------------------------------
+  [\<\<\< Previous](building.html){accesskey="P"}                                                   [Next \>\>\>](configuration.html){accesskey="N"}
+
+------------------------------------------------------------------------
+:::
+
+::: SECT1
+The Inevitable Horror Story
+
+Sadly, life got much less pleasant for quite a while after that. We started seeing mysterious hangs \-- the machine would lock up hard at random intervals, usually during disk I/O operations. This is almost the worst kind of problem to troubleshoot, as it leaves no clues other than the bare fact of the machine\'s catatonia \-- you get no oops message, and all the state you might have used to post-mortem disappears when the machine is reset. The only kind of problem that\'s worse is one that adds irreproducibility to the catatonia. But fortunately, we found that doing **make clean** or **make world** on an X source tree produced the hang pretty reliably.
+
+Approximately thirty hours of troubleshooting (interrupted by far too little sleep) ensued as Gary and I tried to track down the problem. We formed and discarded lots of theories based on where we had not yet seen the hang. For a while we thought the problem only bit in console mode, not in X mode. For another while we thought it happened only under SMP kernels. For a third while we thought we could avoid it by compiling kernels for the Pentium II rather than the Athlon. All these beliefs were eventually falsified amidst much wailing and gnashing of teeth.
+
+Once it became clear that there was a problem at or near the hardware level, we still had a lot of hypotheses to choose from \-- with all of them having pretty unpleasant ramifications for our chances of qualifying this box before I was supposed to fly home. Quite possibly the motherboard was bad. Or we might have been seeing thermal flakeouts due to insufficient cooling of the motherboard chips or memory.
+
+About eighteen hours in, just before we both crashed in exhaustion, we posted the problem to the linux-kernel mailing list. We got a rather larger number of responses than we expected (nearly twenty) within a few hours. Several were quite helpful. And the breakthrough came when a couple of linux-kernel people confirmed that the SB Live! is a frequent source of hangs and lockups on other fast PCI machines. With a few more hours of testing (during which our X source tree probably got cleaned and rebuilt more times than is allowed by law) we satisfied ourselves that the lockups stop happening when the SB Live! has been summarily yanked from the machine.
+
+The most helpful advice we got came from one Daniel T. Chen, who reported that he had nailed some similar lockups to the SB Live! running over a Via chipset \-- and that they stopped when he upgraded to 2.4.8 and the newest version of the emu10k1 driver. So while Gary took a much-needed break (and his wife and kids to a David Byrne concert), I built 2.4.8 (with emu10k1.o hard-compiled in) and ran our torture test \-- first with the SB Live! omitted, and then with it in the machine. No hang. Several more tests seemed to confirm that the problem had cleared up. Victory!
+
+But as it turned out, the story didn\'t end there. The 2.4.8+ driver doesn\'t completely banish the hangs; early in the morning of the third day, while I was asleep, Gary tripped over a way to re-induce them by logging into the machine via **ssh** while an X build is running. I didn\'t yet know this when I next read my mail and saw a report from Jeffrey Ingber of the linux-kernel list that he had continued to see emu10k1 lockups after installing 2.4.8 \-- but that they were banished by the ALSA drivers.
+
+Further testing proved, in fact, that the presence of the SB Live! in the machine can make it vulnerable to lockups triggered by network activity even when the emul10k1 support is not configured in at all! This takes the operating system out of the picture and suggests a hardware- or BIOS-level problem. Our suspicions were immediately directed to PCI IRQ sharing, a well-known source of lossage.
+
+Upon investigation (via `/proc/pci`{.FILENAME}), we discovered that the IRQ assignments looked distinctly dubious. IRQs shared between on-board devices didn\'t bother us; we presumed the board designers had been smart enough to avoid conflicts. But IRQs shared between on-board and daughtercard devices looked like they might be part of the problem.
+
+The standard way to attack IRQ conflict problems on a PCI machine is to move the card with the problem to a different slot. We had put the sound card in slot 4 (second from the bottom) to avoid some cables. We moved it to slot 5. This changed the board\'s IRQ but didn\'t seem to solve the hang problem.
+
+Unlike some other PCI BIOSes, the S2462 doesn\'t give you the capability to wire IRQs to specific card slots. While looking for this, however, we found a BIOS setting that seemed relevant \-- \"Use PCI Interrupt Entries In MP Table\". When we switched it to \`Yes\', rebooted, and looked at `/proc/pci`{.FILENAME}, the IRQ assignments looked a lot saner \-- and when we tested, the **ssh** hang was gone!
+
+Alan Cox warns that the AMD766 north-bridge chip on this board has a bug (which I\'ve seen confirmed in AMD\'s product errata) that could potentially cause hangs in APIC mode. The workaround for this is to run the kernel with the \`noapic\' command-line option and accept something of a performance hit, but we won\'t do that unless we see further hangs.
+
+Perhaps it\'s belaboring the obvious, but the way this problem got resolved was yet another testimony to the power of open-source development and the community that has evolved around it. Once again, our technology and our social machine complemented each other and delivered the goods.
+:::
+
+::: NAVFOOTER
+
+------------------------------------------------------------------------
+
+  ------------------------------------------------- ------------------------------------- --------------------------------------------------
+  [\<\<\< Previous](building.html){accesskey="P"}    [Home](ulb2001.html){accesskey="H"}    [Next \>\>\>](configuration.html){accesskey="N"}
+  Building the Machine                                                                                                   Linux Configuration
+  ------------------------------------------------- ------------------------------------- --------------------------------------------------
+:::

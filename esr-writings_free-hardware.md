@@ -1,0 +1,48 @@
+::: {#Header}
+  ---------------------------------- --
+  "Free Hardware": a Trojan Horse?   
+  ---------------------------------- --
+:::
+
+::: {#Menu}
+
+------------------------------------------------------------------------
+
+[Home Page](http://www.catb.org/~esr "My home page")\
+[What\'s New](http://www.catb.org/~esr/whatsnew.html "What's new on this site")\
+[Site Map](http://www.catb.org/~esr/sitemap.html "Map of the site")\
+[Software](http://www.catb.org/~esr/software.html "Software I maintain")\
+[Projects](http://www.catb.org/~esr/projects.html "My projects")\
+[HOWTOs](http://www.catb.org/~esr/faqs/ "My FAQ documents")\
+[Essays](index.html "Essays and ruminations")\
+[Personal](http://www.catb.org/~esr/personal.html "Portrait of the author")\
+[Weblog](http://www.ibiblio.org/esrblog/)\
+[Freedom!](http://www.catb.org/~esr/netfreedom/)\
+[Firearms!](http://www.catb.org/~esr/guns/)\
+
+------------------------------------------------------------------------
+:::
+
+::: {#Content}
+Recently, Sun Microsystems and Microsoft have been pushing a [vision of the future](http://www.reuters.com/newsArticle.jhtml?type=technologyNews&storyID=5304507) in which computing hardware is "free" --- actually, sold with software subscriptions. IT customers tempted to sign on should take a lesson from the recent box-office bomb Troy and beware of suits bearing gifts. Because it\'s very clear that this version of "free" hardware will actually be "controlled" hardware --- controlled, specifically, to effectively seize control of the customer\'s operation.
+
+At first sight, their pitch might sound attractive. IT shops don\'t care about hardware or software in isolation; they\'re customers for a bundled good, the capability to store and process information. Why not rent a bundle with a low monthly cost, hardware and software both serviced by the same vendor and no hardware-to-software integration problems?
+
+There\'s a clue that something is amiss here in the underlying economics. Hardware has a relatively high fixed unit cost because you have to push bulk matter around to make it and deploy it where it\'s needed. Software is just bits that can be copied perfectly and fly over a cable at lightspeed. Therefore it appears that a world of free software and costly hardware makes more sense than one of costly software and free hardware. This turns out not to change when you look at the expected investment to produce the first copy of a hardware or software design. So why are Sun and Microsoft reversing the proposition?
+
+The key background fact is that Sun\'s market share is collapsing under pressure from white-box vendors, and Microsoft is losing its highest-margin corporate customers in places like the financial-services industry to Linux. The Gartner Group [reported](http://www.infoworld.com/article/04/05/26/HNlinuxgrowth_1.html) that Linux server shipments showed 57% growth in 1Q2004 alone. Over the same period, Sun\'s revenues slumped 12%. The recent Sun-Microsoft pact is a defensive circling of the wagons. Anything that they say has to be evaluated as an attempt to regain the market control they have been losing.
+
+The devil in their "Free Hardware" story is, at least at first, in the details. Anyone who believes a vendor is going to "give away" hardware under a contract that allows the customer to immediately strip off the software and repurpose it probably still hasn\'t faced the truth about the Tooth Fairy. There are really only two scenarios here; either the hardware will be so cheap that the customer would get no gain from the deal, or (if it has real value) the lease contract will have a clause requiring that it be used only with the specified software.
+
+Most likely the whole bundle would be structured as a lease deal --- the vendor retains ownership of both hardware and software. And there is the gotcha --- because under those assumptions, the vendor wouldn\'t just own a critical piece of your infrastructure, they\'d get an even harder hammerlock on it than traditional proprietary software licenses give them.
+
+Are you doubting this? Then consider where you are if the vendor decides to pile on more restrictions on what you can do with the machine, such as a prohibition on third-party apps and DRM to enforce it. You couldn\'t very well object. They\'re only protecting their investment, after all --- it\'s not your property.
+
+Not your property. Owning things may be inconvenient, but without ownership you lose control. Jonathan Schwartz and Bill Gates don\'t want you to notice that connection; they want you to let their free Trojan horse inside the walls, to lose ownership of your IT infrastructure and give control of it to them. If you make that decision, you\'ll pay for it in ever more restrictive lock-in and ever-higher future prices.
+
+What\'s the alternative? Open-source software over commodity hardware; you own it all, and neither Sun nor Microsoft controls a single bit of your information. This latest propaganda initiative of theirs is a desperation maneuver, because if the notoriously conservative Gartner Group\'s figures are correct IT managers have seen the way out and are escaping the proprietary prison in droves now.
+
+This Trojan horse will very likely be burnt on the beach, as King Priam should have done to Agamemnon\'s men. One wonders what invasive tactic Sun and Microsoft will think up next.
+:::
+
+------------------------------------------------------------------------
